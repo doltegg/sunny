@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <h2>電子化支付</h2>
+                    <ul>
+                        <li>行動支付</li>
+                        <li>第三方支付</li>
+                        <li>電子支付</li>
+                        <li>電子票證</li>
+                    </ul>
+                </section>
+				<section>
+                    <h2>行動支付</h2>
+                    <p>所有透過智慧型手機支付的行為，就是行動支付。</p>
+                    <ul>
+                        <li>NFC 感應付款：數位版信用卡、Debit Card、悠遊卡等綁進卡匣</li>
+                        <ul>
+                            <li>Apple Pay / Google Pay / Samsung Pay</li>
+                        </ul>
+                        <li>QR Code 掃碼支付：出示或掃描店家 QR Code</li>
+                            <ul>
+                                <li>LINE Pay / 街口支付 / Pi 錢包</li>
+                            </ul>
+                    </ul>
+                </section>
+                <section>
+                    <h2>第三方支付</h2>
+                    <ul>
+                    <li>經濟部管轄的業務，代理收付交易。</li>
+                    <li>為保障買家及賣家之間的交易安全，錢會先寄放在第三方支付單位的帳戶中，確認到貨後再由第三方將錢交給賣家。</li>
+                        <ul>
+                           <li>Paypal / 藍新金流 / 綠界 ECPay / OPEN 錢包</li> 
+                        </ul>                        
+                    </ul>
+                </section>
+                <section>
+                    <h2>電子支付</h2>
+                    <li>由金管會管理</li>
+                    <li>比第三方支付多了轉帳及儲值功能。</li>
+                    <ul>
+                        <li>LINE Pay / LINE Pay 一卡通 / 街口支付 / Pi 錢包</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>電子票證</h2>
+                    <li>主管機關為金管會</li>
+                    <li>實體感應式卡片，可儲值、消費扣款，不可轉帳。
+                    </li>
+                    <ul>
+                        <li>悠遊卡 / 一卡通 / iCash</li>
+                    </ul>
+                </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
