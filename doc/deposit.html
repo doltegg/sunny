@@ -15,7 +15,38 @@
         <!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
         <style>
-            
+            /*表格*/
+            table.bottomBorder { 
+                border-collapse: collapse; 
+                border-top: 2px solid;
+                border-bottom: 2px solid;
+            }
+            table.bottomBorder tfoot { 
+                border-top: 1px solid; 
+            }
+            table.bottomBorder td { 
+                padding: 5px; 
+                border: 0px; 
+                text-align: left; 
+                font-size: .9em;
+                line-height: 1.2;
+            }
+            table.bottomBorder th { 
+                border-bottom: 1px solid; 
+                padding: 5px; 
+                text-align: center;
+                vertical-align: middle;
+                font-size: .9em;
+            }
+            table.bottomBorder td.toright{
+                text-align: right;
+            }
+            .note{
+                font-size: 30px;
+                text-align: left;
+                color: #bbb;
+                padding-left: 4.6rem;
+            }
         </style>
 	</head>
 	<body>
@@ -44,6 +75,45 @@
                             是否還要回來折抵銀行交易，特別是必要支出的利息、手續費等。</p>
                         <p style="text-align: left">若否，<br>
                             是否等短期完成後再開發，再來折抵銀行交易。</p>                    
+                </section>
+                <section>
+                    <h2>國外部點數回饋</h2>
+                    <table class="bottomBorder">
+                        <tr>
+                            <th>項目</th>
+                            <th>點數回饋</th>
+                        </tr>
+                        <tr>
+                            <td>申辦數位帳戶且加入會員 </td>
+                            <td class="toright">200</td>
+                        </tr>
+                        <tr>
+                            <td>首次開啟外幣到價通知</td>
+                            <td class="toright">5</td>
+                        </tr>
+                        <tr>
+                            <td>買外幣 <span style="color:#ccc; font-size:.85em">(等值台幣 20,000 元)</span></td>
+                            <td class="toright">{50, 1}</td>
+                        </tr>
+                        <tr>
+                            <td>賣外幣 <span style="color:#ccc; font-size:.85em">(等值台幣 20,000 元)</span></td>
+                            <td class="toright">{50, 1}</td>
+                        </tr>
+                        <tr>
+                            <td>外幣換外幣 <span style="color:#ccc; font-size:.85em">({不限金額, 等值台幣 20,000 元})</span></td>
+                            <td class="toright">{50, 1}</td>
+                        </tr>                        
+                        <tr>
+                            <td>外幣匯出匯款 <span style="color:#ccc; font-size:.85em">(不限金額)</span></td>
+                            <td class="toright">5</td>
+                        </tr>
+                        <tr>
+                            <td>生日點數</td>
+                            <td class="toright">2 倍</td>
+                        </tr>
+                    </table>
+                    <p class="note">- 外幣數位存款及信用卡需同時擁有。<br>
+                    - {首次, 非首次}</p>
                 </section>
 			</div>
 		</div>
