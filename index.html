@@ -21,10 +21,8 @@
 						<li><a href="doc/b_ecosystem_w.pdf">用點數串接生活圈 (報告)</a></li>
 						<li><a href="doc/b_ecosystem_p.pdf">用點數串接生活圈 (投影片)</a></li>
 						<li><a href="doc/payment.html">支付</a></li>
-						<li><a href="doc/deposit.html">存款</a></li>
 					</ul>
 				</section>
-				<section>Slide 2</section>
 			</div>
 		</div>
 
@@ -38,6 +36,11 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+                slideNumber: true,
+                transition: 'zoom', // none/fade/slide/convex/concave/zoom
+				math: { 
+					config: 'TeX-AMS_HTML-full', //mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+				      },
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
