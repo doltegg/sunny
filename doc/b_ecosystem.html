@@ -42,7 +42,7 @@
 			<div class="slides">
                 <section>
                     <h1>金融生態圈</h1>
-                    <h4 class="date-form">2021.3.15</h4>
+                    <h4 class="date-form">2021.3.17</h4>
                     <h4 class="sx-letter">egg</h4>
                 </section>
 
@@ -54,7 +54,13 @@
                     <section>
                         <h2>金融生態圈</h2>
                         <p>金融生態圈是指金融中不同業態不同個體之間的相互融合與淘汰，那些具有協同效應及相乘效果的個體有效地組織再一起，形成動態地自我更新與進化的集群。</p>
-                    </section>                     
+                    </section>    
+                    <section>
+                        <h2>生活圈？</h2>
+                        <p>生態圈 $=$ 生活圈</p>
+                        <p>or</p>
+                        <p>生態圈 $\ne$ 生活圈</p>
+                    </section>                 
                 </section>
 
                 <section>
@@ -218,16 +224,22 @@
 		<script src="../plugin/notes/notes.js"></script>
 		<script src="../plugin/markdown/markdown.js"></script>
 		<script src="../plugin/highlight/highlight.js"></script>
+        <script src="../plugin/math/math.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+                math: {
+                    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js', 
+                    config: 'TeX-AMS_HTML-full',
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath, ],
+            });
 		</script>
 	</body>
 </html>
