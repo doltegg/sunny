@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/png" href="img/favicon.ico" />	
+    <title>陽信銀行總行通訊錄</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    
+    <style>
+        *{
+            font-family: 'Raleway','Noto Sans TC', 微軟正黑體,  sans-serif;
+        }
+        table{
+            margin: 10px;
+        }
+        .search-w{
+            width: 50%;
+        }
+        .data-w{
+            width: 75%;
+        }
+    </style>
+    
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="mx-auto" id="app">
+            <div class="input-group my-3 py-3 search-w mx-auto">
+                <span class="input-group-text" id="basic-addon1">查詢關鍵字</span>
+                <input type="text" class="form-control" placeholder="部門、名字、分機 or anyword" v-model='search'>
+              </div>
+            <!-- <input v-model='search' /> -->
+                    <!-- <ul v-for="item in searchData">
+                        <li>{{ item.name }} #{{ item.ext}} {{ item.dept }}</li>
+                    </ul> -->
+            <div class="data-w mx-auto">
+                <table class="table table-sm table-borderless">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th>部門</th>
+                            <th>科</th>
+                            <th>職稱</th>
+                            <th>姓名</th>
+                            <th>分機</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody v-for="item in searchData">
+                        <tr>
+                            <td>{{ item.dept }}</td>
+                            <td>{{ item.bran }}</td>
+                            <td>{{ item.tit }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>#{{ item.ext }}</td>
+                            <td>{{ item.email }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+            search: '',
+            products: [
+                // { name: '蘋果', ext: 25, dept: "水果"},
+                // { name: '香蕉', ext: 15, dept: "水果"},
+                // { name: '雪梨', ext: 65, dept: "水果"}, 
+                // { name: '寶馬', ext: 2500, dept: "汽車"}, 
+                // { name: '寶馬', ext: 10025, dept: "汽車"}, 
+                // { name: '柑橘', ext: 15, dept: "水果" }, 
+                // { name: '奧迪', ext: 25, dept: "汽車" }
+                { dept: '陽信銀行', bran: '', tit: '總經理', name: '丁偉豪', ext: '612', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '主任秘書', name: '吳瑞香', ext: '621', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '特助', name: '何利偉', ext: '666', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '', name: '會客室', ext: '605', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '副理', name: '陳雅惠', ext: '615', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '專員', name: '許庭菀', ext: '622', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '', name: '廖翊君', ext: '616', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '', name: '曹雅棠', ext: '620', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '資深副總經理', name: '何坤堂', ext: '613', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '副總經理', name: '張繼鳴', ext: '611', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '顧問', name: '陳忠憲', ext: '737', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '顧問', name: '陳戰勝', ext: '623', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '副理', name: '陳夢蘭', ext: '619', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '專員', name: '林憶華', ext: '626', email: '' },
+                { dept: '陽信銀行', bran: '', tit: '', name: '錡俐蓉', ext: '625', email: '' },
+                { dept: '人力資源處', bran: '', tit: '經理', name: '王順祥', ext: '772', email: '' },
+                { dept: '人力資源處', bran: '', tit: '襄理', name: '簡旭敏', ext: '773', email: '' },
+                { dept: '人力資源處', bran: '', tit: '襄理', name: '吳明敬', ext: '712', email: '' },
+                { dept: '人力資源處', bran: '考核科', tit: '', name: '謝靜宜', ext: '738', email: '' },
+                { dept: '人力資源處', bran: '考核科', tit: '', name: '莊宏邦', ext: '829', email: '' },
+                { dept: '人力資源處', bran: '考核科', tit: '', name: '賴鈺茹', ext: '777', email: '' },
+                { dept: '人力資源處', bran: '甄敘科', tit: '', name: '葉逸萍', ext: '778', email: '' },
+                { dept: '人力資源處', bran: '甄敘科', tit: '', name: '汪玉英', ext: '828', email: '' },
+                { dept: '人力資源處', bran: '甄敘科', tit: '', name: '魏美華(面試)', ext: '838', email: '' },
+                { dept: '人力資源處', bran: '甄敘科', tit: '', name: '巫佩容', ext: '865', email: '' },
+                { dept: '人力資源處', bran: '員工訓練科', tit: '', name: '阮秋玉', ext: '758', email: '' },
+                { dept: '人力資源處', bran: '員工訓練科', tit: '', name: '陳俊澤', ext: '760', email: '' },
+                { dept: '人力資源處', bran: '員工訓練科', tit: '', name: '莊尚儒', ext: '706', email: '' },
+                { dept: '人力資源處', bran: '員工訓練科', tit: '', name: '柳文晴(福委會)', ext: '776', email: '' },
+                { dept: '人力資源處', bran: '員工訓練科', tit: '', name: '萬譯云', ext: '775', email: '' },
+                { dept: '行政管理處', bran: '', tit: '經理', name: '陳鈺良', ext: '761', email: '' },
+                { dept: '行政管理處', bran: '', tit: '襄理', name: '謝其憲', ext: '792', email: '' },
+                { dept: '行政管理處', bran: '文書科', tit: '襄理', name: '康嘉華', ext: '800', email: '' },
+                { dept: '行政管理處', bran: '文書科', tit: '', name: '陳雅娟', ext: '765', email: '' },
+                { dept: '行政管理處', bran: '文書科', tit: '', name: '康雅淳', ext: '769', email: '' },
+                { dept: '行政管理處', bran: '文書科', tit: '', name: '許裴珊', ext: '770', email: '' },
+                { dept: '行政管理處', bran: '文書科', tit: '', name: '陳慧娟', ext: '793', email: '' },
+                { dept: '行政管理處', bran: '財產管理科', tit: '', name: '鄒文雄', ext: '790', email: '' },
+                { dept: '行政管理處', bran: '財產管理科', tit: '', name: '蔡家喬', ext: '794', email: '' },
+                { dept: '行政管理處', bran: '財產管理科', tit: '', name: '陳湖菁', ext: '795', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '襄理', name: '張文祥', ext: '791', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '徐碧娟(總機)', ext: '749', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '謝宜芳(總機)', ext: '799', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '陳宗榮(總機)', ext: '799', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '葉哲良', ext: '701', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '吳東泰', ext: '860', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '詹謹維', ext: '796', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '蔣濬安', ext: '869', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '張俊韋', ext: '759', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '鍾金龍', ext: '790', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '陳詠聲', ext: '876', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '郭育宏', ext: '797', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '鄒文雄(新大樓門禁)', ext: '110', email: '' },
+                { dept: '行政管理處', bran: '庶務科', tit: '', name: '駐衛警(舊大樓門禁)', ext: '111', email: '' },
+                { dept: '行政管理處', bran: '美工科', tit: '專員', name: '黃國維', ext: '898', email: '' },
+                { dept: '行政管理處', bran: '美工科', tit: '', name: '王凌祥', ext: '736', email: '' },
+                { dept: '行政管理處', bran: '美工科', tit: '', name: '楊爵伃', ext: '798', email: '' },
+                { dept: '行政管理處', bran: '美工科', tit: '', name: '林文莉', ext: '797', email: '' },
+                { dept: '授信審查處', bran: '', tit: '', name: '甘武正', ext: '121', email: '' },
+                { dept: '授信審查處', bran: '管理科', tit: '襄理', name: '許純玉', ext: '159', email: 's19129@sunnybank.com.tw' },
+                { dept: '授信審查處', bran: '', tit: '專員', name: '王仲平', ext: '154', email: '' },
+                { dept: '授信審查處', bran: '', tit: '', name: '謝宜軒', ext: '155', email: '' },
+                { dept: '授信審查處', bran: '', tit: '', name: '裴翊涵', ext: '156', email: '' },
+                { dept: '授信審查處', bran: '', tit: '', name: '黃鈺婷', ext: '157', email: '' },
+                { dept: '授信審查處', bran: '', tit: '', name: '田佩玉', ext: '169', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-授權', tit: '襄理', name: '謝天祥', ext: '174', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '高專', name: '郭素珠', ext: '171', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '專委', name: '呂謦佑', ext: '172', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '', name: '陳炳宏', ext: '152', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '襄理', name: '楊豐銘', ext: '158', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '', name: '溫銘銓', ext: '173', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '', name: '呂孟修', ext: '175', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '襄理(營業部)', name: '陳正玄', ext: '177', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '', name: '林子翔', ext: '179', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '', name: '曾建強', ext: '180', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '', name: '朱玲瑩', ext: '185', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '', name: '洪偉翔', ext: '186', email: '' },
+                { dept: '授信審查處', bran: '個人授信科-審查', tit: '駕駛', name: '王國榮', ext: '188', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-大企審查', tit: '中專', name: '吳福清', ext: '123', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-大企審查', tit: '', name: '黃嘉惠', ext: '124', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-大企審查', tit: '副理', name: '喻經鎔', ext: '125', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-大企審查', tit: '', name: '廖晏民', ext: '126', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-大企審查', tit: '', name: '劉智揚', ext: '127', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-大企審查', tit: '襄理', name: '詹如芬', ext: '128', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-大企審查', tit: '襄理', name: '呂偉成', ext: '129', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-大企審查', tit: '襄理', name: '余施霖', ext: '134', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-大企審查', tit: '', name: '楊雅筑', ext: '130', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小審查', tit: '專員', name: '金肖薇', ext: '131', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小審查', tit: '襄理', name: '曾婉雯', ext: '135', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小審查', tit: '專員', name: '黃銘峰', ext: '141', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小審查', tit: '', name: '邱義興', ext: '142', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小審查', tit: '', name: '林曉瑄', ext: '144', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小審查', tit: '', name: '江育芳', ext: '146', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小審查', tit: '', name: '楊方雅', ext: '132', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小審查', tit: '', name: '陳雅柔', ext: '133', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小授權', tit: '副理', name: '張原禎', ext: '122', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小授權', tit: '襄理', name: '何坤霖', ext: '137', email: '' },
+                { dept: '授信審查處', bran: '企業授信科-中小授權', tit: '高專', name: '魏俊智', ext: '138', email: '' },
+                { dept: '授信審查處', bran: '徵信科-鑑價覆核', tit: '副理', name: '溫智斌', ext: '136', email: '' },
+                { dept: '授信審查處', bran: '徵信科-鑑價覆核', tit: '襄理', name: '施夙娟', ext: '139', email: '' },
+                { dept: '授信審查處', bran: '徵信科-鑑價覆核', tit: '襄理', name: '陳治勳', ext: '160', email: '' },
+                { dept: '授信審查處', bran: '徵信科-鑑價覆核', tit: '', name: '蘇學丞', ext: '143', email: '' },
+                { dept: '風險管理處', bran: '', tit: '經理', name: '楊濂澤', ext: '147', email: '' },
+                { dept: '風險管理處', bran: '', tit: '副理', name: '林家璋', ext: '193', email: '' },
+                { dept: '風險管理處', bran: '', tit: '', name: '陳怡君', ext: '192', email: '' },
+                { dept: '風險管理處', bran: '', tit: '', name: '張馨予', ext: '149', email: '' },
+                { dept: '風險管理處', bran: '', tit: '', name: '黃詩婷', ext: '148', email: '' },
+                { dept: '風險管理處', bran: '', tit: '', name: '蔡惠琤', ext: '140', email: '' },
+                { dept: '業務管理處', bran: '', tit: '協理', name: '郭政宏', ext: '731', email: '' },
+                { dept: '業務管理處', bran: '', tit: '副理', name: '蔡文旭', ext: '258', email: '' },
+                { dept: '業務管理處', bran: '', tit: '副理', name: '許瑞宏', ext: '720', email: '' },
+                { dept: '業務管理處', bran: '管理考核科', tit: '專員', name: '林盈秀', ext: '887', email: '' },
+                { dept: '業務管理處', bran: '管理考核科', tit: '', name: '謝秉憲', ext: '726', email: '' },
+                { dept: '業務管理處', bran: '管理考核科', tit: '', name: '葉政達', ext: '728', email: '' },
+                { dept: '業務管理處', bran: '管理考核科', tit: '', name: '吳承峰', ext: '747', email: '' },
+                { dept: '業務管理處', bran: '行銷企劃科', tit: '副理', name: '田凱元', ext: '722', email: '' },
+                { dept: '業務管理處', bran: '行銷企劃科', tit: '專員', name: '葉良智', ext: '859', email: 's18166@sunnybank.com.tw' },
+                { dept: '業務管理處', bran: '行銷企劃科', tit: '專員', name: '曾室錦', ext: '727', email: '' },
+                { dept: '業務管理處', bran: '行銷企劃科', tit: '', name: '王政純', ext: '744', email: '' },
+                { dept: '業務管理處', bran: '行銷企劃科', tit: '', name: '林泓晉', ext: '746', email: '' },
+                { dept: '業務管理處', bran: '行銷企劃科', tit: '', name: '蔡涵如', ext: '748', email: '' },
+                { dept: '業務管理處', bran: '行銷企劃科', tit: '專員', name: '林益君', ext: '756', email: '' },
+                { dept: '業務管理處', bran: '業務規章科', tit: '專員', name: '簡秀玫', ext: '834', email: '' },
+                { dept: '業務管理處', bran: '業務規章科', tit: '', name: '芮文婷', ext: '248', email: '' },
+                { dept: '業務管理處', bran: '業務規章科', tit: '', name: '張寧恩', ext: '743', email: '' },
+                { dept: '業務管理處', bran: '分行營運科', tit: '', name: '林惠琳', ext: '216', email: '' },
+                { dept: '業務管理處', bran: '督導副總幹部', tit: '副理', name: '蔡明憲', ext: '893', email: 's12720@sunnybank.com.tw' },
+                { dept: '業務管理處', bran: '督導副總幹部', tit: '副理', name: '王健仲', ext: '845', email: '' },
+                { dept: '業務管理處', bran: '督導副總幹部', tit: '襄理', name: '黃志寬', ext: '832', email: '' },
+                { dept: '業務管理處', bran: '督導副總幹部', tit: '', name: '會議室(前)', ext: '745', email: '' },
+                { dept: '業務管理處', bran: '督導副總幹部', tit: '', name: '會議室(後)', ext: '897', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '協理', name: '李文光', ext: '762', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '副理', name: '賴金美', ext: '763', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '劉昱麟', ext: '870', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '劉庭芳', ext: '766', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '林信嘉', ext: '766', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '陳偲嘉', ext: '864', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '楊惠晴', ext: '864', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '徐睿', ext: '764', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '孫維佑', ext: '764', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '林鈺鈜', ext: '768', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '洪偉展', ext: '768', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '陳薇年', ext: '767', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '盧奕萱', ext: '897', email: '' },
+                { dept: '法令遵循處', bran: '', tit: '', name: '劉柔邑', ext: '897', email: '' },
+                { dept: '會計處', bran: '', tit: '經理', name: '劉宗勳', ext: '732', email: '' },
+                { dept: '會計處', bran: '審核科', tit: '襄理', name: '何瑞玲', ext: '753', email: '' },
+                { dept: '會計處', bran: '審核科', tit: '專員', name: '陳雅玲', ext: '751', email: '' },
+                { dept: '會計處', bran: '審核科', tit: '', name: '賴婷惠', ext: '711', email: '' },
+                { dept: '會計處', bran: '審核科', tit: '', name: '張育嘉', ext: '735', email: '' },
+                { dept: '會計處', bran: '審核科', tit: '', name: '韓曉菊', ext: '750', email: '' },
+                { dept: '會計處', bran: '會計科', tit: '副理', name: '汪國勝', ext: '755', email: '' },
+                { dept: '會計處', bran: '會計科', tit: '襄理', name: '廖寶猜', ext: '780', email: '' },
+                { dept: '會計處', bran: '會計科', tit: '', name: '葉憲緯', ext: '752', email: '' },
+                { dept: '會計處', bran: '會計科', tit: '', name: '王仁豪', ext: '729', email: '' },
+                { dept: '會計處', bran: '會計科', tit: '', name: '葉喜箴', ext: '868', email: '' },
+                { dept: '會計處', bran: '會計科', tit: '', name: '張淯姍', ext: '754', email: '' },
+                { dept: '文教基金會', bran: '', tit: '', name: '劉辛卯', ext: '801', email: '' },
+                { dept: '企業工會', bran: '', tit: '', name: '陳建維', ext: '4587', email: '' },
+                { dept: '電子金融部', bran: '', tit: '經理', name: '鄭琰慶', ext: '895', email: '' },
+                { dept: '電子金融部', bran: '電子銀行科', tit: '副理', name: '張佩鈴', ext: '896', email: 's8792@sunnybank.com.tw' },
+                { dept: '電子金融部', bran: '電子銀行科', tit: '襄理', name: '顏敏勇', ext: '862', email: '' },
+                { dept: '電子金融部', bran: '電子銀行科', tit: '', name: '陳美如', ext: '894', email: '' },
+                { dept: '電子金融部', bran: '電子銀行科', tit: '', name: '黃詩雲', ext: '836', email: '' },
+                { dept: '電子金融部', bran: '電子商務科', tit: '襄理', name: '李函穎', ext: '881', email: '' },
+                { dept: '電子金融部', bran: '電子商務科', tit: '', name: '許欽竣', ext: '866', email: '' },
+                { dept: '電子金融部', bran: '電子商務科', tit: '', name: '夏苡瑄', ext: '841', email: '' },
+                { dept: '電子金融部', bran: '行銷規劃科', tit: '襄理', name: '何如玉', ext: '883', email: '' },
+                { dept: '電子金融部', bran: '行銷規劃科', tit: '', name: '莊三輝', ext: '877', email: '' },
+                { dept: '電子金融部', bran: '行銷規劃科', tit: '', name: '張貿翔', ext: '824', email: '' },
+                { dept: '電子金融部', bran: '行銷規劃科', tit: '', name: '楊建一', ext: '879', email: '' },
+                { dept: '電子金融部', bran: '行銷規劃科', tit: '', name: '謝欣蘭', ext: '867', email: '' },
+                { dept: '電子金融部', bran: '行銷規劃科', tit: '', name: '楊雅婷', ext: '841', email: '' },
+                { dept: '稽核處', bran: '', tit: '總稽核', name: '陳正豐', ext: '221', email: '' },
+                { dept: '稽核處', bran: '', tit: '經理', name: '岳文章', ext: '251', email: '' },
+                { dept: '稽核處', bran: '', tit: '副理', name: '徐月舫', ext: '222', email: '' },
+                { dept: '稽核處', bran: '', tit: '專員', name: '高志利', ext: '223', email: '' },
+                { dept: '稽核處', bran: '', tit: '襄理', name: '張家銘', ext: '223', email: '' },
+                { dept: '稽核處', bran: '', tit: '副理', name: '柯志清', ext: '225', email: '' },
+                { dept: '稽核處', bran: '', tit: '襄理', name: '范正立', ext: '225', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '曾式揚', ext: '227', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '林秦吉', ext: '227', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '俞寶如', ext: '228', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '連子毅', ext: '228', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '連子毅', ext: '229', email: '' },
+                { dept: '稽核處', bran: '', tit: '專員', name: '陳靖綺', ext: '229', email: '' },
+                { dept: '稽核處', bran: '', tit: '專員', name: '鄧勝元', ext: '230', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '陳雲仲', ext: '230', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '魏明煌', ext: '231', email: '' },
+                { dept: '稽核處', bran: '', tit: '專員', name: '張美玲', ext: '246', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '何玉鳳', ext: '246', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '陳靜瑩', ext: '247', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '王瑞淵', ext: '247', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '許育禎(值班台)', ext: '272', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '陳昱辰(值班台)', ext: '271', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '池佳玲', ext: '789', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '李彗禎', ext: '789', email: '' },
+                { dept: '稽核處', bran: '', tit: '', name: '舊六樓88會議室', ext: '683', email: '' },
+                { dept: '資訊處', bran: '', tit: '經理', name: '鄭琰慶', ext: '505', email: '' },
+                { dept: '資訊處', bran: '開放應用', tit: '副理', name: '林美慧', ext: '583', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '襄理', name: '陳稚易', ext: '534', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '襄理', name: '盧建霖', ext: '553', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '專員', name: '李平', ext: '596', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '專員', name: '林坤璋', ext: '577', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '陳姵如', ext: '554', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '劉志健', ext: '556', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '潘俊安', ext: '559', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '陳坤伸', ext: '573', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '林宜樺', ext: '324', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '林俊宇', ext: '308', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '葉玲菱', ext: '325', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '何宣穎', ext: '326', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '郭懿慧', ext: '327', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '林婉婷', ext: '328', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '鄭家瑜', ext: '330', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '卓欣儀', ext: '332', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '陳佳宏', ext: '310', email: '' },
+                { dept: '資訊處', bran: '開放應用科-網際應用', tit: '', name: '鄭兆君', ext: '323', email: '' },
+                { dept: '信託部', bran: '', tit: '協理', name: '李慶成', ext: '668', email: '' },
+                { dept: '信託部', bran: '業務管理科-保管組', tit: '襄理', name: '游麗如', ext: '657', email: 's84819@sunnybank.com.tw' },
+                { dept: '信託部', bran: '業務管理科-保管組', tit: '', name: '劉意文', ext: '675', email: '' },
+                { dept: '信託部', bran: '業務管理科-保管組', tit: '', name: '黃立丞', ext: '669', email: '' },
+                { dept: '信託部', bran: '業務管理科-保管組', tit: '', name: '蔡亞純', ext: '659', email: '' },
+                { dept: '信託部', bran: '業務管理科-保管組', tit: '', name: '楊芷晴', ext: '675', email: '' },
+                { dept: '信託部', bran: '業務管理科-資管組', tit: '襄理', name: '白潤吟', ext: '658', email: '' },
+                { dept: '信託部', bran: '業務管理科-資管組', tit: '', name: '林宜甄', ext: '670', email: '' },
+                { dept: '信託部', bran: '業務管理科-資管組', tit: '', name: '楊捷雄', ext: '671', email: '' },
+                { dept: '信託部', bran: '業務管理科-資管組', tit: '', name: '王佩湘', ext: '672', email: '' },
+                { dept: '信託部', bran: '業務管理科-資管組', tit: '', name: '汪倢宇', ext: '676', email: '' },
+                { dept: '信託部', bran: '業務管理科-資管組', tit: '', name: '郭心宜', ext: '680', email: '' },
+                { dept: '信託部', bran: '業務管理科-資管組', tit: '', name: '莊銘俊', ext: '667', email: '' },
+                { dept: '信託部', bran: '業務管理科-資管組', tit: '', name: '陳珮瑜', ext: '673', email: '' },
+                { dept: '信託部', bran: '業務管理科-基金組', tit: '襄理', name: '何羚羚', ext: '655', email: '' },
+                { dept: '信託部', bran: '業務管理科-基金組', tit: '', name: '張嘉君', ext: '660', email: '' },
+                { dept: '信託部', bran: '業務管理科-基金組', tit: '', name: '吳淑娟', ext: '661', email: '' },
+                { dept: '信託部', bran: '業務管理科-基金組', tit: '專員', name: '林冠君', ext: '662', email: '' },
+                { dept: '信託部', bran: '業務管理科-基金組', tit: '', name: '許宜庭', ext: '663', email: '' },
+                { dept: '信託部', bran: '業務管理科-基金組', tit: '', name: '黃義喜', ext: '638', email: '' },
+                { dept: '信託部', bran: '行銷企劃科', tit: '副理', name: '王秀燕', ext: '656', email: '' },
+                { dept: '信託部', bran: '行銷企劃科', tit: '襄理', name: '蔡宗樺', ext: '677', email: '' },
+                { dept: '信託部', bran: '行銷企劃科', tit: '', name: '鄭文傑', ext: '665', email: 's85236@sunnybank.com.tw' },
+                { dept: '信託部', bran: '行銷企劃科', tit: '', name: '洪湘凌', ext: '682', email: '' },
+                { dept: '信託部', bran: '行銷企劃科', tit: '', name: '黃張誌', ext: '674', email: '' },
+                { dept: '信用卡部', bran: '', tit: '協理', name: '宋萍萍', ext: '288', email: '' },
+                { dept: '信用卡部', bran: '行銷企劃組', tit: '副理', name: '李月君', ext: '858', email: 's5892@sunnybank.com.tw' },
+                { dept: '信用卡部', bran: '行銷企劃組', tit: '專員', name: '高義筌', ext: '218', email: '' },
+                { dept: '信用卡部', bran: '行銷企劃組', tit: '', name: '洪正誼', ext: '217', email: '' },
+                { dept: '信用卡部', bran: '行銷企劃組', tit: '', name: '呂婉慈', ext: '209', email: '' },
+                { dept: '信用卡部', bran: '收單組', tit: '襄理', name: '廖德烊', ext: '219', email: '' },
+                { dept: '信用卡部', bran: '收單組', tit: '專員', name: '林佑洪', ext: '861', email: '' },
+                { dept: '信用卡部', bran: '收單組', tit: '', name: '陳翰一', ext: '208', email: '' },
+                { dept: '信用卡部', bran: '收單組', tit: '', name: '林閔慧', ext: '262', email: '' },
+                { dept: '信用卡部', bran: '收單組', tit: '', name: '洪嘉瑋', ext: '204', email: '' },
+                { dept: '信用卡部', bran: '帳務組', tit: '襄理', name: '吳良褀', ext: '266', email: '' },
+                { dept: '信用卡部', bran: '帳務組', tit: '', name: '陳詩錦', ext: '237', email: '' },
+                { dept: '信用卡部', bran: '帳務組', tit: '', name: '林雅真', ext: '211', email: '' },
+                { dept: '信用卡部', bran: '帳務組', tit: '', name: '張羽辰', ext: '211', email: '' },
+                { dept: '信用卡部', bran: '帳務組', tit: '', name: '劉千綺', ext: '214', email: '' },
+                { dept: '信用卡部', bran: '帳務組', tit: '', name: '張碧如', ext: '298', email: '' },
+                { dept: '信用卡部', bran: '行政製卡組', tit: '專員', name: '許宏志', ext: '215', email: '' },
+                { dept: '信用卡部', bran: '行政製卡組', tit: '', name: '林佳儀', ext: '281', email: '' },
+                { dept: '信用卡部', bran: '行政製卡組', tit: '', name: '陳怡婷', ext: '243', email: '' },
+                { dept: '信用卡部', bran: '行政製卡組', tit: '', name: '宋詩鈞', ext: '203', email: '' },
+                { dept: '信用卡部', bran: '徵審組', tit: '', name: '施雅玲', ext: '287', email: '' },
+                { dept: '信用卡部', bran: '徵審組', tit: '', name: '劉雅純', ext: '297', email: '' },
+                { dept: '信用卡部', bran: '授權風管組', tit: '', name: '周哲廷', ext: '270', email: '' },
+                { dept: '信用卡部', bran: '授權風管組', tit: '', name: '蔡云榛', ext: '205', email: '' },
+                { dept: '信用卡部', bran: '授權風管組', tit: '', name: '陳采緹', ext: '205', email: '' },
+                { dept: '消費金融部', bran: '', tit: '協理', name: '宋萍萍', ext: '288', email: '' },
+                { dept: '消費金融部', bran: '消金作業科', tit: '副理', name: '張智能', ext: '260', email: '' },
+                { dept: '消費金融部', bran: '消金作業科', tit: '襄理', name: '張海倫', ext: '268', email: '' },
+                { dept: '消費金融部', bran: '消金作業科', tit: '襄理', name: '曾冠豪', ext: '274', email: '' },
+                { dept: '消費金融部', bran: '消金作業科', tit: '襄理', name: '羅台鳳', ext: '257', email: '' },
+                { dept: '消費金融部', bran: '消金作業科', tit: '', name: '黃麗靜', ext: '279', email: '' },
+                { dept: '消費金融部', bran: '消金作業科', tit: '', name: '鄧伊婷', ext: '249', email: '' },
+                { dept: '消費金融部', bran: '消金作業科', tit: '', name: '王思文', ext: '296', email: '' },
+                { dept: '消費金融部', bran: '管理科', tit: '襄理', name: '顏逸塵', ext: '264', email: '' },
+                { dept: '消費金融部', bran: '管理科', tit: '', name: '郭思妤', ext: '239', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '副理', name: '陳淑惠', ext: '168', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '襄理', name: '吳姿嬋', ext: '102', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '周漢沛', ext: '119', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '吳瓊羚', ext: '116', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '周穎廷', ext: '117', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '劉雅瑜', ext: '120', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: ' ', name: '張瑀珊 ', ext: '118', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '戴天祐', ext: '105', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '葉孟秋', ext: '105', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '陳建誌', ext: '106', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '高培根', ext: '106', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '孫和慶', ext: '110', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '李姝蓁', ext: '110', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '林進賢', ext: '111', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '吳德維', ext: '112', email: '' },
+                { dept: '', bran: '', tit: '', name: '陳明陞', ext: '112', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '陳俊宇', ext: '107', email: '' },
+                { dept: '消費金融部', bran: '車貸作業科', tit: '', name: '黃偉杰', ext: '101', email: '' },
+                { dept: '債權管理處', bran: '', tit: '副理', name: '林宜靜', ext: '848', email: '' },
+                { dept: '債權管理處', bran: '', tit: '襄理', name: '方華鈺', ext: '607', email: '' },
+                { dept: '債權管理處', bran: '', tit: '', name: '黃勖哲', ext: '273', email: '' },
+                { dept: '債權管理處', bran: '', tit: '', name: '趙御仲', ext: '846', email: '' },
+                { dept: '債權管理處', bran: '催收科-債務協商組', tit: '襄理', name: '蕭麗敏', ext: '250', email: '' },
+                { dept: '債權管理處', bran: '催收科-債務協商組', tit: '', name: '蔡淑芬', ext: '236', email: '' },
+                { dept: '債權管理處', bran: '催收科-債務協商組', tit: '', name: '朱甚珍', ext: '245', email: '' },
+                { dept: '債權管理處', bran: '催收科-債務協商組', tit: '', name: '謝禎文', ext: '245', email: '' },
+                { dept: '債權管理處', bran: '催收科-債務協商組', tit: '', name: '盧鴻文', ext: '241', email: '' },
+                { dept: '債權管理處', bran: '催收科-債務協商組', tit: '', name: '李佳純', ext: '857', email: '' },
+                { dept: '債權管理處', bran: '催收科-債務協商組', tit: '', name: '李佳純', ext: '839', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '副理', name: '林文謙', ext: '292', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '謝宜臻', ext: '252', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '陳信華', ext: '253', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '高延年', ext: '254', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '何衣珊', ext: '276', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '陳信華', ext: '276', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '黎耘豪', ext: '291', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '黃蘭惠', ext: '291', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '黃秀敏', ext: '700', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '楊安婷', ext: '700', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '周美蓮', ext: '837', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '陳瀅如', ext: '835', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '劉璧瑜', ext: '822', email: '' },
+                { dept: '債權管理處', bran: '催收科-外訪組', tit: '', name: '何宜庭', ext: '822', email: '' },
+                { dept: '財富管理部', bran: '', tit: '協理', name: '汪建義', ext: '630', email: 's56836@sunnybank.com.tw' },
+                { dept: '財富管理部', bran: '投資研究科', tit: '襄理', name: '洪亘儀', ext: '649', email: '' },
+                { dept: '財富管理部', bran: '投資研究科', tit: '', name: '羅文婷', ext: '640', email: '' },
+                { dept: '財富管理部', bran: '行銷企劃科', tit: '', name: '高何龍', ext: '641', email: '' },
+                { dept: '財富管理部', bran: '行銷企劃科', tit: '', name: '張元鍾', ext: '815', email: '' },
+                { dept: '財富管理部', bran: '行銷企劃科', tit: '', name: '林珮蓉', ext: '635', email: '' },
+                { dept: '財富管理部', bran: '行銷企劃科', tit: '', name: '蔡曉明', ext: '643', email: 's103303@sunnybank.com.tw' },
+                { dept: '財富管理部', bran: '行銷企劃科', tit: '', name: '巫旆君', ext: '646', email: '' },
+                { dept: '財富管理部', bran: '理財管理科', tit: '襄理', name: '林曉玲', ext: '633', email: '' },
+                { dept: '財富管理部', bran: '理財管理科', tit: '', name: '郭昕宜', ext: '639', email: '' },
+                { dept: '財富管理部', bran: '理財管理科', tit: '', name: '曾珮璇', ext: '637', email: '' },
+                { dept: '財富管理部', bran: '理財管理科', tit: '', name: '吳韋葶', ext: '646', email: '' },
+                { dept: '財富管理部', bran: '理財管理科', tit: '', name: '黃炳勳', ext: '807', email: '' },
+                { dept: '保險代理部', bran: '', tit: '協理', name: '汪建義', ext: '630', email: '' },
+                { dept: '保險代理部', bran: '', tit: '副理', name: '江東益', ext: '805', email: '' },
+                { dept: '保險代理部', bran: '', tit: '副理', name: '陳佩瑜', ext: '809', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '黃鈺茱', ext: '825', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '', ext: '817', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '盧冠運', ext: '831', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '林育安', ext: '803', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '洪丞儀', ext: '821', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '古聿均', ext: '650', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '陳孟芯', ext: '629', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '陳欣陽', ext: '853', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '', ext: '653', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '廖于萱', ext: '654', email: '' },
+                { dept: '保險代理部', bran: '', tit: '', name: '', ext: '636', email: '' },
+                { dept: '國外部', bran: '', tit: '協理', name: '趙慧真', ext: '101', email: '' },
+                { dept: '國外部', bran: '', tit: '副理', name: '閻家驥', ext: '201', email: '' },
+                { dept: '國外部', bran: '管理科', tit: '副理', name: '許至榮', ext: '801', email: 's11231@sunnybank.com.tw' },
+                { dept: '國外部', bran: '管理科', tit: '襄理', name: '郭桓愉', ext: '802', email: 's77613@sunnybank.com.tw' },
+                { dept: '國外部', bran: '管理科', tit: '', name: '林雅鳳', ext: '806', email: '' },
+                { dept: '國外部', bran: '管理科', tit: '', name: '郭怡瑩', ext: '804', email: '' },
+                { dept: '國外部', bran: '管理科', tit: '司機', name: '蔡世中', ext: '805', email: '' },
+                { dept: '國外部', bran: '管理科', tit: '', name: '蔡承翰', ext: '803', email: '' },
+                { dept: '國外部', bran: '管理科', tit: '工讀生', name: '徐子軒', ext: '205', email: '' },
+                { dept: '國外部', bran: '進出口科', tit: '', name: '劉芬秀', ext: '301', email: '' },
+                { dept: '國外部', bran: '進出口科', tit: '', name: '蘇治澐', ext: '302', email: '' },
+                { dept: '國外部', bran: '進出口科', tit: '', name: '洪意婷', ext: '303', email: '' },
+                { dept: '國外部', bran: '進出口科', tit: '', name: '蔡微琴', ext: '202', email: '' },
+                { dept: '國外部', bran: '進出口科', tit: '', name: '陳怡君', ext: '203', email: '' },
+                { dept: '國外部', bran: '會計科', tit: '', name: '謝麗芬', ext: '501', email: '' },
+                { dept: '國外部', bran: '會計科', tit: '', name: '曹育甄', ext: '502', email: '' },
+                { dept: '國外部', bran: '會計科', tit: '', name: '林佳徵', ext: '503', email: '' },
+                { dept: '國外部', bran: '匯兌科', tit: '', name: '莊欣怡', ext: '609', email: '' },
+                { dept: '國外部', bran: '匯兌科', tit: '', name: '陳文玲', ext: '608', email: '' },
+                { dept: '國外部', bran: '匯兌科', tit: '', name: '陳美玲', ext: '605', email: '' },
+                { dept: '國外部', bran: '匯兌科', tit: '', name: '廖致凱', ext: '603', email: '' },
+                { dept: '國外部', bran: '匯兌科', tit: '', name: '吳姍庭', ext: '604', email: '' },
+                { dept: '國外部', bran: '匯兌科', tit: '', name: '吳宜貞', ext: '607', email: '' },
+                { dept: '國外部', bran: '匯兌科', tit: '', name: '廖瓊瓔', ext: '206', email: '' },
+                { dept: '國外部', bran: '匯兌科', tit: '', name: '曲家緯', ext: '207', email: '' },
+                { dept: 'OBU', bran: '', tit: '', name: '程廣財', ext: '701', email: '' },
+                { dept: 'OBU', bran: '', tit: '', name: '蔡瑞娟', ext: '702', email: '' },
+                { dept: 'OBU', bran: '', tit: '', name: '萬國生', ext: '703', email: '' },
+                { dept: 'OBU', bran: '', tit: '', name: '陳怡安', ext: '704', email: '' },
+                { dept: 'OBU', bran: '', tit: '', name: '方美晴', ext: '705', email: '' }            ]
+            },
+            computed: {
+                searchData: function() {
+                    var search = this.search;
+
+                        if (search) {
+                            return this.products.filter(function(product) {
+                                return Object.keys(product).some(function(key) {
+                                    return String(product[key]).toLowerCase().indexOf(search) > -1
+                                })
+                            })
+                        }
+
+                    return this.products;
+                }
+            }
+        })
+    </script>
+
+
+</body>
+</html>
