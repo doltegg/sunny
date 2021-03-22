@@ -40,7 +40,7 @@
     <div id="app" class="container">        
         <div class="row justify-content-center">
             <div class="col col-lg-5">                
-                <div class="input-group my-3 py-3mx-auto"> <!--search-w -->
+                <div class="input-group my-3 py-3 mx-auto"> <!--search-w -->
                     <span class="input-group-text bg-warning" id="basic-addon1">查詢關鍵字</span>
                     <input type="text" class="form-control" placeholder="部門、職稱、名字、分機 or 鮭魚" v-model='search'>
                 </div>
@@ -59,7 +59,7 @@
                         <th class="d-none d-sm-block">職稱</th>
                         <th>姓名</th>
                         <th>分機</th>
-                        <th class="d-none d-lg-block d-xl-none">Email</th>
+                        <th class="d-none d-sm-block">Email</th>
                     </tr>
                 </thead>
                 <tbody v-for="item in searchData">
@@ -69,7 +69,7 @@
                         <td class="d-none d-sm-block">{{ item.tit }}</td>
                         <td>{{ item.name }}</td>
                         <td>#{{ item.ext }}</td>
-                        <td class="d-none d-lg-block d-xl-none">{{ item.email }}</td>
+                        <td class="d-none d-sm-block">{{ item.email }}</td>
                     </tr>
                 </tbody>
             </table>
