@@ -1,0 +1,291 @@
+*,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Raleway','Noto Sans TC', 微軟正黑體,  sans-serif;
+}
+
+h1 {
+  font-family: 'Noto Sans TC';
+  font-size: 8rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+.member-name {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #343;
+  padding-bottom: 6px;
+}
+
+
+.header {
+  height: 300px;
+  /*background-image: url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80);*/
+  background-image: url(../img/bg.jpg);  
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+
+.m-border{
+  border-radius: 100%;
+  border: 1px solid #088A29;
+  width: 14rem;  
+}
+.f-border{
+  border-radius: 100%;
+  border: 1px solid #f08;
+  width: 14rem;  
+}
+
+#dice {
+  /* background-image: url(https://images.unsplash.com/photo-1586941963134-6486b671b809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); */
+  /* background-image: url(https://images.unsplash.com/photo-1585066437551-230239e3131e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); */
+  /* background-image: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=841&q=80); */
+  /*background-image: url(https://images.unsplash.com/photo-1584880368838-f60e501e7493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80);*/
+  background-image: url(../img/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.custom-card {
+  background-color: transparent; 
+  /*rgba(0,0,0,.9);*/
+  border: none;
+  position: relative;
+}
+
+.card-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: red; */
+  border-radius: 10px;
+  /* z-index: -1; */
+  overflow: hidden;
+  box-shadow: 5px 3px 12px #C0C0C0;
+}
+
+.card-bg:after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  right: -20px;
+  bottom: -20px;
+  filter: blur(8px);
+  border-radius: 10px;
+  /*background-image: url(https://images.unsplash.com/photo-1584880368838-f60e501e7493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80);*/
+  background-image: url(../img/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.card-body {
+  /* width: 600px; */
+  z-index: 1;
+}
+
+.border-radius {
+  border-radius: 50px;
+}
+
+/* 以下為抽籤 CSS */
+#dice p .p-mar {
+  margin-top: 15px;
+}
+
+#dice .p-mar10 {
+  margin-top: 13px;
+}
+
+#dice .mytext {
+  color: #bbb;
+}
+
+#more_input{
+  font-family: 'Noto Sans TC';
+}
+
+.bubox .btn1,
+.bubox .btn2,
+.bubox .btn3 {
+  cursor: pointer;
+  padding: 4px 1.8rem; /*40px;*/
+  margin: 0 .2rem;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  box-shadow: 0 5px 10px 0 rgba(255, 255, 255, .2), 0 3px 10px 0 rgba(255, 255, 255, .25);
+}
+
+.bubox .btn1:hover,
+.bubox .btn2:hover,
+.bubox .btn3:hover {
+  box-shadow: 0 12px 16px 0 rgba(99, 99, 99, .8), 0 17px 50px 0 rgba(99, 99, 99, .75);
+}
+
+.bubox .btn1 {
+  background: #28a745;
+  /* #4CAF50;*/
+}
+
+.bubox .btn2 {
+  background: #dc3545;
+  /*#880000;*/
+}
+
+.bubox .btn3 {
+  background: #6c757d;
+  /*#2E64FE;*/
+}
+
+.name_list {
+  overflow: hidden;
+  padding: 6px;
+  clear: both;
+  border: 1px solid #40AA53;
+  border-radius: 5px;
+  background: rgb(10, 10, 10, .2);
+  color: #6c757d;
+  line-height: 1.5;
+  /* height: 84px; */
+}
+
+
+
+/*表格*/
+table tr, table th, table td{
+  font-family: 'Raleway', 'Noto Sans TC';
+  font-weight: 100;
+}
+table.bottomBorder { 
+    border-collapse: collapse; 
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+}
+table.bottomBorder tfoot { 
+  border-top: 1px solid; 
+}
+table.bottomBorder td { 
+  padding: 5px; 
+  border: 0px; 
+  text-align: center; 
+  /* font-size: 28px; */
+  line-height: 1.1;
+}
+table.bottomBorder th { 
+    border-bottom: 1px solid; 
+    padding: 5px; 
+    text-align: center;
+    vertical-align: middle;
+    /* font-size: 28px; */
+}
+.bg-code{
+  background: #666; /*rgba(255,102,198,1);*/
+  padding: 10px 0px 0px 10px;
+  /* display: flex; */
+}
+.bg-works{
+  background: #228B22;
+  padding: 10px 0px 0px 10px;
+  /* display: flex; */
+}
+/* #collection {
+  border: 2rem solid transparent;
+  background-image: linear-gradient(gray,gray), url(https://images.unsplash.com/photo-1501520158826-76df880863a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3000&q=80);
+  background-origin: padding-box, border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+#collection .fas{
+  color:#eee;
+  font-size: 1.8rem;
+  padding-left: .3rem;
+  padding-right: .8rem;
+}
+#collection h5{
+  color:#eee;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: .7;
+}
+#collection h6{
+  color: #FFFACD;
+  font-family: 'Lobster', cursive;
+  font-size: .8rem;
+  line-height: .8;
+}
+#collection ol{
+  /* list-style-type: none; */
+  margin-left: -1rem; 
+  margin-bottom: -.2rem;  
+}
+#collection li{
+  padding-bottom: 6px;
+  font-size: 1rem;
+  letter-spacing: .5px;
+  color: #343;
+}
+#collection li:after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #eee, #A9A9A9 100%, #fff);
+  margin-left: -.9rem
+}
+
+#outprint {
+  background-image: linear-gradient(45deg,#777,#eee);
+}
+#outprint .bg-roof{
+  background: #222;
+  padding: 10px 0px 0px 10px;
+}
+#outprint h5{
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: .7;
+  padding-left: .5rem;
+}
+#outprint small{
+  font-size: .6rem;
+  font-family: 'Lobster';
+  color: darkgray;
+  padding-left: .5rem;
+}
+
+#outprint ol{
+  margin-left: -1rem; 
+  margin-bottom: -.2rem;
+  color: #666;
+}
+#outprint .body-bg{
+  background: #DCDCDC; 
+}
