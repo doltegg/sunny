@@ -13,6 +13,15 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
         <style>
             .reveal .sx-letter{
                 text-transform: lowercase;
@@ -37,15 +46,49 @@
             .reveal .gray{
                 color: gray;
             }
+            .parent{
+		        position:absolute;
+            }
+            .left{
+                position: relative;
+                float: left;
+                /* height: 350px; */
+                width: 50%;
+            }
+            .right{
+                position: relative;
+                float: right;
+                /* height: 350px; */
+                width: 50%;
+            }
         </style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
                 <section>
-                    <h1 style="font-family: 'Noto Sans TC'; font-weight: 900;font-size:6.5rem">數位轉型</h1>
-                    <h4 class="date-form">2021.4.1</h4>
-                    <h4 class="sx-letter">egg</h4>
+                    <section>
+                        <h1 style="font-family: 'Noto Sans TC'; font-weight: 900;font-size:6.5rem">數位轉型</h1>
+                        <h4 class="date-form">2021.4.6</h4>
+                        <h4 class="sx-letter">egg</h4>
+                    </section>
+                    <section>
+                        <h2>目錄</h2>
+                        <div class="parents">
+                            <div class="left">
+                                <ul>
+                                    <li>轉型</li>
+                                    <li>無紙化</li>
+                                    <li>工具</li>
+                                    <li>技術</li>
+                                    <li>思維</li>
+                                </ul>
+                            </div>                        
+                            <div class="right">
+                                <img src="imgs/fintech_qr.png" alt="">
+                            </div>
+                        </div>
+                    </section>
                 </section>
 
                 <!-- 轉型 -->
@@ -54,20 +97,23 @@
                         <h1>轉型</h1>
                     </section>
                     <section>
-                        <h2>目的</h2>
-                        <ul>
-                            <li>敏捷</li>
-                            <li>自動</li>
-                            <li>化繁為簡</li>
-                            <li>無限</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>過程</h2>
+                        <h2>轉型是「過程」</h2>
                         <ul>
                             <li>溝通</li>
                             <li>傾聽</li>
                             <li>盤點</li>
+                        </ul>
+                        <p class="orange">用 1 年基礎建設追上別人 10 年的軟硬體，<br>
+                            用 3 年習慣養成打造別人 10 餘年經驗及知識。       
+                        </p>
+                    </section>
+                    <section>
+                        <h2>目的</h2>
+                        <ul>
+                            <li>化繁為簡</li>
+                            <li>敏捷</li>
+                            <li>自動化</li>                            
+                            <li>無限</li>
                         </ul>
                     </section>
                     <section>
@@ -75,6 +121,7 @@
                         <ul>
                             <li>跨部門</li>
                             <li>團體</li>
+                            <li>玩真的</li>
                         </ul>
                     </section>
                 </section>
@@ -117,6 +164,7 @@
                             <li>需求單</li>
                             <li>外出</li>
                             <li>每日報表</li>
+                            <li>其他</li>
                         </ul>
                     </section>
                 </section>
@@ -238,10 +286,6 @@
                         <h2>Bank 4.0</h2>
                         <p>Banking everywhere, Never at a bank.</p>
                     </section>
-                </section>
-				
-		<section>
-                    <img src="imgs/fintech_qr.png">
                 </section>
 
 
