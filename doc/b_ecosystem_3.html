@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>生態圈</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+        <!-- 另存pdf： ?print-pdf -->
+
+        <style>
+            .reveal .sx-letter{
+                text-transform: lowercase;
+            }
+            .reveal .date-form{
+                padding-top:1.6rem;  
+            }     
+            .reveal h1{
+                font-weight: 700;
+            }       
+            .small{
+                font-size: 75%;
+                color: #bbb;
+                line-height: 1;
+            }
+            .orange{
+                color:orange;
+            }
+            .sub-title{
+                color: #da0;
+            }
+            .reveal .gray{
+                color: gray;
+            }
+            .parent{
+		        position:absolute;
+            }
+            .left{
+                position: relative;
+                float: left;
+                /* height: 350px; */
+                width: 50%;
+            }
+            .right{
+                position: relative;
+                float: right;
+                /* height: 350px; */
+                width: 50%;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h1 style="font-family: 'Noto Sans TC'; font-weight: 900;font-size:6.5rem">生態圈第 3 次報告</h1>
+                    <h4 class="date-form">2021.4.7</h4>
+                </section>
+
+                <section>
+                    <section>
+                        <h1 style="color:gray;text-transform:capitalize">Chapter 1</h1>
+                        <h1 style="font-family: 'Noto Sans TC';font-weight:700">生態圈</h1>
+                    </section>
+                    <section>
+                        <h2>生態圈</h2>
+                        <img src="imgs/b_ecosystem/ecosystem.jpg" alt="">
+                    </section>
+                    <section>
+                        <h2>生態圈三階段</h2>
+                        <ol>
+                            <li>銀行用點數引導客戶至電商</li>
+                            <li>電商建構消費生態圈</li>
+                            <li>運用消費金流資料提供客製化金融服務</li>
+                        </ol>
+                    </section>
+                </section> 
+                
+                <section>
+                    <section>
+                        <h1 style="color:gray;text-transform:capitalize">Chapter 2</h1>
+                        <h1 style="font-family: 'Noto Sans TC';font-weight:700">分工</h1>
+                    </section>
+                    <section>
+                        <h2>報告</h2>
+                        <p>4/20 向董事長報告</p>
+                    </section>
+                    <section>
+                        <h2>分工</h2>
+                        <p>怎麼做、時程安排計畫</p>
+                        <ul>
+                            <li>電商：系統平台</li>
+                            <li>電金部：數據團隊</li>
+                            <li>信用卡部：Call Center</li>
+                            <li>業務處：銀行內部做法</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>排程</h2>
+                        <ul>
+                            <li>4/9 盤點要做的事討論</li>
+                            <li>4/14 初步大綱底定</li>
+                            <li>4/16 報告簡報試報</li>
+                            <li>4/20 向董事長報告</li>
+                        </ul>
+                    </section>          
+                    
+                </section>
+
+
+                
+
+                
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+        <script src="../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                slideNumber: true,
+                math: {
+                    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js', 
+                    config: 'TeX-AMS_HTML-full',
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath, ],
+            });
+		</script>
+	</body>
+</html>
+
