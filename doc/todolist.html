@@ -66,6 +66,14 @@
                 float: left;
                 width: 49%;
             }
+            .list-style{
+                list-style-type:none;
+            }
+            .reveal input[type="checkbox"]{
+                width: 2rem;
+                height: 2rem;
+                margin-right: 1rem; 
+            }
         </style>
 	</head>
 	<body>
@@ -131,13 +139,13 @@
 
                 <section id="ch2">
                     <h2>設備</h2>
-                    <ul>
-                        <li>網路</li>
-                        <li>電視</li>
-                        <li>筆電</li>
-                        <li>連接頭</li>
-                        <li>會議室</li>
-                        <li>權責</li>
+                    <ul style="margin-left:-2rem;">
+                        <li class="list-style"><input type="checkbox">網路</li>
+                        <li class="list-style"><input type="checkbox">電視</li>
+                        <li class="list-style"><input type="checkbox">筆電</li>
+                        <li class="list-style"><input type="checkbox">連接頭</li>
+                        <li class="list-style"><input type="checkbox">會議室</li>
+                        <li class="list-style"><input type="checkbox">權責</li>
                     </ul>                
                 </section>
 
