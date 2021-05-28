@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Digitization</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+        <!-- <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script> -->
+        <!-- 列印 pdf： ?print-pdf -->
+
+        <style>
+            *{
+                font-family: 'Raleway','Noto Sans TC', 微軟正黑體,  sans-serif!important;
+            }
+            
+            .reveal .sx-letter{
+                text-transform: lowercase;
+            }
+            .reveal .date-form{
+                padding-top:1.6rem;  
+            }     
+            .reveal h1{
+                font-weight: 700;
+            } 
+            .reveal section h2 { 
+                color:#4CAF50; 
+            }      
+            .small{
+                font-size: 75%;
+                color: #bbb;
+                line-height: 1;
+            }
+            .orange{
+                color:orange;
+            }
+            .sub-title{
+                color: #da0;
+            }
+            .reveal .gray{
+                color: gray;
+            }
+            /* .parents{
+		        width: 100%;
+            } */
+            .left{
+                float: left;
+                width: 49%;
+            }
+            .right{
+                float: left;
+                width: 49%;
+            }
+            .list-style{
+                list-style-type:none;
+            }
+            .reveal input[type="checkbox"]{
+                width: 2rem;
+                height: 2rem;
+                margin-right: 1rem; 
+            }
+            .reveal button{
+                font-size: .8em;
+                text-decoration: none;
+                width: 3.5em;
+                height: 1.6em;
+                border: 1px;
+                border-radius: 1em;
+                background: orange;                
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">    
+                <section>         
+                    <section>
+                        <h1 style="font-family: 'Noto Sans TC'; font-weight: 900;font-size:6.2rem">數位轉型筆記</h1>
+                        <h3 class="date-form">2021.5.28</h3>
+                        <h4 class="sx-letter">egg</h4>
+                    </section>
+                    <section id="agenda">
+                        <h2>目錄</h2>
+                            <div class="left">
+                                <ol>
+                                    <li><a href="#/ch1">團隊或個人</a></li>
+                                    <li><a href="#/ch2">設備</a></li>
+                                    <li><a href="#/ch3">轉型起手式</a></li>
+                                    <li><a href="#/ch4">Email</a></li>
+                                    <li><a href="#/ch5">用紙</a></li>
+                                    <li><a href="#/ch6">公文系統</a></li>
+                                    <li><a href="#/ch7">打造無痛工作環境</a></li>
+                                </ol>
+                            </div>
+                            <div class="right">
+                                <ol start=8>                                    
+                                    <li><a href="#/ch8">內網</a></li>
+                                    <li><a href="#/ch9">打卡</a></li>
+                                    <li><a href="#/ch10">遠距</a></li>
+                                    <li><a href="#/ch11">專業</a></li>
+                                    <li><a href="#/ch12">資料庫</a></li>
+                                    <li><a href="#/ch13">區塊鏈</a></li>
+                                    <li><a href="#/ch14">附錄</a></li>
+                                </ol>
+                            </div>                        
+                    </section>
+                </section>
+
+                <section>
+                    <p>當我</p>
+                    <ul>
+                        <li>要筆電</li>
+                        <li>要網路</li>
+                        <li>要視訊會議</li>
+                        <li>要遠距上班安排</li>
+                        <li>要安排最少人力撐起總公司</li>
+                    </ul>
+                    <p>終究讓病毒逼著了？做嗎？</p>
+                </section>
+
+                <section>
+                    <section>
+                        The matrix is a system, Neo. That system is our enemy. But when you’re inside, look around, what do you see? Businessmen, teachers, lawyers, carpenters. The very minds of the people we are trying to save. But until we do, these people are a part of that system, and that makes them our enemy. You have to understand, most of these people are not ready to be unplugged. And many of them are so inert so hopelessly dependent on the system that they will fight to protect it.
+                    </section>
+                    <section>
+                        You take the blue pill, the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill, you stay in Wonderland, and I show you how deep the rabbit hole goes.
+                    </section>
+                </section>
+
+                <section>
+                    <p>天底下有一種鬧劇叫</p>
+                </section>
+
+                <section>
+                    <h2>趨勢</h2>
+                    <p>現代的金融創新公司長什麼樣子？</p>
+                </section>
+
+                <section id="ch1">
+                    <h2>團隊或個人，專職或兼職</h2>
+                    <ul>
+                        <li>有何急迫性</li>
+                        <li>有何資源</li>
+                        <li>有何義務</li>
+                        <li>有何權力</li>
+                        <li>組織：團隊或個人</li>
+                        <li>該不該尊重專業</li>
+                    </ul>    
+                </section>
+
+                <section>
+                    <h2>問題的本質</h2>
+                    <ul>
+                        <li>當某件事情可以重做，你覺得
+                            <ul>
+                                <li>要拆分成什麼樣子重做</li>
+                                <li>要怎麼重做</li>
+                            </ul>
+                        </li>
+                        <li>新創的東西，要高層支持，底層跟隨</li>
+                        <li>到底在控管什麼</li>
+                        <li>訪談</li>
+                    </ul>
+                </section>
+
+                <section id="ch2">
+                    <h2>設備</h2>
+                    <ul style="margin-left:-2rem;">
+                        <li class="list-style"><input type="checkbox">網路</li>
+                        <li class="list-style"><input type="checkbox">電視</li>
+                        <li class="list-style"><input type="checkbox">筆電</li>
+                        <li class="list-style"><input type="checkbox">連接頭</li>
+                        <li class="list-style"><input type="checkbox">會議室</li>
+                        <li class="list-style"><input type="checkbox">權責</li>
+                    </ul>                
+                </section>
+
+                <section>
+                    <h2>學習技能</h2>
+                    <ul>
+                        <li>排版</li>
+                        <li>Word</li>
+                        <li>PowerPoint</li>
+                        <li>Excel</li>
+                        <li>Outlook</li>
+                    </ul>
+                    <p>陽信銀行連開會都不會！</p>
+                </section>
+
+                <section id="ch3">
+                    <h2>轉型起手式</h2>
+                    <ul>
+                        <li>公告：發函、發通知</li>
+                        <li><a href="#/meeting">說明會</a></li>
+                        <li>溝通：意見、痛點反應管道</li>
+                        <li>教育訓練：Word, Excel, PowerPoint, email, app,</li>
+                        <li><a href="#/digital">電子化</a></li>
+                        <li>Email</li>
+                        <li>用紙辦法、筆電辦法、資安要求</li>
+                        <li>怎麼盤點</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section id="ch4">
+                        <h1>Email</h1>
+                    </section>
+                    <section>
+                        <h2>Email</h2>
+                        <ul>
+                            <li>帳號</li>
+                            <li>全行通訊錄</li>
+                            <li>群組建立</li>
+                            <li>Webmail 政策</li>
+                            <li>化繁為簡的工作習慣：開會通知、檢討報告、外部(教育)訊息轉知、商店街</li>
+                            <li>設定、教育訓練與推廣</li>     
+                        </ul>                    
+                    </section>
+                    <section>
+                        <h2>新聞</h2>
+                        <div class="left">
+                            <img src="imgs/fubon1.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li>確診？</li>
+                                <li>發信。為什麼是「信」？</li>
+                                <li>內部。什麼是「內部」？</li>
+                                <li>全體。如何「全體」？</li>
+                                <li>15 日。星期六，是假日耶？</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>人云亦云<br>枉費了大腦</h2>
+                        <ul>
+                            <li>當別人家財萬貫，我們家徒四壁時...</li>
+                            <li>當別人淘汰網路 ATM 時...</li>
+                            <li>當別人大數據、AI、區塊鏈時...</li>
+                            <li>當別人分流上班、異地辦公、在家上班時...</li>
+                            <li>當別人實聯制上線時...</li>
+                        </ul>
+                        <p>到底禁止、管制、開放 webmail 何者較先進？</p>
+                    </section>
+                    <section>
+                        <h2>很難嗎？怎都不做？</h2>
+                        <ul style="margin-left:-2rem;">
+                            <li class="list-style"><input type="checkbox">全行通訊錄</li>
+                            <li class="list-style"><input type="checkbox">改辦法</li>
+                            <li class="list-style"><input type="checkbox">改帳號</li>
+                            <li class="list-style"><input type="checkbox">全行設定好</li>
+                            <li class="list-style"><input type="checkbox">所有主管帶頭用</li>
+                            <li class="list-style"><input type="checkbox">上班的第一件事</li>
+                            <li class="list-style"><input type="checkbox">資訊處開班授課</li>
+                        </ul>                
+                    </section>
+                </section>
+
+                <section id="ch5">
+                    <section>                   
+                        <h1>用紙</h1>
+                    </section>    
+                    <section>
+                        <h2>觀念</h2>                   
+                        <ul>
+                            <li>什麼是開會</li>
+                            <li>紙的用途、紙的浪費、紙的使用</li>
+                            <li>何謂必要，不能數位化嗎？體溫登記？週會簽到</li>
+                            <li>開會簽到？簽名？照相？都不？信任？自由心證</li>
+                            <li>公文系統</li> 
+                            <li>傳真？</li>   
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>無紙化</h2>
+                        <ul>
+                            <li>一個「開會不發紙本」政策搞得天翻地覆</li>
+                            <ul>
+                                <li>用繪畫軟體剪文字貼到 PowerPoint</li>
+                                <li>捨棄 PowerPoint 改用 Word</li>
+                                <li>導致有人問，無紙化為什麼要多做事</li>
+                            </ul>
+                            <li>紙要怎麼用</li>
+                            <li>有沒有要「自發性」地全面檢討、全面改善</li>
+                            <li>到底有什麼東西一定要印</li>
+                        </ul>
+                    </section> 
+                    <section>
+                        <h2>杞人憂天</h2>
+                        <ul>
+                            <li>還沒發生的事就別談了</li>
+                            <li>從自己做起</li>                            
+                            <li>一切都只是觀念而已</li>
+                            <li>樂觀來看，我只能相信「有一天」</li>
+                        </ul>
+                    </section>                  
+                </section>
+
+                <section>
+                    <section id="ch6">
+                        <h1>公文</h1>
+                    </section>
+                    <section>
+                        <h2>觀念</h2>
+                        <ul>
+                            <li>放行</li>
+                            <li>簽核</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>電子公文</h2>
+                        <ul>
+                            <li>甚麼是電子公文：範圍、要件</li>
+                            <li>稿、簽、函、令、通知、訊息、廣告</li>
+                            <li>何謂簽章</li>
+                            <li>流程及程序：辦法、以下適用辦法</li>
+                            <li>電子公文要件</li>
+                            <li>電子公文內建功能：畫表、貼圖、…</li>
+                            <li>歸檔：新舊公文銜接</li>  
+                        </ul>                    
+                    </section>
+                    <section>
+                        <h2>有沒有信任</h2>
+                        <ul>
+                            <li>垃圾</li>
+                            <ul>
+                                <li>開會通知單</li>
+                                <li>要東西：提開案、題庫、檢討報告</li>
+                                <li>研訓院的課程</li>
+                            </ul>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>杞人憂天</h2>
+                        <ul>
+                            <li>誰可以去臆測他人</li>
+                            <li>政策如此，「誰」能不遵守</li>                            
+                            <li>誰在怕？怕什麼？</li>
+                            <li>為了整體檔案儲存</li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <section>
+                    <section id="ch7">
+                        <h1>打造無痛工作環境</h1>
+                    </section>                
+                    <section>
+                        <h2>痛點</h2>
+                            <ul>
+                                <li>設備</li>
+                                <li>申請、登記：請假、外出、會議、報名、登記</li>
+                                <li>盤點：報表、表單、檔案、網頁樣式</li>
+                                <li>檔案移轉</li>
+                                <li>開會資料空間：app、企業即時通、…</li>
+                                <li>內網</li>
+                                <li>簡覆表：(追蹤客訴案時效)</li>
+                            </ul> 
+                    </section>
+                    <section>
+                        <h2>化繁為簡</h2>
+                        <div class="left">
+                            <img src="imgs/ques.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li>要個題庫要發函？</li>
+                                <li>開會通知要發函？</li>
+                                <li>開會提案要部門主管簽章？</li>
+                                <li>發函要簽到誰？</li>
+                                <li>簽准的案子，誰可以發函？</li>
+                                <li>為何不能有「信任」？</li>
+                                <li>何不都簽到董事長？</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>檔案</h2>
+                        <ul>
+                            <li>移動</li>
+                            <li>儲存</li>
+                            <li>尋找</li>
+                            <li>歸檔</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>抄襲</h2>
+                    </section>
+                    <section>
+                        <h2>遵法</h2>
+                    </section>
+                    <section>
+                        <h2>奴性</h2>
+                        <ul>
+                            <li>有益的事不做</li>
+                            <li>虛耗的事倒很盡責</li>
+                        </ul>
+                    </section>
+                </section>
+
+
+                <section>
+                    <p>而這鬧劇更可能變成悲劇</p>
+                </section>
+
+                <section>
+                    <section id="ch8">
+                        <h1>內網</h1>
+                    </section>
+                    <section>
+                        <h2>痛點</h2>
+                        <ol>
+                            <li>帳號、密碼</li>
+                            <li>無邏輯</li>
+                            <li>功能面發揮</li>
+                            <li>權限</li>
+                            <li>系統更新 (IE 不能動)</li>
+                            <li>沒有更醜</li>                        
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>帳號、密碼</h2>
+                        <ul>
+                            <li>帳密整合</li>
+                            <li>單一入口</li>
+                            <li>權限</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>無邏輯</h2>
+                        <ul>
+                            <li>home、陽信入口網站、內部應用系統、新內部應用系統？</li>
+                            <li>公告？各科室公告、陽信入口網站公告中心</li>
+                            <li>通訊錄？</li>
+                            <li>規章辦法 (可以分一下類別嗎)</li>
+                            <li>權限</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>功能面發揮</h2>
+                        <ul>
+                            <li>各式表單、報表查詢、下載</li>
+                            <li>各式申請登記</li>
+                            <li>常用功能設定</li>
+                            <li>靜態公告</li>
+                            <li>User Interface <span class="note">(讀書會報名)</span></li>
+                            <li>Responsive Web Design</li>
+                        </ul>    
+                        <p>各部處盤點：外出登記、加班、薪資、會議室登記、提案單、<a href="../address.html" target="_blank">email</a>、簽到表、體溫表、請假...</p>     </a>          
+                    </section>
+                    <section>
+                        <h2>權限</h2>
+                        <ul>
+                            <li>內外網的權限分水嶺</li>
+                            <li>職位、工作權限的區隔</li>
+                        </ul>
+                        <p>Internet 直通 portal 帳密登入網頁，<br>
+                           進入 portal 始控管內外網分流系統。</p>
+                    </section>
+                    <section>
+                        <h2>系統更新 (IE 不能動)</h2>
+                        <ul>
+                            <li>不符合資安的</li>
+                            <li>系統老舊的</li>
+                            <li>不符合使用者體驗的</li>
+                            <li>醜的</li>
+                        </ul>              
+                    </section>
+                    <section>
+                        <h2>醜</h2>
+                    </section>
+                    <section>
+                        <h2>權責</h2>
+                    </section>
+                    <section>
+                        <h2><a href="login.html" target="_blank">Demo</a></h2>
+                    </section>                   
+                </section>
+                
+                <section>
+                    <section>
+                        <p>假設內網改了，<br>
+                        官網是不是也該改了？<br>
+                        <span class="gray">什麼？沒人才？</span></p>
+                    </section>
+                    <section>
+                        <p>假設內網、官網改了，<br>
+                            網銀是不是也該改了？<br>
+                            <span class="gray">什麼？沒人才？</span></p>
+                    </section>
+                </section>
+
+                <section id="ch9">
+                    <h2>打卡</h2>
+                    <ul>
+                        <li>系統老舊</li>
+                        <li>簽到系統為何可以跟加班、排假、查詢系統分開</li>
+                        <li>打卡時間障礙</li>
+                        <li>手機打卡</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section id="ch10">
+                        <h1>遠距</h1>
+                    </section>
+                    <section>
+                        <h2>遠距</h2>
+                        <ul>
+                            <li>遠距上班、行動上班</li>
+                            <li>無接觸服務</li>
+                            <li>視訊會議</li>
+                        </ul>
+                    </section> 
+                    <section>
+                        <h2>在家上班難不難</h2>
+                        <ul>
+                            <li>如果可以在家收發 email</li>
+                            <li>如果內外網分流</li>
+                        </ul>
+                        <p>應該超過一半的人可以在家上班了！</p>
+                    </section> 
+                    <section>
+                        <h2>居家上班設備</h2>
+                        <ul>
+                            <li>筆電</li>
+                            <li>網路</li>
+                            <li>電話</li>
+                            <li>VPN</li>
+                        </ul>
+                    </section>  
+                    <section>
+                        <h2>實聯制</h2>
+                        <ul>
+                            <li>收集個資目的、使用方法</li>
+                            <li>網址沒有 "sunnybank"</li>                            
+                            <li>分行有沒有預設</li>
+                            <li>欄位有沒有檢核</li>
+                            <li>客戶的個資可以放在谷歌</li>
+                            <li>谷歌的帳號是誰的</li>
+                        </ul>
+                        <p>高下立判</p>
+                    </section>
+                    <section>
+                        <h2>啟示</h2>
+                        <ul>
+                            <li>雙北準第四級的啟示</li>
+                            <li>天然災害停止上班及上課作業辦法</li>
+                            <li>分流上班、異地備援、在家上班</li>
+                        </ul>
+                    </section>
+                </section>
+                
+
+                <section id="ch11">
+                    <p>請尊重專業</p>
+                </section>
+
+                <section>
+                    <h2>專業</h2>
+                    <ul>
+                        <li>人力</li>
+                        <li>教育訓練</li>
+                        <li>人才</li>
+                    </ul>
+                </section>
+
+                <section id="ch12">
+                    <h2>資料庫</h2>
+                    <ul>
+                        <li>沒有資料庫哪來資料</li>
+                        <li>沒有資料哪來分析</li>
+                        <li>沒有分析哪來政策</li>
+                        <li>結論：沒有資料庫什麼都幹不成</li>
+                    </ul>
+                    <p>何謂貼標、何謂模型、何謂大數據？</p>
+                </section>
+
+
+                <section>
+                    <h2>守法</h2>
+                    <ul>
+                        <li>沒有專業的法務怎麼辦</li>
+                        <li>全行沒有法遵素養怎麼辦</li>
+                        <li>行員沒有法律諮詢窗口怎麼辦</li>
+                        <li>到底該怎麼建立專業法務人員</li>
+                    </ul>
+                </section>
+
+                <section>                    
+                    <section>
+                        <h2>改造</h2>
+                        <ul>
+                            <li>訊息無法流通</li>
+                            <li>政策不執行、叫不動</li>
+                            <li>說不通又不學習</li>
+                            <li>沒專業，又不尊重專業</li>
+                            <li>鬼打牆，浪費精力在無謂的事</li>
+                            <li>老做無謂的事，要緊的事都沒人做</li>
+                            <li>把主管機關當藉口</li>
+                            <li>毫無來由的抄襲同業</li>
+                            <li>文書流程太久</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>解除列管？</p>
+                    </section>
+                    <section>
+                        <h2>奴性</h2>
+                        <ul>
+                            <li>沒人規定就不做、不改</li>
+                            <li>對於不對、不合理的事不質疑、不改善</li>
+                            <li>對的事不做，錯的事倒很起勁</li>
+                            <li>都講了，也被同意了，還是繼續奴</li>
+                        </ul>
+                        <p>解除奴性才會有創意</p>
+                    </section>  
+                    <section>
+                        <h2>方法</h2>
+                        <p>需要外來刺激，破壞性建設</p>
+                        <ul>
+                            <li>找一個新的、懂得且願意做對事的決策層級來帶領</li>
+                            <li>外部顧問公司</li>
+                        </ul>
+                    </section>
+                </section>
+                
+
+                <section>
+                    <section id="ch13">
+                        <h1>區塊鏈</h1>
+                    </section>    
+                    <section>
+                        <img src="imgs/cath_sunny.jpg" alt="">
+                    </section>
+                    <section>
+                        <h2>何謂區塊鏈</h2>
+                        <ul>
+                            <li>誰懂國泰在搞什麼？</li>
+                            <li>誰懂區塊鏈？</li>
+                            <li>誰該懂區塊鏈？</li>
+                            <li>怎麼懂？</li>
+                            <li>不動產鏈上投資平台？</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>團隊？</h2>
+                        <ul>
+                            <li>環球貿易共享區塊鏈</li>
+                            <li>不動產鏈上投資平台</li>
+                            <li>未來區塊鏈應用</li>
+                        </ul>
+                        <p>要不要有研究團隊？</p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>數位帳戶</h2>
+                    <ul>
+                        <li>為何用數位帳戶打自己的實體帳戶</li>
+                        <li>誰要來開數位帳戶</li>
+                        <li>舊客戶、新客戶開數位帳戶數量</li>
+                        <li>主推實體帳戶或數位帳戶</li>
+                    </ul>
+                    <p>數位帳戶怎麼推？</p>
+                </section>
+
+                <!-- 小故事 -->
+                <section>
+                    <h2>小故事</h2>
+                    <div class="left">
+                        <ol style="font-size: 2rem">
+                            <li>科技公司自居：牛仔褲的故事</li>
+                            <li>疫情的實名制</li>
+                            <li>政大會議室的投影機</li>
+                            <li>副理趴在牆上登記會議室</li>
+                            <li>陽信銀行面試 ── 消失的履歷</li>
+                            <li>兩支剪刀剪報比一支快</li>
+                            <li>關不了機的部門筆電</li>
+                            <li>外部講師要查法條</li>
+                            <li>我不要經手客戶的個資</li>
+                            <li><a href="../article/fax.pdf" target="_blank">傳真機</a></li>                     
+                        </ol>
+                    </div>
+                    <div class="right">
+                        <ol start="11" style="font-size: 2rem">                            
+                            <li>原來業務處是 Call Out 部隊</li>
+                            <li>高科技門鎖</li>
+                            <li>誰教數學系教授微積分</li>
+                            <li>用讀稿機開會</li>
+                            <li>甘願當個奴</li><!-- 別人規定錯的事，耗再大力氣也要完成。對的事，沒人主動作、改 -->
+                            <li>可以提現金的 WebATM</li> <!-- 官網訊息 -->
+                            <li>到底誰可以理直氣壯</li> <!-- 不該來總公司還來，不應該以曠職論嗎？還可以抱怨 -->
+                            <li>公告假訊息</li> <!-- 公告訊息滿出來、客製化 email -->
+                            <li>註定失敗收場</li><!-- 一開始不說清楚，當然註定一定不會成功 -->
+                            <li>用滑鼠釘釘子</li>
+                        </ol>
+                    </div>  
+                </section>
+
+                <section>
+                    <h2>員工創意與建議</h2>
+                    <ul>
+                        <li>匿名</li>
+                        <li>委員制</li>
+                        <li>立案
+                            <ul>立案軌跡 (不可私了)</ul> 
+                            <li>立案就有獎</li>
+                            <li>立案後相關單位要有書面報告</li>
+                            <li>立案就要開會、回復</li>
+                        </li>                        
+                        <li>委員會決議通不通過 (獎金、列入追蹤)</li>
+                        <li>結案後要公布</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section id="ch14">
+                        <h1>附錄</h1> 
+                    </section>
+                    <section id="meeting">
+                        <h2>說明會 <sup><a href="#/ch3"><i class="fas fa-undo" style="font-size:1.5rem;"></i></a></sup></h2>
+                        <p class="gray">先主管再同同仁，同仁參加人次達一半以上。</p>
+                        <ul>
+                            <li>宣告觀念、目的、習慣</li>
+                            <li>開會不紙，溝通紙的用法</li>
+                            <li>電子公文</li>
+                            <li>使用 email、簡報、<s class="gray">傳真</s>。(教育訓練、設定)</li>
+                            <li>盤點工作：紙本、電子化、化繁為簡、<sapn class="orange">創意</sapn></li>
+                            <li>盤點內網：邏輯結構樹狀圖、分內外網架構</li>
+                            <li>問題回饋管道</li>
+                        </ul>                        
+                    </section>
+                    <section id="digital">
+                        <h2>電腦化 <sup><a href="#/ch3"><i class="fas fa-undo-alt" style="font-size:1.5rem;"></i></a></sup></h2>
+                        <ul>
+                            <li>會議室登記簿</li>
+                            <li>外出登記</li>
+                            <li>資訊需求書</li>
+                            <li>檔案資料更正書</li>
+                            <li>物品領用清單</li>
+                            <li>全行通訊錄</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>電金委員會</h2>
+                        <div class="left">
+                            <ul>
+                                <li>報表</li>                                
+                                <ul>
+                                    <li>WebATM 筆數、交易類別</li>
+                                    <li>網銀會員、月新增、MAU</li>
+                                    <li>行動網銀下載人數、使用人數</li>
+                                    <li>台灣 Pay 筆數</li>
+                                    <li>數位帳戶</li>
+                                </ul>
+                            </ul> 
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li>功能</li>                                
+                                <ul>
+                                    <li>分享新知</li>
+                                    <li>同業借鏡</li>
+                                    <li>創意發想</li>
+                                    <li>成果發表</li>
+                                    <li>數位化檢討</li>
+                                    <li>千萬別變成採購會議</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </section>    
+                    <section>
+                        <h2>金融機構運用新興科技作業規範</h2>
+                        <p>第三條：社群媒體控管程序</p>
+                        <p>第四條：自攜裝置安全控管</p>
+                        <button><a href="https://www.rootlaw.com.tw/LawArticle.aspx?LawID=A040390041060000-1060831">查閱</a></button>
+                    </section>           
+                </section>
+
+
+              
+
+                
+
+
+
+
+
+                
+
+                
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+        <script src="../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                slideNumber: true,
+                math: {
+                    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js', 
+                    config: 'TeX-AMS_HTML-full',
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath, ],
+            });
+		</script>
+	</body>
+</html>
+
