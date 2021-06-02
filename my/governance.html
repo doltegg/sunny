@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>公司治理</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+        <!-- <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script> -->
+        <!-- 列印 pdf： ?print-pdf -->
+
+        <style>
+            *{
+                font-family: 'Raleway','Noto Sans TC', 微軟正黑體,  sans-serif!important;
+            }
+            
+            .reveal .sx-letter{
+                text-transform: lowercase;
+            }
+            .reveal .date-form{
+                padding-top:1.6rem;  
+            }     
+            .reveal h1{
+                font-weight: 700;
+            } 
+            .reveal section h2 { 
+                color:#4CAF50; 
+            }    
+            .small{
+                font-size: 75%;
+                color: #bbb;
+                line-height: 1;
+            }
+            .orange{
+                color:orange;
+            }
+            .sub-title{
+                color: #da0;
+            }
+            .reveal .gray{
+                color: gray;
+            }
+            /* .parents{
+		        width: 100%;
+            } */
+            .left{
+                float: left;
+                width: 49%;
+            }
+            .right{
+                float: left;
+                width: 49%;
+            }
+            .list-style{
+                list-style-type:none;
+            }
+            .reveal input[type="checkbox"]{
+                width: 2rem;
+                height: 2rem;
+                margin-right: 1rem; 
+            }
+            .reveal button{
+                font-size: .8em;
+                text-decoration: none;
+                width: 3.5em;
+                height: 1.6em;
+                border: 1px;
+                border-radius: 1em;
+                background: orange;                
+            }
+            .reveal section ol li{
+                font-size: 1.9rem;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">  
+                        
+                <section>
+                    <h1 style="font-family: 'Noto Sans TC'; font-weight: 900;font-size:6.2rem">公司治理</h1>
+                    <h3 class="date-form">2021.6.2</h3>
+                    <h4 class="sx-letter">egg</h4>
+                </section>
+
+                <section>
+                    <h2>不友善的工作環境</h2>
+                    <ol>
+                        <li>內部表單混亂</li>
+                        <li>Email 無法使用，沒有通訊錄</li>
+                        <li>創新建議管道不通順</li>
+                        <li>會議設備不足</li>
+                        <li>檔案無法流動</li>
+                        <li>專業技能普遍不足</li>
+                        <li>在無謂的事務打轉</li>
+                        <li>生產效率低落</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>公司治理</h2>
+                    <ol>
+                        <li>層級決策不明確，人治</li>
+                        <li>沒有信任，非法治</li>
+                        <li>不懂法，該守不守，不該守亂守</li>
+                        <li>用 LINE 通知公事</li>
+                        <li>用 Google Meet 開會</li>
+                        <li>用員工自攜設備處理公事</li>
+                        <li>筆電不控管</li>
+                        <li>私用社交軟體 (飛鴿)</li>
+                        <li>發函要員工申請 Gmail 帳戶</li>
+                    </ol>
+                </section>
+
+
+                
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+        <script src="../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                slideNumber: true,
+                math: {
+                    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js', 
+                    config: 'TeX-AMS_HTML-full',
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath, ],
+            });
+		</script>
+	</body>
+</html>
+
