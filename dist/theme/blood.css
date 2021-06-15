@@ -46,7 +46,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   background-color: #222; }
 
 .reveal {
-  font-family: Ubuntu, "sans-serif";
+  font-family: Ubuntu, "sans-serif",'Noto Sans TC', 微軟正黑體;
   font-size: 40px;
   font-weight: normal;
   color: #eee; }
@@ -77,7 +77,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #eee;
-  font-family: Ubuntu, "sans-serif";
+  font-family: Ubuntu, "sans-serif",'Noto Sans TC', 微軟正黑體;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;

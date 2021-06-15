@@ -47,7 +47,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   background-color: #f7f3de; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif,'Noto Sans TC', 微軟正黑體;
   font-size: 40px;
   font-weight: normal;
   color: #333; }
@@ -78,7 +78,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #333;
-  font-family: "League Gothic", Impact, sans-serif;
+  font-family: "League Gothic", Impact, sans-serif,'Noto Sans TC', 微軟正黑體,;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;

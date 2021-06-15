@@ -21,7 +21,7 @@ html * {
   --main-color: #657b83;
   --block-margin: 20px;
   --heading-margin: 0 0 20px 0;
-  --heading-font: League Gothic, Impact, sans-serif;
+  --heading-font: League Gothic, Impact, sans-serif,'Noto Sans TC', 微軟正黑體;
   --heading-color: #586e75;
   --heading-line-height: 1.2;
   --heading-letter-spacing: normal;
@@ -44,7 +44,7 @@ html * {
   background-color: #fdf6e3; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif,'Noto Sans TC', 微軟正黑體,;
   font-size: 40px;
   font-weight: normal;
   color: #657b83; }
