@@ -18,35 +18,52 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
   <style>
-      *{
-        font-family: 'Raleway','Noto Sans TC', 微軟正黑體,  sans-serif;
-      }
-      .b-color{
-        background-image: linear-gradient(135deg,ivory,#228B22);
-      }
-      .l-line{
-          border-left: 6px gray solid;
-          padding-left: 6px;
-      }
-      .news-title{
-          color:#00954F;
-          font-weight: 700;
-      }
-      .card-body p.p-content{
-          margin: -10px 0;
-          color: #444; 
-          font-size: .9rem;
-      }
-      hr{
-          border-style: dashed;
-      }
-      .fit{
-          width: 100%;
-      }
-      /* .news-more{
-          margin: -5px 0;
-          padding: 0 0;
-      } */
+    *{
+    font-family: 'Raleway','Noto Sans TC', 微軟正黑體,  sans-serif;
+    }
+    .b-color{
+    background-image: linear-gradient(135deg,ivory,#228B22);
+    }
+    .l-line{
+        border-left: 6px gray solid;
+        padding-left: 6px;
+    }
+    .news-title{
+        color:#00954F;
+        font-weight: 700;
+    }
+    .card-body p.p-content{
+        margin: -10px 0;
+        color: #444; 
+        font-size: .9rem;
+    }
+    hr{
+        border-style: dashed;
+    }
+    .fit{
+        width: 100%;
+    }
+    /* .news-more{
+        margin: -5px 0;
+        padding: 0 0;
+    } */
+    .card-shadow{
+        box-shadow:5px 5px 5px #aaa;                    
+    }
+    .list{
+        margin-left: -2.5rem;
+        list-style: none;
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 6px;
+    }
+    .date{
+        color: #198754;
+    }
+    .subject{
+        margin-left: 1rem;
+        color: black;
+        text-decoration: none;
+    }
  </style>
 
 </head>
@@ -68,7 +85,7 @@
                 <a class="nav-link text-white" tabindex="0" data-toggle="dropdown" data-submenu>行政資源</a>
                 <div class="dropdown-menu">
                     <div class="dropdown dropright dropdown-submenu">
-                        <button class="dropdown-item dropdown-toggle" type="button" data-toggle="dropdown">陽信入口網站</button>
+                        <button class="dropdown-item dropdown-toggle" type="button" data-toggle="dropdown">Hot News</button>
                         <div class="dropdown-menu">
                             <!-- <button class="dropdown-item" type="button" href="#">公告中心</button> -->
                             <div class="dropdown dropright dropdown-submenu">
@@ -91,17 +108,14 @@
                     </div>
                     <a class="dropdown-item" type="button" href="#" target="_blank">員工訓練</a>
                     <a class="dropdown-item" type="button" href="#" target="_blank">職工福利</a>
-                    <button class="dropdown-item" type="button">陽信 EIP 系統</button>
+                    
                     <div class="dropdown dropright dropdown-submenu">
-                        <button class="dropdown-item dropdown-toggle" type="button">放款</button>
+                        <button class="dropdown-item dropdown-toggle" type="button">資源借用</button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" type="button" href="#" target="_blank">企金徵審系統</a>
-                            <a class="dropdown-item" type="button" href="#" target="_blank">房貸徵審系統</a>
-                            <a class="dropdown-item" type="button" href="#" target="_blank">擔保品作業管理系統</a>
-                            <a class="dropdown-item" type="button" href="#" target="_blank">不動產鑑估系統</a>
-                            <a class="dropdown-item" type="button" href="#" target="_blank">地籍資料查詢系統</a>
-                            <a class="dropdown-item" type="button" href="#" target="_blank">車/信貸徵授信管理系統</a>
-                            <a class="dropdown-item" type="button" href="#" target="_blank">催收管理系統</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">會議室借用</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">平板借用</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">筆電借用</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">電視借用</a>
                         </div>
                     </div>
                     <a class="dropdown-item" type="button" href="#" target="_blank">電腦暨資產管理</a>
@@ -116,9 +130,22 @@
                     <a class="dropdown-item" type="button" href="#" target="_blank">差勤管理系統</a>
                     <a class="dropdown-item" type="button" href="#" target="_blank">內部應用系統</a>
                     <a class="dropdown-item" type="button" href="#" target="_blank">新內部應用系統</a>
+                    <button class="dropdown-item" type="button">陽信 EIP 系統</button>
+                    <div class="dropdown dropright dropdown-submenu">
+                        <button class="dropdown-item dropdown-toggle" type="button">放款系統</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" type="button" href="#" target="_blank">企金徵審系統</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">房貸徵審系統</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">擔保品作業管理系統</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">不動產鑑估系統</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">地籍資料查詢系統</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">車/信貸徵授信管理系統</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">催收管理系統</a>
+                        </div>
+                    </div>
                     <a class="dropdown-item" type="button" href="#" target="_blank">稽核系統</a>
                     <div class="dropdown dropright dropdown-submenu">
-                        <button class="dropdown-item dropdown-toggle" type="button" data-toggle="dropdown">商品</button>
+                        <button class="dropdown-item dropdown-toggle" type="button" data-toggle="dropdown">商品系統</button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" type="button" href="#" target="_blank">壽險系統</a>  
                             <a class="dropdown-item" type="button" href="#" target="_blank">產險系統</a>
@@ -171,6 +198,25 @@
             </li>
             <li class="nav-item dropdown mr-3">
                 <a class="nav-link text-white" tabindex="0" data-toggle="dropdown" data-submenu>處部</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" type="button" href="#" target="_blank">業務處</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">會計處</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">人力資源處</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">行政管理處</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">法遵部</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">電金部</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">資訊處</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">授信審查處</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">風險管理處</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">稽核處</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">財務部</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">信用卡部</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">消費金融部</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">信託部</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">債權管理處</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">財富管理處</a>
+                    <a class="dropdown-item" type="button" href="#" target="_blank">保險代理部</a>
+                </div>
             </li>
             <li class="nav-item dropdown mr-3">
                 <a class="nav-link text-white" tabindex="0" data-toggle="dropdown" data-submenu>分類 2</a>
@@ -263,33 +309,73 @@
             <div class="col-md-6 my-3">
                 <h5 class="card-title l-line">公文</h5>
                 <div class="card custom-card">
-                    <div class="card-body">
-                        <p class="p-content"><span class="news-title">【提醒 1】 </span>上架消息要有期限，舊訊息不要留，避免造成錯誤。</u></a></p>
-                        <hr> 
-                        <p class="p-content"><span class="news-title">【提醒 2】 </span>密碼整合，單一入口網站，不要每個系統都要登入，且密碼還不一樣。</u></a></p>
-                        <hr>                    
-                        <p class="p-content"><span class="news-title">【業務處】 </span>振興三倍券使用期限至 109 年 12 月 31 日，店家可兌換至 110 年 3 月 31 日。請各營業單位特別注意... <a href="#"><u> 看更多</u></a></p>
-                        <hr>                        
-                        <p class="p-content"><span class="news-title">【授審處】 </span>110 年 02 月份授信戶追蹤資料請於3月5日前填報並送至授審處。... <a href="#"><u> 看更多</u></a></p> 
-                        <hr>                        
-                        <p class="p-content"><span class="news-title">【授審處】 </span>110 年 02 月份授信戶追蹤資料請於3月5日前填報並送至授審處。... <a href="#"><u> 看更多</u></a></p>                    
-                        <hr>                        
-                        <p class="p-content"><span class="news-title">【法遵處】 </span>各單位針對洗防管控名單倘有於客戶完成KYC更新前，由幹部/主管以刷主管碼方式先予放行交易者，請務必... <a href="#"><u> 看更多</u></a></p>
-                        
+                    <div class="card-body card-shadow">
+                        <ul>
+                            <li class="list">
+                                <a href="#">
+                                    <span class="date">2021/06/18</span>
+                                    <span class="subject">函轉財團法人海峽交流基金會新增對大陸地區公...</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="list">
+                                <a href="#">
+                                    <span class="date">2021/06/18</span>
+                                    <span class="subject">茲轉知衛生福利部於110年5月16日公告「嚴重...</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="list">
+                                <a href="#">
+                                    <span class="date">2021/06/18</span>
+                                    <span class="subject">為持續拓展存款業務規模，以配合放款動能...</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="list">
+                                <a href="#">
+                                    <span class="date">2021/06/17</span>
+                                    <span class="subject">茲公告迄至110年5月底「同心協力陽信人」110年...</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="list">
+                                <a href="#">
+                                    <span class="date">2021/06/09</span>
+                                    <span class="subject">檢送本行110年5月份存、放款業務量增減統計表...</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="list">
+                                <a href="#">
+                                    <span class="date">2021/06/09</span>
+                                    <span class="subject">檢送本行106-110年度存、放款業務增減統計表...</span>
+                                </a>
+                            </li>
+                        </ul>
+
                     </div>                       
                 </div>
                 <div class="d-flex justify-content-end mt-2">
                     <button type="button" class="btn btn-success rounded-pill p-0 px-1">More</button>
                 </div>
-            </div>   
+            </div> 
+            
+            
+
             <!-- 右邊 -->        
             <div class="col-md-6 my-3">
                 <h5 class="card-title l-line">最新消息</h5>
                 <div class="card custom-card">
-                    <div class="card-body">
-                        <p class="p-content"><span class="news-title">【提醒 1】 </span>上架消息要有期限，舊訊息不要留，避免造成錯誤。</u></a></p>
+                    <div class="card-body card-shadow">
+                        <p class="p-content"><span class="news-title">【提醒 1】 </span>上架消息要有期限，舊訊息不要留，避免造成錯誤。</p>
                         <hr> 
-                        <p class="p-content"><span class="news-title">【提醒 2】 </span>密碼整合，單一入口網站，不要每個系統都要登入，且密碼還不一樣。</u></a></p>
+                        <p class="p-content"><span class="news-title">【提醒 2】 </span>密碼整合，單一入口網站，不要每個系統都要登入，且密碼還不一樣。</p>
                         <hr>                    
                         <p class="p-content"><span class="news-title">【業務處】 </span>振興三倍券使用期限至 109 年 12 月 31 日，店家可兌換至 110 年 3 月 31 日。請各營業單位特別注意... <a href="#"><u> 看更多</u></a></p>
                         <hr>                        
