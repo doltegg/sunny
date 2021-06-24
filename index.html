@@ -31,12 +31,12 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 6em;">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#">首頁 <span class="sr-only">(current)</span></a>
         <li class="nav-item">
-          <a class="nav-link" href="#collection">館藏</a>
+          <a class="nav-link" href="cssdemo/cssdemo.html" target="_blank">CSS</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -50,7 +50,7 @@
       </ul> 
       <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown mr-2">
-            <a class="nav-link" tabindex="0" data-toggle="dropdown" data-submenu href="address.html" target="_blank"><img src="doc/imgs/digital/phone.png" alt=""></a>
+            <a class="nav-link" tabindex="0" data-toggle="dropdown" data-submenu href="address.html" target="_blank"><img src="doc/imgs/digital/phone.png"></a>
           </li>
       </ul>        
     </div>
@@ -90,7 +90,7 @@
           </div>
 
            <!-- something -->
-           <div class="list-group mt-3">
+           <!-- <div class="list-group mt-3">
             <div class="card-header d-flex bg-code">
               <i class="fas fa-gavel"></i>
               <div>
@@ -103,7 +103,7 @@
             <a class="list-group-item list-group-item-action" href="doc/checkmanual.pdf" target="_blank">銀行檢查手冊</a>
             <a class="list-group-item list-group-item-action" href="others/hardsoft.pdf" target="_blank">陽信商業銀行個人電腦暨軟體管理要點</a>
             <a class="list-group-item list-group-item-action" href="others/newtech.pdf" target="_blank">陽信商業銀行運用新興科技作業規範</a>
-          </div>  
+          </div>   -->
 
         </div>    
           
@@ -129,9 +129,31 @@
             <a class="list-group-item list-group-item-action" href="address.html" target="_blank">通訊錄</a>          
           </div>
 
+        </div>
+
+
+        <!-- 第三欄     -->
+        <div class="col-lg-4 col-md-6">
+
+          <div class="list-group mt-3">
+            <div class="card-header d-flex bg-css">
+              <i class="fas far fa-file-code"></i>
+              <div>
+                <h5> 公司治理</h5>
+                <h6> Governance</h6>
+              </div>
+            </div>
+            <a class="list-group-item list-group-item-action" href="doc/blockchain.html" target="_blank">不動產投資平台</a>
+            <a class="list-group-item list-group-item-action" href="my/governance.html" target="_blank">公司治理</a>            
+            <a class="list-group-item list-group-item-action" href="doc/checkmanual.pdf" target="_blank">銀行檢查手冊</a>
+            <a class="list-group-item list-group-item-action" href="others/hardsoft.pdf" target="_blank">陽信商業銀行個人電腦暨軟體管理要點</a>
+            <a class="list-group-item list-group-item-action" href="others/newtech.pdf" target="_blank">陽信商業銀行運用新興科技作業規範</a>
+            
+          </div>  
+
           <!-- something -->
           <div class="list-group mt-3">
-            <div class="card-header d-flex bg-works">
+            <div class="card-header d-flex bg-css">
               <i class="fas fa-file-powerpoint"></i>
               <div>
                 <h5> Something</h5>
@@ -139,24 +161,31 @@
               </div>
             </div>
             <!-- <a class="list-group-item list-group-item-action" href="https://www.bnext.com.tw/article/53778/what%27s-next-in-payments">《數位時代》支付</a> -->
-            <a class="list-group-item list-group-item-action" href="doc/payment.html" target="_blank">支付</a>
-            
+            <a class="list-group-item list-group-item-action" href="doc/payment.html" target="_blank">支付</a>            
             <a class="list-group-item list-group-item-action" href="my/typesetting.html" target="_blank">排版示範</a>
-          </div>  
-        </div>
+          </div>
+
+        </div>  
 
 
-        <!-- 第三欄     -->
-        <div class="col-lg-4 col-md-6">
-          <div class="list-group mt-3">
-            <div class="card-header d-flex bg-css">
-              <i class="fas far fa-file-code"></i>
-              <div>
-                <h5> 範例</h5>
-                <h6> CSS</h6>
-              </div>
-            </div>
-            <a class="list-group-item list-group-item-action" href="cssdemo/3d.html" target="_blank">3D 文字效果</a>
+        
+
+      </div>
+    </div>
+  </section> 
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
+
+
+
+<!--        <a class="list-group-item list-group-item-action" href="cssdemo/3d.html" target="_blank">3D 文字效果</a>
             <a class="list-group-item list-group-item-action" href="cssdemo/search.html" target="_blank">搜尋列</a>
             <a class="list-group-item list-group-item-action" href="cssdemo/menu.html" target="_blank">全螢幕導覽選單</a>
             <a class="list-group-item list-group-item-action" href="cssdemo/glassmorphism.html" target="_blank">玻璃效果登入表單</a>
@@ -204,22 +233,4 @@
             <a class="list-group-item list-group-item-action" href="cssdemo/close_sidebar.html" target="_blank">關閉側邊選單</a>
             <a class="list-group-item list-group-item-action" href="cssdemo/text_loading.html" target="_blank">方塊下載中</a>
             <a class="list-group-item list-group-item-action" href="cssdemo/climb_cube.html" target="_blank">方塊爬升</a>
-            <a class="list-group-item list-group-item-action" href="cssdemo/scroll_cube.html" target="_blank">方塊馬路滾動</a>
-          </div>  
-        </div>  
-
-
-        
-
-      </div>
-    </div>
-  </section> 
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-
-
-</body>
-
-</html>
+            <a class="list-group-item list-group-item-action" href="cssdemo/scroll_cube.html" target="_blank">方塊馬路滾動</a> -->
