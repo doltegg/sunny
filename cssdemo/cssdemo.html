@@ -5,17 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="icon" type="image/png" href="img/favicon.ico" />	
+  <!-- <link rel="icon" type="image/png" href="img/favicon.ico" />	 -->
   <title>CSS Demo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+  
 
     <style>
         *{
@@ -23,7 +23,7 @@
             padding: 0;
             font-family: 'Poppins', 'Note Sans TC', sans-serif;
         }
-        .contain{
+        .container{
             width: 90%;
             margin: 3% auto;
         }
@@ -33,40 +33,76 @@
             align-items: stretch;
             flex-wrap: wrap;
         }
-        h1{
-            font-size: 32px;
+        .container h1{
+            font-size: 36px;
             text-align: center;
-            margin-bottom: .5rem;
         }
-        .box{
+        .container h2{
+            font-size: 26px;
+            text-align: center;
+            color: #666;
+            margin-bottom: .6em;
+        }
+        .container .type .box{
             width: 19.25%;
-            border: 1px solid #ddd;
             margin: 0.5rem 0;
+            background: #ccc;
+            /* border: 1px solid #ddd; */
         }
-        img{
+        .container .type .box:nth-of-type(odd){
+            border: 1px solid #5a0;
+        }
+        .container .type .box:nth-of-type(even){
+            border: 1px solid #99f;
+        }
+        .container .type .box:hover{
+            border: 1px solid #f00;
+            opacity: 0.5;
+        }
+        .container .type .box img{
             width: 100%;
         }
         .txt{
             margin: 10px;
         }
+        .container .type .box a{
+            text-decoration: none;
+        }
+        .container .type .box p{
+            margin: 3px 3px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="contain">
+    <div class="container">
         <h1>CSS Demo</h1>
-        <div class="type">            
+        <h2>From Online Tutorials</h2>
+
+        <div class="type">
+            <div class="box">
+                <a target="_blank" href="applelogo.html">
+                    <img src="pics/applelogo.jpg">                
+                    <p class="txt">APPLE LOGO</p>
+                </a>
+            </div> 
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/woodentext.html">
+                    <img src="pics/woodentext.jpg">                
+                    <p class="txt">木製字排版</p>
+                </a>
+            </div>           
             <div class="box">
                 <a target="_blank" href="3d.html">
-                    <img src="pics/3d.jpg">
+                    <img src="pics/3d.jpg">                
+                    <p class="txt">3 D 文字效果</p>
                 </a>
-                <p class="txt">3 D 文字效果</p>
             </div>
             <div class="box">
                 <a target="_blank" href="search.html">
                     <img src="pics/search.jpg">
-                </a>
-                <p class="txt">搜尋列</p>
+                    <p class="txt">搜尋列</p>
+                </a>                
             </div>
             <div class="box">
                 <a target="_blank" href="google_search.html">
@@ -164,6 +200,25 @@
                 </a>
                 <p class="txt">卡片懸停效果</p>
             </div>
+
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/card_1.html">
+                    <img src="pics/card_1.jpg">
+                </a>
+                <p class="txt">卡片 1</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/card_2.html">
+                    <img src="pics/card_2.jpg">
+                </a>
+                <p class="txt">卡片 2</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/card_3.html">
+                    <img src="pics/card_3.jpg">
+                </a>
+                <p class="txt">卡片 3</p>
+            </div>
             <div class="box">
                 <a target="_blank" href="card_pricing.html">
                     <img src="pics/card_pricing.jpg">
@@ -226,7 +281,20 @@
                 <p class="txt">動態看更多</p>
             </div>
             <div class="box">
-                <a target="_blank" href="radio_button".html">
+                <a target="_blank" href="neonlightb.html">
+                    <img src="pics/neonlightb.jpg">
+                </a>
+                <p class="txt">霓虹邊框按鈕</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/glassmorphism.html">
+                    <img src="pics/glass_btn.jpg">
+                </a>
+                <p class="txt">玻璃態懸停按鈕</p>
+            </div>
+            
+            <div class="box">
+                <a target="_blank" href="radio_button.html">
                     <img src="pics/radio_button.jpg">
                 </a>
                 <p class="txt">單選按鈕</p>
@@ -323,6 +391,12 @@
                 </a>
                 <p class="txt">Z 軸跳上</p>
             </div>
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/pointer.html">
+                    <img src="pics/pointer.jpg">
+                </a>
+                <p class="txt">指向方塊</p>
+            </div>
             
             <div class="box">
                 <a target="_blank" href="slidershow.html">
@@ -397,7 +471,7 @@
   </section> 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> -->
 
 
 
