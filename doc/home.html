@@ -21,6 +21,22 @@
     *{
     font-family: 'Raleway','Noto Sans TC', 微軟正黑體,  sans-serif;
     }
+    .logobox{
+        height: 40px;
+    }
+    .logobox ul li{
+        display: inline;
+    }
+    .time{
+        /* font-family: 'Poppins', sans-serif; */
+        color: #0a5;
+    }
+    .msg{
+        background-color: #c00;
+        color: #fff;
+        padding: 0 3px;
+        border-radius: 45%;
+    }
     .b-color{
     background-image: linear-gradient(135deg,ivory,#228B22);
     }
@@ -68,16 +84,32 @@
 
 </head>
 <body>  
-
-
-    
+    <!-- <div class="logobox justify-content-between">-->
+    <div class="navbar navbar-expand-sm mr-5">
+        <a class="navbar-brand mx-5" href="#"><img src="imgs/digital/logo3.png"></a> 
+        <div class="collapse navbar-collapse"></div>
+            <ul class="navbar-nav ml-auto"> 
+                <li class="ml-auto mx-3 mt-2"><span class="user_name">蔡英文 先生您好，歡迎登入員工入口網站</span></li>
+                <li class="mx-2 mt-2"><i class="fas fa-comment-dots text-secondary"></i>訊息<a href="#"><sup class="msg">99</sup></a></span></li>
+                <li class="time mx-2 mt-2">
+                    <span id="hour">00</span><span>:</span><span id="minute">00</span><span>:</span><span id="seconds">00</span><sup id="ampm"> AM</sup>             
+                </li>			
+                <li class="mx-2 mt-2">
+                    <a href="#">新版教學</a>
+                </li>			
+                <li>
+                    <button type="button" class="btn btn-success py-1">登出</button>
+                </li>
+		    </ul>
+        </div>
+    </div>
 <div id="gotop"></div>
 <nav class="navbar sticky-top navbar-dark bg-dark navbar-expand-sm mb-3">
-    <a class="navbar-brand mx-5" href="#"><img src="imgs/digital/logo3.png" style="margin:-20px 0"></a> 
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- <a class="navbar-brand mx-5" href="#"><img src="imgs/digital/logo3.png" style="margin:-20px 0"></a>  -->
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
@@ -178,20 +210,20 @@
             <li class="nav-item dropdown mr-3">
                 <a class="nav-link text-white" tabindex="0" data-toggle="dropdown" data-submenu>下載專區</a>
                 <div class="dropdown-menu">
+                    <a class="dropdown-item" type="button" href="#" target="_blank">行動會議室</a>
                     <div class="dropdown dropright dropdown-submenu">
-                        <button class="dropdown-item dropdown-toggle" type="button" data-toggle="dropdown">業務處</button>
+                        <button class="dropdown-item dropdown-toggle" type="button" data-toggle="dropdown">商品教案</button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" type="button" href="#" target="_blank">規章辦法</a>  
-                            <a class="dropdown-item" type="button" href="#" target="_blank">業務手冊</a>
-                            <a class="dropdown-item" type="button" href="#" target="_blank">表格</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">保險</a>  
+                            <a class="dropdown-item" type="button" href="#" target="_blank">基金</a>
                         </div>
                     </div>
                     <div class="dropdown dropright dropdown-submenu">
-                        <button class="dropdown-item dropdown-toggle" type="button" data-toggle="dropdown">人資處</button>
+                        <button class="dropdown-item dropdown-toggle" type="button" data-toggle="dropdown">法令、辦法</button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" type="button" href="#" target="_blank">規章辦法</a>  
-                            <a class="dropdown-item" type="button" href="#" target="_blank">業務手冊</a>
-                            <a class="dropdown-item" type="button" href="#" target="_blank">表格</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">行政命令</a>  
+                            <a class="dropdown-item" type="button" href="#" target="_blank">教育宣導</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">法令遵循</a>
                         </div>
                     </div>                    
                 </div>
@@ -199,7 +231,15 @@
             <li class="nav-item dropdown mr-3">
                 <a class="nav-link text-white" tabindex="0" data-toggle="dropdown" data-submenu>處部</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" type="button" href="#" target="_blank">業務處</a>
+                    <div class="dropdown dropright dropdown-submenu">
+                        <button class="dropdown-item dropdown-toggle" type="button" data-toggle="dropdown">業務處</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" type="button" href="#" target="_blank">規章辦法</a>  
+                            <a class="dropdown-item" type="button" href="#" target="_blank">業務手冊</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">教案</a>
+                            <a class="dropdown-item" type="button" href="#" target="_blank">表格</a>
+                        </div>
+                    </div>
                     <a class="dropdown-item" type="button" href="#" target="_blank">會計處</a>
                     <a class="dropdown-item" type="button" href="#" target="_blank">人力資源處</a>
                     <a class="dropdown-item" type="button" href="#" target="_blank">行政管理處</a>
@@ -278,7 +318,7 @@
             </li> -->
         </ul>
         <!-- 靠右選單 -->
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown mr-2">
                 <a class="nav-link" tabindex="0" data-toggle="dropdown" data-submenu href="#" target="_blank"><img src="imgs/digital/doc.png" alt=""></a>
             </li>
@@ -292,13 +332,14 @@
                     <a class="dropdown-item" type="button" href="#" target="_blank">mvpn代碼表</a>
                 </div>
             </li>
-            <li class="nav-item dropdown mr-5 pr-5">
+            <li class="nav-item dropdown">
                 <a class="nav-link" tabindex="0" data-toggle="dropdown" data-submenu htef="#" target="_blank"><img src="imgs/digital/mail.png" alt=""></a>
             </li>
             <!-- <li class="nav-item dropdown mr-5 pr-5">
                 <a class="nav-link" tabindex="0" data-toggle="dropdown" data-submenu htef="#" target="_blank"><i class="fas fa-envelope fa-lg text-white"></i></a>
             </li> -->
         </ul>
+    </div>
     </div>
 </nav>
 
@@ -369,28 +410,58 @@
             
 
             <!-- 右邊 -->        
-            <div class="col-md-6 my-3">
-                <h5 class="card-title l-line">最新消息</h5>
-                <div class="card custom-card">
-                    <div class="card-body card-shadow">
-                        <p class="p-content"><span class="news-title">【提醒 1】 </span>上架消息要有期限，舊訊息不要留，避免造成錯誤。</p>
-                        <hr> 
-                        <p class="p-content"><span class="news-title">【提醒 2】 </span>密碼整合，單一入口網站，不要每個系統都要登入，且密碼還不一樣。</p>
-                        <hr>                    
-                        <p class="p-content"><span class="news-title">【業務處】 </span>振興三倍券使用期限至 109 年 12 月 31 日，店家可兌換至 110 年 3 月 31 日。請各營業單位特別注意... <a href="#"><u> 看更多</u></a></p>
-                        <hr>                        
-                        <p class="p-content"><span class="news-title">【授審處】 </span>110 年 02 月份授信戶追蹤資料請於3月5日前填報並送至授審處。... <a href="#"><u> 看更多</u></a></p> 
-                        <hr>                        
-                        <p class="p-content"><span class="news-title">【授審處】 </span>110 年 02 月份授信戶追蹤資料請於3月5日前填報並送至授審處。... <a href="#"><u> 看更多</u></a></p>                    
-                        <hr>                        
-                        <p class="p-content"><span class="news-title">【法遵處】 </span>各單位針對洗防管控名單倘有於客戶完成KYC更新前，由幹部/主管以刷主管碼方式先予放行交易者，請務必... <a href="#"><u> 看更多</u></a></p>
-                        
-                    </div>                       
-                </div>
-                <div class="d-flex justify-content-end mt-2">
-                    <button type="button" class="btn btn-success rounded-pill p-0 px-1">More</button>
-                </div>
-            </div>  
+            <div class="col-md-3 my-3">
+                <h5 class="card-title l-line">快捷區</h5>
+                <!-- <div class="row"> -->
+                <!-- <div class="col-lg-6 col-md-12"> -->
+                    
+                    <div class="list-group">
+                        <div class="card-header d-flex bg-success py-2 text-white">我的最愛</div>
+                        <a class="list-group-item list-group-item-action py-1" href="#">外出</a>
+                        <a class="list-group-item list-group-item-action py-1" href="#">請假</a>
+                        <a class="list-group-item list-group-item-action py-1" href="#">薪資查詢</a>
+                        <a class="list-group-item list-group-item-action py-1" href="#">請假</a>
+                        <a class="list-group-item list-group-item-action py-1" href="#">報表查詢</a>
+                        <a class="list-group-item list-group-item-action py-1" href="#">表單下載</a>
+                        <a class="list-group-item list-group-item-action py-1" href="#">筆硯</a>
+                    </div>
+                <!-- <div class="col-lg-6 col-md-12">
+                    <div class="list-group">
+                        <div class="card-header d-flex bg-success py-2 text-white">業務</div>
+                        <a class="list-group-item list-group-item-action py-1" href="#">報表查詢</a>
+                        <a class="list-group-item list-group-item-action py-1" href="#">表單下載</a>
+                        <a class="list-group-item list-group-item-action py-1" href="#">筆硯</a>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="col-md-3 my-3">
+                <h5 class="card-title l-line">休假</h5> 
+                <ul>
+                    <li class="pb-1">下次休假：2021/7/20 全天</li>
+                    <li class="pb-1">未休天數：10.5 天</li>
+                </ul>   
+                <h5 class="card-title l-line">待完成工作</h5> 
+                <ul>
+                    <li class="pb-1">公文系統：<a href="#">(2)</a></li>
+                    <li class="pb-1">請假系統：(0)</li>
+                    <li class="pb-1">外出系統：(0)</li>
+                    <li class="pb-1">Pinereport: <a href="#">(6)</a></li>
+                    <li class="pb-1">電腦需求書<a href="#">(1)</a></li>
+                    <li class="pb-1">放款：(0)</li>
+                    <li class="pb-1">信用卡：(0)</li>
+                    <li class="pb-1">財富管理：(0)</li>
+                </ul>               
+            </div>
+
+
+
+
+
+
+
+
+
         </div>    
     </section>
 
@@ -430,50 +501,32 @@
                     </a>
                 </div>
             </div>
-            <!-- 右邊 -->        
-            <div class="col-md-3 my-3">
-                <h5 class="card-title l-line">快捷區</h5>
-                <!-- <div class="row"> -->
-                <!-- <div class="col-lg-6 col-md-12"> -->
-                    
-                    <div class="list-group">
-                        <div class="card-header d-flex bg-success py-2 text-white">我的最愛</div>
-                        <a class="list-group-item list-group-item-action py-1" href="#">外出</a>
-                        <a class="list-group-item list-group-item-action py-1" href="#">請假</a>
-                        <a class="list-group-item list-group-item-action py-1" href="#">薪資查詢</a>
-                        <a class="list-group-item list-group-item-action py-1" href="#">請假</a>
-                        <a class="list-group-item list-group-item-action py-1" href="#">報表查詢</a>
-                        <a class="list-group-item list-group-item-action py-1" href="#">表單下載</a>
-                        <a class="list-group-item list-group-item-action py-1" href="#">筆硯</a>
-                    </div>
-                <!-- <div class="col-lg-6 col-md-12">
-                    <div class="list-group">
-                        <div class="card-header d-flex bg-success py-2 text-white">業務</div>
-                        <a class="list-group-item list-group-item-action py-1" href="#">報表查詢</a>
-                        <a class="list-group-item list-group-item-action py-1" href="#">表單下載</a>
-                        <a class="list-group-item list-group-item-action py-1" href="#">筆硯</a>
-                    </div>
-                </div> -->
-            </div>
+            <!-- 右邊 -->   
+            <div class="col-md-6 my-3">
+                <h5 class="card-title l-line">最新消息</h5>
+                <div class="card custom-card">
+                    <div class="card-body card-shadow">
+                        <p class="p-content"><span class="news-title">【提醒 1】 </span>上架消息要有期限，舊訊息不要留，避免造成錯誤。</p>
+                        <hr> 
+                        <p class="p-content"><span class="news-title">【提醒 2】 </span>密碼整合，單一入口網站，不要每個系統都要登入，且密碼還不一樣。</p>
+                        <hr>                    
+                        <p class="p-content"><span class="news-title">【業務處】 </span>振興三倍券使用期限至 109 年 12 月 31 日，店家可兌換至 110 年 3 月 31 日。請各營業單位特別注意... <a href="#"><u> 看更多</u></a></p>
+                        <hr>                        
+                        <p class="p-content"><span class="news-title">【授審處】 </span>110 年 02 月份授信戶追蹤資料請於3月5日前填報並送至授審處。... <a href="#"><u> 看更多</u></a></p> 
+                        <hr>                        
+                        <p class="p-content"><span class="news-title">【授審處】 </span>110 年 02 月份授信戶追蹤資料請於3月5日前填報並送至授審處。... <a href="#"><u> 看更多</u></a></p>                    
+                        <hr>                        
+                        <p class="p-content"><span class="news-title">【法遵處】 </span>各單位針對洗防管控名單倘有於客戶完成KYC更新前，由幹部/主管以刷主管碼方式先予放行交易者，請務必... <a href="#"><u> 看更多</u></a></p>
+                        
+                    </div>                       
+                </div>
+                <div class="d-flex justify-content-end mt-2">
+                    <button type="button" class="btn btn-success rounded-pill p-0 px-1">More</button>
+                </div>
+            </div>  
+            
 
-            <div class="col-md-3 my-3">
-                <h5 class="card-title l-line">休假</h5> 
-                <ul>
-                    <li>下次休假：2021/7/20 全天</li>
-                    <li>未休天數：10.5 天</li>
-                </ul>   
-                <h5 class="card-title l-line">未完成工作</h5> 
-                <ul>
-                    <li>公文系統：<a href="#">(2)</a></li>
-                    <li>請假系統：(0)</li>
-                    <li>外出系統：(0)</li>
-                    <li>Pinereport: <a href="#">(6)</a></li>
-                    <li>電腦需求書<a href="#">(1)</a></li>
-                    <li>放款：(0)</li>
-                    <li>信用卡：(0)</li>
-                    <li>財富管理：(0)</li>
-                </ul>               
-            </div>
+            
 
         </div>    
     </section>
@@ -550,7 +603,36 @@
 <script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.js" defer></script>
 <script src="https://vsn4ik.github.io/bootstrap-submenu/dist/js/bootstrap-submenu.js" defer></script>
 <script src="https://vsn4ik.github.io/bootstrap-submenu/assets/js/docs.js" defer></script>
+<script>
+    function clock(){
+        let hour = document.getElementById('hour');
+        let minute = document.getElementById('minute');
+        let seconds = document.getElementById('seconds');
+        let ampm = document.getElementById('ampm');
 
+        let h = new Date().getHours();
+        let m = new Date().getMinutes();
+        let s = new Date().getSeconds();
+        var am = "AM";
+
+        // Convert 24 hour time to 12 hour format with AM PM Indicator
+        if (h > 12){
+            h = h -12;
+            var am = ' PM';
+        }
+
+        // Add 0 to the begining of number if less than 10
+        h = ( h < 10) ? '0' + h : h;
+        m = ( m < 10) ? '0' + m : m;
+        s = ( s < 10) ? '0' + s : s;
+
+        hour.innerHTML = h;
+        minute.innerHTML = m;
+        seconds.innerHTML = s;
+        ampm.innerHTML = am;
+    }
+    var interval = setInterval(clock, 1000);
+</script>
 
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script> -->
