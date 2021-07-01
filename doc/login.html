@@ -1,131 +1,159 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="zh_TW">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登入</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>Cloudy & Rainy Login</title>
 
     <style>
-        /* #Reset & Basics (Inspired by E. Meyers)
-================================================== */
-    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline; }
-    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-        display: block; }
-    body {
-        line-height: 1; }
-    ol, ul {
-        list-style: none; }
-    blockquote, q {
-        quotes: none; }
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none; }
-    table {
-        /*border-collapse: collapse;*/
-        border-spacing: 0; }
-
-/* #Basic Styles
-================================================== */
-    body {
-        background:#87CEFA;
-        overflow:hidden;
-        font:normal 16px/1.5 Helvetica, "Microsoft Yahei", Arial, sans-serif;
-        color:#444;
-        -webkit-font-smoothing:antialiased; /* Fix for webkit rendering */
-        -webkit-text-size-adjust:100%;
-    }
-    input {padding:10px 15px;outline:0;border:0;border-radius:3px;width:200px;}
-    a, a:visited { color: #333; text-decoration: none; outline: 0; }
-    a:hover, a:focus { color: #000;}
-
-/*云层*/
-    #clouds{position:absolute;top:0;right:0;bottom:0;left:0;}
-    [class^="cloud-"]{position:absolute;right:120%;width:200px;height:60px;background:white;-webkit-border-radius:200px;-moz-border-radius:200px;border-radius:200px;}
-    [class^="cloud-"]:before,[class^="cloud-"]:after{content:'';position:absolute;top:-15px;left:10px;width:100px;height:80px;background:#fff;-webkit-border-radius:100px;border-radius:100px;-webkit-transform:rotate(30deg);-moz-transform:rotate(30deg);transform:rotate(30deg);}
-    [class^="cloud-"]:after {top: -55px;left: auto;right: 15px;width: 120px;height: 120px;}
-    .cloud-1 {top: 50px;-webkit-animation: moveclouds 30s linear infinite;-moz-animation: moveclouds 30s linear infinite;-o-animation: moveclouds 30s linear infinite;animation: moveclouds 30s linear infinite;}
-    .cloud-2 {top: 100px;opacity: 0.8;-webkit-transform: scale(0.8);-moz-transform: scale(0.8);transform: scale(0.8);-webkit-animation: moveclouds 45s linear infinite;-moz-animation: moveclouds 45s linear infinite;-o-animation: moveclouds 45s linear infinite;animation: moveclouds 45s linear infinite;-webkit-animation-delay: 5s;-moz-animation-delay: 5s;animation-delay: 5s;}
-    .cloud-3 {top: 150px;opacity: 0.6;-webkit-transform: scale(0.6);-moz-transform: scale(0.6);transform: scale(0.6);-webkit-animation: moveclouds 40s linear infinite;-moz-animation: moveclouds 40s linear infinite;-o-animation: moveclouds 40s linear infinite;animation: moveclouds 40s linear infinite;}
-    .cloud-4 {top: 200px;opacity: 0.75;-webkit-transform: scale(0.75);-moz-transform: scale(0.75);transform: scale(0.75);-webkit-animation: moveclouds 26s linear infinite;-moz-animation: moveclouds 26s linear infinite;-o-animation: moveclouds 26s linear infinite;animation: moveclouds 26s linear infinite;-webkit-animation-delay: 8s;-moz-animation-delay: 8s;animation-delay: 8s;}
-    /*云层移动*/
-    @keyframes moveclouds {
-        0%   { right: -20%; }
-        100% { right: 120%; }
-    }
-
-
-/* #Content Styles
-================================================== */    
-    /*内容*/
-
-    .content{width:100%;}
-    .container{width:960px;margin:0 auto;text-align:center;}
-    .login{width:400px;height:300px;position:absolute;top:50%;left:50%;margin-top:-200px;margin-left:-200px;background:#F8F8F8;border-radius:10px;box-shadow:0 3px 6px rgba(0, 0, 0, 0.5);}
-
-    .login_header{height:60px;line-height:60px;font-size:20px;font-weight:bold;color:#77CA60;background:#FFF;border-radius:10px 10px 0 0;-webkit-box-shadow:0 1px 3px rgba(0, 0, 0, .1);-moz-box-shadow:0 1px 3px rgba(0, 0, 0, .1);box-shadow:0 1px 3px rgba(0, 0, 0, .1);}
-    .icon-home{font-size:30px;position:relative;top:3px;}
-
-    .login_content{height:200px;padding:30px 20px;}
-    input{width:300px;padding:14px 15px;background:#F0F0F0;font:normal 16px/1.5 Helvetica,"Microsoft Yahei",Arial,sans-serif;color:#444;}
-    span{position:relative;display:inline-block;height:50px;margin-bottom:30px;}
-    .tip{text-indent:80px;-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;transition:all .3s ease-in-out;}
-    .tip:focus,.tip:active{text-indent:0;}
-    .tip + label{position:absolute;top:16px;left:15px;-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;transition:all .3s ease-in-out;}
-    .tip:focus + label,.tip:active + label{-webkit-transform:translateY(-40px);-moz-transform:translateY(-40px);transform:translateY(-40px);}
-    .icon-user,.icon-lock{position:absolute;top:16px;right:14px;color:#999;}
-    .ing{width:100%;height:5px;position:absolute;bottom:60px;}
-
-    .login_btn{margin-top:-60px;width:100%;height:60px;line-height:60px;outline:0;border:none;color:white;font-weight:bold;font-size:20px;background:#77CA60;border-radius:0 0 10px 10px;cursor:pointer;text-shadow:1px 1px 1px rgba(0, 0, 0, 0.3);}
-    .login_btn .white{color:white;}
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Note Sans TC', sans-serif;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(-30deg, #03a9f4 0%, #3a78b7 50%, #262626 50%, #607d8b 100%);
+            /* filter:hue-rotate(120deg); */
+            animation: animate 10s linear infinite;
+        }
+        @keyframes animate{
+            0%{
+                filter: hue-rotate(0deg);
+            }
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+        .box{
+            position: relative;
+            padding: 50px;
+            width: 360px;
+            height: 480px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            box-shadow: 0 5px 35px rgba(0,0,0,0.2);
+        }
+        .box::after{
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            pointer-events: none;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%,rgab(255,255,255,0.1) 15%, transparent 50%, transparent 85%,rgba(255,255,255,0.3) 100%)
+        }
+        .box .form{
+            position: relative;
+            width: 100%;
+        }
+        .box .form h2{
+             color: #fff;
+             font-weight: 600;
+             letter-spacing: 2px;
+             margin-bottom: 30px;   
+        }
+        .box .form h2 span{
+            color: #ff0157;
+            font-size: 1.8em;
+        }
+        .box .form .inputBx{
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .box .form .inputBx input{
+            width: 100%;
+            outline: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
+            padding: 8px 10px;
+            padding-left: 35px;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+        }
+        .box .form .input input::placeholder{
+            color: #fff;
+        }
+        .box .form .inputBx input[type="submit"]{
+            background: #fff;
+            color: #111;
+            max-width: 100px;
+            padding: 8px 10px;
+            box-shadow: none;
+            font-weight: 800;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .box .form .inputBx img{
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            transform: scale(0.7);
+            filter: invert(1);
+        }
+        .remeber{
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            font-weight: 300;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .box .form p{
+            color: #fff;
+            font-weight: 300;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+        .box .form a{
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     
-
-
-        <!-- 背景云层 -->
-	<div class="header">
-        <div id="clouds">
-            <div class="cloud-1" data-speed="35000"></div>
-            <div class="cloud-2" data-speed="45000" data-delay="15000"></div>
-            <div class="cloud-3" data-speed="40000"></div>
-            <div class="cloud-4" data-speed="38000" data-delay="20000"></div>
+    <section>
+        <div class="box">
+            <div class="form">
+                <h2>Cloudy<span>.</span> Rainy<span>.</span></h2>
+                <form>
+                    <div class="inputBx">
+                        <input type="text" placeholder="帳號">
+                        <img src="../cssdemo/imgs/user.png" alt="">
+                    </div>
+                    <div class="inputBx">
+                        <input type="password" placeholder="密碼">
+                        <img src="../cssdemo/imgs/lock.png" alt="">
+                    </div>
+                    <label class="remeber"><input type="checkbox"> Remember Me</label>
+                    <div class="inputBx">
+                        <input type="submit" value="登入">
+                    </div>
+                </form>
+                <!-- <p>Forget <a href="#">Password</a></p>
+                <p>Need an <a href="#">Account</a></p> -->
+            </div>
         </div>
-	</div>
-
-    <div class="content">
-        <div class="container">            
-            <form class="login">
-                <div class="login_header"><i class="icon-home"></i>陽信銀行入口網站</div>
-                
-                <div class="login_content">
-                    <span>
-                        <input class="tip" name="username" type="text" maxlength="18">
-                        <label for="username">帳號</label>
-                        <i class="icon-user"></i>
-                    </span>
-                    <span>
-                        <input class="tip" name="password" type="password" maxlength="16">
-                        <label for="password">密碼</label>
-                        <i class="icon-lock"></i>
-                    </span>
-                </div>
-                <div class="login_btn">
-                    <a class="white" href="home.html">登入</a>
-                </div>
-            </form>
-        </div>
-    </div>
-	
-
+    </section>
 
 </body>
 </html>
