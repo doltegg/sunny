@@ -39,8 +39,8 @@
         .box{
             position: relative;
             padding: 50px;
-            width: 360px;
-            height: 480px;
+            width: 380px;
+            height: 450px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -125,8 +125,21 @@
             margin-top: 5px;
         }
         .box .form a{
-            color: #fff;
+            position: relative;
+            display: inline-block;
+            padding: 10px 34px;
+            margin-top: 15px;
+            background: #fff;
+            color: #000;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
         }
+        /* .box .form a{
+            color: #fff;
+        } */
     </style>
 </head>
 <body>
@@ -145,8 +158,11 @@
                         <img src="../cssdemo/imgs/lock.png" alt="">
                     </div>
                     <label class="remeber"><input type="checkbox"> Remember Me</label>
-                    <div class="inputBx">
+                    <!-- <div class="inputBx">
                         <input type="submit" value="登入">
+                    </div> -->
+                    <div>
+                        <a href="home.html">登入</a>
                     </div>
                 </form>
                 <!-- <p>Forget <a href="#">Password</a></p>
