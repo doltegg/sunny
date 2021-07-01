@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>打造入口網站</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+
+        <!-- <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script> -->
+        <!-- 列印 pdf： ?print-pdf -->
+
+        <style>
+            .reveal .slides section *{
+                font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+            }
+            .reveal .slides section h1{
+                font-weight: 900;
+            }
+            .reveal section h2 { 
+                color:#4CAF50; 
+            } 
+            .container{
+                display: flex;
+                justify-content: space-around;
+                align-items: stretch;
+            }
+            .box{
+                width: 45%;
+                border: 2px solid #ccc;
+                border-radius: 10px;
+                /* background: rgba(255,255,255,0.1); */
+                box-shadow: 0px 15px 25px rgba(255,255,255,0.2);
+            }
+            .case,
+            .sol{
+                padding: 1rem 0;
+                border-bottom: 3px;
+                color: #03989e;
+                font-size: 1.25em;
+                font-weight: 600;
+            }
+            .sol{
+                color: #ffa500;
+            }
+            .deeppink{
+                color: deeppink;
+            }
+            .yellow{
+                color: yellow;
+            }
+            .point{
+                color: #f08080;
+            }
+            .box p{
+                font-size: 0.9em;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h1>入口網站</h1>
+                    <h3>2021.07.07</h3>
+                </section>
+                <section>
+                    <h2>重作</h2>
+                    <ul>
+                        <li>拆分成什麼樣子重作</li>
+                        <li>要控管什麼</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>一切重頭</h2>
+                    <ul>
+                        <li>忘記入口、內應、外應</li>
+                        <li>忘記內網、外網、官網、系統</li>
+                        <li>忘記所有網路的一切</li>
+                    </ul>
+                    <p>全部從頭來過！</p>
+                </section>
+                <section>
+                    <h2>需求 1</h2>
+                    <div class="container">
+                        <div class="box">
+                            <div class="case">情境</div>
+                            <p>小英今天臨時肚子痛，又想偷懶，不想上班。</p>
+                        </div>
+                        <div class="box">
+                            <div class="sol">解法</div>
+                            <p>如果公司有線上請假系統，就可在家中上網請假。</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>線上請假系統</h2>
+                    <ol>
+                        <li>開個請假系統</li>
+                        <li>讓員工在家請假</li>
+                    </ol>
+                    <p class="point fragment">重點：在家</p>
+                </section>
+                
+                <section>
+                    <h2>需求 2</h2>
+                    <div class="container">
+                        <div class="box">
+                            <div class="case">情境</div>
+                            <p>小英在家坐月子，聽說今天有一批人員晉升，他想查一下他的好友阿德有沒有晉升。</p>
+                        </div>
+                        <div class="box">
+                            <div class="sol">解法</div>
+                            <p>如果公司有線上公告公文，就可在家中上網看榜。</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>線上公文系統</h2>
+                    <ol>
+                        <li>公文是公司最重要且正確的訊息，應該讓所有人「隨時」、「輕易」查詢。</li>
+                        <li>你的公文、我的公文、他的公文</li>
+                    </ol>
+                    <p class="point fragment">重點：在家、權限</p>
+                </section>
+
+                <section>
+                    <h2>需求 2</h2>
+                    <div class="container">
+                        <div class="box">
+                            <div class="case">情境</div>
+                            <p>公司買給小郭一台 iPad，他很苦惱開會資料怎麼進入 iPad。</p>
+                        </div>
+                        <div class="box">
+                            <div class="sol">解法</div>
+                            <p>如果公司開放一個空間儲存開會資料，供與會者下載。</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>線上行動會議室</h2>
+                    <ol>
+                        <li>召開會議人上傳開會資料至網路</li>
+                        <li>有權開會的人上去下載</li>
+                        <li>更甚者，寫一個「行動會議室 app」</li>
+                    </ol>
+                    <p class="point fragment">重點：在家、權限、上傳、下載</p>
+                </section>
+
+                <section>
+                    <h2>網站</h2>
+                    <p>結合以上三個需求，整合至一個網站，姑且稱之為「入口網站」。</p>
+                    <ul>
+                        <li>隨時隨地</li>
+                        <li>登入入口的單一帳號、密碼</li>
+                        <li>特定權限因「人」而異</li>
+                    </ul>
+                    <p>網站開始塞進每個部門的需求，作為訊息、交流、申請、申報、核准等工具。</p>
+                </section>
+
+                <section>
+                    <h2>作業系統</h2>
+                    <p>放款、徵審、鑑價、稽核、資訊、...等，姑且稱之為不可在家使用的作業系統</p>
+                    <p class="point fragment">重點：還是要塞進「入口網站」</p>
+                </section>
+
+
+                <section>
+                    <h2>入口網站功能</h2>
+                    <ul>
+                        <li>入口：集所有通道的地圖、連結、網頁的閘口</li>
+                        <li>訊息公告：公文公告</li>
+                        <li>訊息備份：教案、法規、辦法、報表</li>
+                        <li>作業系統：連結、彙整統計未完成事項</li>
+                        <li>被動客製化：因權限</li>
+                        <li>主動客製化：我的最愛</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>線上化表單</h2>
+                    <ul>
+                        <li>所有表單通通線上，幾乎沒有可以例外</li>
+                        <ul>
+                            <li>網站地圖</li>
+                            <li>集中電子化表單？</li>
+                        </ul>
+                        <li>部門的「正式」溝通，可以建一個系統「簡覆表」</li>
+                    </ul>
+                </section>
+
+
+
+                
+
+                
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+        <script src="../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                slideNumber: true,
+                math: {
+                    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js', 
+                    config: 'TeX-AMS_HTML-full',
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath, ],
+            });
+		</script>
+	</body>
+</html>
+
