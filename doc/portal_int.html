@@ -11,7 +11,11 @@
 		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    
+            
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
 
@@ -26,7 +30,7 @@
 
         <style>
             .reveal .slides section *{
-                font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+                font-family: 'Poppins', 'Noto Sans TC', sans-serif "FontAwesome";
             }
             .reveal .slides section h1{
                 font-weight: 900;
@@ -40,14 +44,13 @@
                 align-items: stretch;
             }
             .box{
-                width: 45%;
+                width: 32%;
                 border: 2px solid #ccc;
                 border-radius: 10px;
                 /* background: rgba(255,255,255,0.1); */
                 box-shadow: 0px 15px 25px rgba(255,255,255,0.2);
             }
-            .case,
-            .sol{
+            .case,.sol,.impt{
                 padding: 1rem 0;
                 border-bottom: 3px;
                 color: #03989e;
@@ -57,6 +60,10 @@
             .sol{
                 color: #ffa500;
             }
+            .impt{
+                color: deeppink;
+            }
+
             .deeppink{
                 color: deeppink;
             }
@@ -69,6 +76,168 @@
             .box p{
                 font-size: 0.9em;
             }
+            /* 登入 */
+            section .cm{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container2{
+                width: 60%;
+                /* border: 2px solid #fff; */
+                height: 360px;
+                border-radius: 8px;
+                background: #4CAF50; /*#03a9f4;*/
+                box-shadow: 0 5px 20px rgba(255,255,255,.4);
+            }
+            form .inTitle{
+                font-size: .85em;
+                margin: 1em;
+                font-weight: 600;
+            }
+            form label{
+                font-size: .7em;
+            }
+            form input{
+                font-size: .7em;
+                width: 70%;
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+            form input[type="submit"]{
+                background: deeppink;
+                border: none;
+                color: #fff;
+                max-width: 120px;
+                cursor: pointer;
+                letter-spacing: 4px;
+                /* margin-top: 80px; */
+            }
+            /* 請假系統 */
+            .col2{
+                display: flex;
+                justify-content: space-around;
+                align-items: stretch;
+            }
+            .leftNav{
+                position: relative;
+                width: 34.5%;
+                /* border: 2px solid #fff; */
+                border-radius: 8px;
+                overflow: hidden;
+                height: 400px;
+                background: #fff;
+            }
+            .rightLeave{
+                width: 64.5%;
+                /* border: 2px solid #fff; */
+                height: 400px;
+                border-radius: 8px;
+                background: green;
+            }
+            .menuTitle{
+                position: relative;
+                font-size: .6em;
+                background: #4CAF50;
+                padding: .6em;
+            }
+            .leftNav ul{                
+                margin: 0;
+                padding: 0;
+                display: block;
+            }
+            .leftNav ul li{
+                position: relative;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: block;
+                width: 100%;
+                /* background: #fff; */
+                color: #333;
+                font-size: 0.5em;
+                line-height: 1.8;
+                padding-left: 1em;
+                cursor: pointer;
+            }
+            .leftNav ul li.active,
+            .leftNav ul li:hover{
+                background: #777;
+                color: #eee;
+                font-weight: 500;
+            }
+            .rightLeave .formTitle{
+                padding: .5em;
+                font-size: .7em;
+            }
+            form input{
+                font-size: .5em;
+                width: 70%;
+                padding: 4px;
+                margin-bottom: 6px;
+            }
+            form input[type="submit"]{
+                background: #DC143C;
+                border: none;
+                color: #fff;
+                max-width: 120px;
+                cursor: pointer;
+                letter-spacing: 4px;
+                margin-top: 16px;
+                font-weight: 500;
+            }
+            .container3{
+                background:rgb(173,121,9);
+                width: 50%;
+                border-radius: 8px;
+                height: 350px;
+            }
+            .logTitle{
+                font-size: 0.7em;
+                padding: 1em;
+                color: #fff;
+            }
+            .inputBx input{
+                border-radius: 6px;
+                padding: 0.3em;
+            }
+            /* .logA{
+                color: #ccc;
+                width: 100px;
+                display: flex;
+                text-align: center;
+            } */
+            .container3 a{
+                font-size: 0.6em;
+                color: #222;
+                background: #fff;
+                padding: .5em;
+                margin: 1em;
+                border-radius: 4px;
+                padding: .3em .6em;
+            }
+            .tcm{
+                display: flex;
+                justify-content: space-between;
+                align-items: stretch;
+            }
+            .topbox{
+                border: 1px solid #b50;
+                padding: 10px;
+                border-radius: 8px;
+                background: rgba(187,85,0,0.15);
+            }
+            .downbox{
+                border: 1px solid #B50;
+                width: 48.7%;
+                border-radius: 8px;
+                background: rgba(187,85,0,0.15);
+            }
+
+
+
+
+
         </style>
 	</head>
 	<body>
@@ -94,89 +263,302 @@
                     </ul>
                     <p>全部從頭來過！</p>
                 </section>
+
                 <section>
-                    <h2>需求 1</h2>
-                    <div class="container">
-                        <div class="box">
-                            <div class="case">情境</div>
-                            <p>小英今天臨時肚子痛，又想偷懶，不想上班。</p>
+                    <section>
+                        <h2>需求 1</h2>
+                        <div class="container">
+                            <div class="box">
+                                <div class="case">情境</div>
+                                <p>小英今天臨時肚子痛，又想偷懶，不想上班。</p>
+                            </div>
+                            <div class="box fragment">
+                                <div class="sol">解法</div>
+                                <p>如果公司有線上請假系統，就可在家中上網請假。</p>
+                            </div>
+                            <div class="box fragment">
+                                <div class="impt">重點</div>
+                                <p>在家</p>
+                            </div>
                         </div>
-                        <div class="box">
-                            <div class="sol">解法</div>
-                            <p>如果公司有線上請假系統，就可在家中上網請假。</p>
+                    </section>
+
+                    <section>
+                        <h2>線上請假系統</h2>
+                        <ol>
+                            <li>開個請假系統</li>
+                            <li>讓員工在家請假</li>
+                        </ol>
+                    </section>
+                    <section class="cm">
+                        <h2>登入</h2>
+                        <div class="cm">
+                            <div class="container2">
+                                <div class="form signinForm">
+                                    <form>
+                                        <div class="inTitle">差勤系統登入</div>
+                                            <label>帳號：<input type="text"><br>
+                                            密碼：<input type="password"></label>
+                                            <input type="submit" value="登入">
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section>
-                    <h2>線上請假系統</h2>
-                    <ol>
-                        <li>開個請假系統</li>
-                        <li>讓員工在家請假</li>
-                    </ol>
-                    <p class="point fragment">重點：在家</p>
-                </section>
+                    </section>
+    
+                    <section>
+                        <h2>申請人畫面</h2>
+                        <div class="col2">
+                            <div class="leftNav">
+                                <div class="menuTitle">
+                                    差勤系統
+                                </div>
+                                <ul class="MenuItem">
+                                    <li class="active">請假申請</li>
+                                    <li>代位請假申請</li>
+                                    <li>年度特休排假</li>
+                                    <li>特休查詢</li>
+                                    <li>已休假查詢</li>
+                                    <li>代理人設定</li>
+                                </ul>
+                            </div>
+                            <div class="rightLeave">
+                                <form action="">                
+                                    <div class=formTitle>請假申請</div>
+                                    <input type="date" id="date"><br>
+                                    <input list="start" placeholder="開始" style="width:calc(35% - 10px)"> 
+                                    <datalist id="start">
+                                        <option value="08:50">
+                                        <option value="09:50">
+                                        <option value="10:50">
+                                        <option value="12:50">
+                                        <option value="13:50">
+                                        <option value="14:50">
+                                        <option value="15:50">
+                                        <option value="16:50">
+                                    </datalist>
+                                    <input list="end" placeholder="結束" style="width:calc(35% - 10px)">
+                                    <datalist id="end">
+                                        <option value="09:50">
+                                        <option value="10:50">
+                                        <option value="11:50">
+                                        <option value="13:50">
+                                        <option value="14:50">
+                                        <option value="15:50">
+                                        <option value="16:50">
+                                        <option value="17:50">
+                                    </datalist>
+                                    <br>                 
+                                    <input list="leave" placeholder="假別"><br>        
+                                    <datalist id="leave">
+                                        <option value="事假">
+                                        <option value="病假">
+                                        <option value="特休假">
+                                        <option value="防疫假">
+                                        <option value="公假">
+                                    </datalist>                                    
+                                    <input type="textarea" placeholder="事由"><br>
+                                    <input type="submit" value="提交">
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>主管覆核畫面</h2>
+                        <div class="col2">
+                            <div class="leftNav">
+                                <div class="menuTitle">
+                                    差勤系統
+                                </div>
+                                <ul class="MenuItem">
+                                    <li>請假申請</li>
+                                    <li>代位請假申請</li>
+                                    <li>年度特休排假</li>
+                                    <li>特休查詢</li>
+                                    <li>已休假查詢</li>
+                                    <li>代理人設定</li>
+                                    <li class="active">覆核</li>
+                                    <li>權限設定</li>
+                                </ul>
+                            </div>
+                            <div class="rightLeave" style="background:#F5F5DC">
+                                <form>
+                                    <div class=formTitle style="color: #111; font-weight: 600;">覆核</div>
+                                    <p style="margin: 80px 0; color: #aaa;">請假內容</p>
+                                    <input type="submit" value="退回">
+                                    <input type="submit" value="確認" style="background: green;">
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </section>                   
+                </section>  
                 
                 <section>
-                    <h2>需求 2</h2>
-                    <div class="container">
-                        <div class="box">
-                            <div class="case">情境</div>
-                            <p>小英在家坐月子，聽說今天有一批人員晉升，他想查一下他的好友阿德有沒有晉升。</p>
+                    <section>
+                        <h2>需求 2</h2>
+                        <div class="container">
+                            <div class="box">
+                                <div class="case">情境</div>
+                                <p>小英在家坐月子，聽說今天有一批人員晉升，他想查一下他的好友阿德有沒有晉升。</p>
+                            </div>
+                            <div class="box fragment">
+                                <div class="sol">解法</div>
+                                <p>如果公司有線上公告公文，就可在家中上網看榜。</p>
+                            </div>
+                            <div class="box fragment">
+                                <div class="impt">重點</div>
+                                <p>在家<br>權限</p>
+                            </div>
                         </div>
-                        <div class="box">
-                            <div class="sol">解法</div>
-                            <p>如果公司有線上公告公文，就可在家中上網看榜。</p>
+                    </section>                    
+                    <section>
+                        <h2>線上公文系統</h2>
+                        <ol>
+                            <li>公文是公司最重要且正確的訊息，應該讓所有人「隨時」、「輕易」查詢。</li>
+                            <li>你的公文、我的公文、他的公文</li>
+                        </ol>
+                    </section>
+
+                   
+                    <section>
+                        <h2>看公文登入</h2>
+                        <div class="cm">
+                            <div class="container3">
+                                <div class="form">
+                                    <div class="logTitle">公文公告</div>
+                                    <form>
+                                        <div class="inputBx">
+                                            <input type="text" placeholder="帳號">
+                                        </div>
+                                        <div class="inputBx" style="margin-bottom: 0.5em;">
+                                            <input type="password" placeholder="密碼">
+                                        </div>
+                                        <a href="#">登入</a>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section>
-                    <h2>線上公文系統</h2>
-                    <ol>
-                        <li>公文是公司最重要且正確的訊息，應該讓所有人「隨時」、「輕易」查詢。</li>
-                        <li>你的公文、我的公文、他的公文</li>
-                    </ol>
-                    <p class="point fragment">重點：在家、權限</p>
+                    </section>
+                    <section>
+                        <h2>公文查詢畫面</h2>
+                        <img src="imgs/doctxt.jpg" alt="">
+                    </section>
+                    <section>
+                        <h2>權限</h2>
+                        <ul>
+                            <li>我的公文 VS 他的公文</li>
+                            <li>簽公文時的權限</li>
+                            <ul>
+                                <li>發起</li>
+                                <li>簽核</li>
+                                <li>會辦、加會</li>
+                                <li>核准</li>
+                                <li>知會</li>
+                            </ul>
+                        </ul>
+                    </section>
                 </section>
 
                 <section>
-                    <h2>需求 2</h2>
-                    <div class="container">
-                        <div class="box">
-                            <div class="case">情境</div>
-                            <p>公司買給小郭一台 iPad，他很苦惱開會資料怎麼進入 iPad。</p>
+                    <section>
+                        <h2>需求 3</h2>
+                        <div class="container">
+                            <div class="box">
+                                <div class="case">情境</div>
+                                <p>公司買給小郭一台 iPad，他很苦惱開會資料怎麼進入 iPad。</p>
+                            </div>
+                            <div class="box fragment">
+                                <div class="sol">解法</div>
+                                <p>如果公司開放一個空間儲存開會資料，供與會者下載。</p>
+                            </div>
+                            <div class="box fragment">
+                                <div class="impt">重點</div>
+                                <p>在家<br>權限<br>上傳、下載<br></p>
+                            </div>
                         </div>
-                        <div class="box">
-                            <div class="sol">解法</div>
-                            <p>如果公司開放一個空間儲存開會資料，供與會者下載。</p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h2>線上行動會議室</h2>
-                    <ol>
-                        <li>召開會議人上傳開會資料至網路</li>
-                        <li>有權開會的人上去下載</li>
-                        <li>更甚者，寫一個「行動會議室 app」</li>
-                    </ol>
-                    <p class="point fragment">重點：在家、權限、上傳、下載</p>
+                    </section>                                    
+                    <section>
+                        <h2>線上行動會議室</h2>
+                        <ol>
+                            <li>召開會議人上傳開會資料至網路</li>
+                            <li>有權開會的人上去用 wifi 下載</li>
+                            <li>更甚者，寫一個「行動會議室 app」</li>
+                        </ol>
+                        <!-- <p class="point fragment">重點：在家、權限、上傳、下載</p> -->
+                    </section>
                 </section>
 
                 <section>
                     <h2>網站</h2>
-                    <p>結合以上三個需求，整合至一個網站，姑且稱之為「入口網站」。</p>
-                    <ul>
-                        <li>隨時隨地</li>
-                        <li>登入入口的單一帳號、密碼</li>
-                        <li>特定權限因「人」而異</li>
-                    </ul>
-                    <p>網站開始塞進每個部門的需求，作為訊息、交流、申請、申報、核准等工具。</p>
+                    <p class="topbox">結合以上三個需求，<span style="color:deeppink">整合</span>至一個網站，姑且稱之為「入口網站」。</p>
+                    <div class="tcm">
+                        <div class="downbox">
+                            <ul>
+                                <li>隨時隨地</li>
+                                <li>登入入口的單一帳號、密碼</li>
+                                <li>特定權限因「人」而異</li>
+                            </ul>
+                        </div>
+                        <div class="downbox">
+                            <p>網站開始塞進每個部門的需求，作為訊息、交流、申請、申報、核准等工具。</p>
+                        </div>
+                    </div>                    
                 </section>
 
+
+
+
+                <section>
+                    <h2>需求 4</h2>
+                    <div class="container">
+                        <div class="box">
+                            <div class="case">情境</div>
+                            <p>公司要全面自動化，信用卡、放款、徵審等作業全改成線上。</p>
+                        </div>
+                        <div class="box fragment">
+                            <div class="sol">解法</div>
+                            <p>向外面買各式的作業系統。</p>
+                        </div>
+                        <div class="box fragment">
+                            <div class="impt">重點</div>
+                            <p>在家<br>權限<br>上傳、下載<br>資安</p>
+                        </div>
+                    </div>
+                </section>
                 <section>
                     <h2>作業系統</h2>
-                    <p>放款、徵審、鑑價、稽核、資訊、存款、會計...等，姑且稱之為不可在家使用的作業系統</p>
+                    <p>存款、放款、徵審、鑑價、稽核、資訊、存款、會計...等，姑且稱之為不可在家使用的作業系統</p>
                     <p class="point fragment">重點：還是要塞進「入口網站」</p>
                 </section>
+                <section>
+                    <section>
+                        <h2>需求 5</h2>
+                        <div class="container">
+                            <div class="box">
+                                <div class="case">情境</div>
+                                <p>小德下班前趕了一份急件公文在電子公文系統，但當他完成簽出，協理已下班了！</p>
+                            </div>
+                            <div class="box fragment">
+                                <div class="sol">解法</div>
+                                <p>打電話請協理進入電子公文系統點急件簽呈。</p>
+                            </div>
+                            <div class="box fragment">
+                                <div class="impt">重點</div>
+                                <p>在家<br>權限<br>上傳、下載<br>資安？</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>什麼是資安</h2>
+                        <p>回到第 1 頁所說的：要控管什麼？</p>
+                        <ul>
+                            <li>單一個案</li>
+                            <li>源源不絕可查詢到的個資</li>
+                            <li>資安還是障礙</li>
+                        </ul>
+                    </section>      
+                </section>              
 
 
                 <section>
@@ -186,11 +568,13 @@
                         <li>訊息公告：公文公告</li>
                         <li>訊息備份：教案、法規、辦法、報表</li>
                         <li>作業系統：連結、彙整統計未完成事項</li>
-                        <li>被動客製化：因權限</li>
-                        <li>主動客製化：我的最愛</li>
+                        <li>客製化：因權限(被動)、我的最愛(主動)</li>
                         <li>各部室可以自己經營一個網頁</li>
+                        <li>照會簡覆表</li>
                     </ul>
                 </section>
+
+                
 
                 <section>
                     <h2>線上化表單</h2>
@@ -202,6 +586,25 @@
                         </ul>
                         <li>部門的「正式」溝通，可以建一個系統「簡覆表」</li>
                     </ul>
+                </section>
+
+                <section>
+                    <div class="tcm">
+                        <div class="downbox">
+                            <h2>如何打造</h2>
+                            <ul>
+                                <li>邏輯</li>
+                                <li>全面</li>
+                                <li>乾淨</li>
+                                <li>UI/UX</li>
+                            </ul>
+                        </div> 
+                        <div class="downbox">
+                            <h2>Demo</h2>
+                            <!-- <a href="login.html"><img src="imgs/html.png" target="_blank"></a> -->
+                            <a href="login.html"><i class="fas fa-file-code" style="font-size:3em;text-decoration:none;padding-top:0.2em;"></i></a>
+                        </div> 
+                    </div>
                 </section>
 
 
@@ -217,7 +620,7 @@
 		<script src="../plugin/markdown/markdown.js"></script>
 		<script src="../plugin/highlight/highlight.js"></script>
         <script src="../plugin/math/math.js"></script>
-		<script>
+        <script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
