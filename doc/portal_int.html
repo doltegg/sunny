@@ -35,9 +35,9 @@
             .reveal .slides section h1{
                 font-weight: 900;
             }
-            .reveal section h2 { 
+            /* .reveal section h2 { 
                 color:#4CAF50; 
-            } 
+            }  */
             .container{
                 display: flex;
                 justify-content: space-around;
@@ -48,14 +48,15 @@
                 border: 2px solid #ccc;
                 border-radius: 10px;
                 /* background: rgba(255,255,255,0.1); */
-                box-shadow: 0px 15px 25px rgba(255,255,255,0.2);
+                box-shadow: 0px 15px 25px rgba(255,255,255,0.2);                
             }
             .case,.sol,.impt{
-                padding: 1rem 0;
+                padding-top: 1rem;
                 border-bottom: 3px;
                 color: #03989e;
                 font-size: 1.25em;
                 font-weight: 600;
+
             }
             .sol{
                 color: #ffa500;
@@ -63,7 +64,6 @@
             .impt{
                 color: deeppink;
             }
-
             .deeppink{
                 color: deeppink;
             }
@@ -75,6 +75,7 @@
             }
             .box p{
                 font-size: 0.9em;
+                padding: 0.2em;
             }
             /* 登入 */
             section .cm{
@@ -233,7 +234,17 @@
                 border-radius: 8px;
                 background: rgba(187,85,0,0.15);
             }
-
+            .tcm2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .bottombox{
+                width: 30%;
+            }
+            .bottombox .fas{
+                font-size: 3em;
+            }
 
 
 
@@ -246,6 +257,7 @@
                 <section>
                     <h1>入口網站</h1>
                     <h3>2021.07.07</h3>
+                    <h3 style="text-transform:lowercase">egg</h3>
                 </section>
                 <section>
                     <h2>重作</h2>
@@ -522,7 +534,7 @@
                         </div>
                         <div class="box fragment">
                             <div class="impt">重點</div>
-                            <p>在家<br>權限<br>上傳、下載<br>資安</p>
+                            <p>在家<br>權限<br>上傳、下載<br>資安！</p>
                         </div>
                     </div>
                 </section>
@@ -564,10 +576,10 @@
                 <section>
                     <h2>入口網站功能</h2>
                     <ul>
-                        <li>入口：集所有通道的地圖、連結、網頁的閘口</li>
-                        <li>訊息公告：公文公告、彙整統計未完成事項</li>
-                        <li>訊息備份：教案、法規、辦法、報表</li>
-                        <li>作業系統：連結、處理、溝通、聯繫</li>
+                        <li>單一入口：集所有通道連結、網頁的閘口</li>
+                        <li>資訊公告：公文、教案、法規、辦法、報表</li>
+                        <li>訊息通知：聯繫、彙整統計未完成事項</li>
+                        <li>作業系統：處理、溝通、聯繫</li>
                         <li>客製化：因權限(被動)、我的最愛(主動)</li>
                         <li>各部室可以自己經營一個網頁</li>
                         <li>照會簡覆表</li>
@@ -589,20 +601,19 @@
                 </section>
 
                 <section>
-                    <div class="tcm">
-                        <div class="downbox">
-                            <h2 style="padding: .3em">如何打造</h2>
+                    <h2>如何打造</h2>
+                    <div class="tcm2">
+                        <div class="bottombox">                            
                             <ul>
-                                <li>邏輯</li>
+                                <li>單一</li>
                                 <li>全面</li>
-                                <li>乾淨</li>
+                                <li>邏輯</li>
                                 <li>UI/UX</li>
                             </ul>
                         </div> 
-                        <div class="downbox">
-                            <h2 style="padding: .3em">Demo</h2>
+                        <div class="bottombox">
                             <!-- <a href="login.html"><img src="imgs/html.png" target="_blank"></a> -->
-                            <a href="login.html"><i class="fas fa-file-code" style="font-size:3em;text-decoration:none;padding-top:0.2em;"></i></a>
+                            <a href="login.html"><i class="fas fa-file-code"></i></a>
                         </div> 
                     </div>
                 </section>
