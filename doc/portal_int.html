@@ -245,7 +245,9 @@
             .bottombox .fas{
                 font-size: 3em;
             }
-
+            .bottomTitle{
+                margin:.65em 0 .3em 0;
+            }
 
 
 
@@ -397,9 +399,78 @@
                                 <form>
                                     <div class=formTitle style="color: #111; font-weight: 600;">覆核</div>
                                     <p style="margin: 80px 0; color: #aaa;">請假內容</p>
+                                    <!-- <input type="checkbox" name="vehicle1" value="Bike">
+                                    <label for="vehicle1"> I have a bike</label> -->
+                                    <label class="main">蔡英文
+                                        <input type="checkbox">
+                                        <span class="w3docs"></span>
+                                      </label>
                                     <input type="submit" value="退回">
                                     <input type="submit" value="確認" style="background: green;">
                                 </form>
+                                <style>
+                                    .main {
+                                        display: block;
+                                        position: relative;
+                                        padding-left: 1.2em;
+                                        /* margin-bottom: 15px; */
+                                        cursor: pointer;
+                                        font-size: .6em;
+                                        color: #111;
+                                        font-weight: 400;
+
+                                    }
+                                    input[type=checkbox] {
+                                        visibility: hidden;
+                                    }
+                                    .w3docs {
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        height: .8em;
+                                        width: .8em;
+                                        /* background-color: black; */
+                                        margin-left: 1.2em;
+                                        border: 1px solid #111;
+                                    }
+                                    .main:hover input ~ .w3docs {
+                                        background-color: orange;
+                                    }
+                                    /* Specify the background color to be shown when checkbox is active */
+                                    .main input:active ~ .w3docs {
+                                        background-color: white;
+                                    }
+                                    /* Specify the background color to be shown when checkbox is checked */
+                                    .main input:checked ~ .w3docs {
+                                        background-color: #111;
+                                    }
+                                    /* Checkmark to be shown in checkbox */
+                                    /* It is not be shown when not checked */
+                                    .w3docs:after {
+                                        content: "";
+                                        position: absolute;
+                                        display: none;
+                                    }
+                                    /* Display checkmark when checked */
+                                    .main input:checked ~ .w3docs:after {
+                                        display: block;
+                                    }
+                                    /* Styling the checkmark using webkit */
+                                    /* Rotated the rectangle by 45 degree and 
+                                    showing only two border to make it look
+                                    like a tickmark */
+                                    .main .w3docs:after {
+                                        left: 8px;
+                                        bottom: 5px;
+                                        width: 6px;
+                                        height: 12px;
+                                        border: solid white;
+                                        border-width: 0 4px 4px 0;
+                                        -webkit-transform: rotate(45deg);
+                                        -ms-transform: rotate(45deg);
+                                        transform: rotate(45deg);
+                                    }
+                                </style>
                                 
                             </div>
                         </div>
@@ -501,8 +572,8 @@
                     </section>
                 </section>
 
-                <section>
-                    <h2>網站</h2>
+                <!-- <section>
+                    <h2>入口網站</h2>
                     <p class="topbox">結合以上三個需求，<span style="color:deeppink">整合</span>至一個網站，姑且稱之為「入口網站」。</p>
                     <div class="tcm">
                         <div class="downbox">
@@ -516,7 +587,47 @@
                             <p>網站開始塞進每個部門的需求，作為訊息、交流、申請、申報、核准等工具。</p>
                         </div>
                     </div>                    
+                </section> -->
+                <section>
+                     <section>
+                    <h2>入口網站</h2>
+                    <p class="topbox">結合以上三個需求，<span style="color:deeppink">整合</span>至一個網站，姑且稱之為「入口網站」。</p>
+                            <ul>
+                                <li>隨時隨地</li>
+                                <li>登入入口的單一帳號、密碼</li>
+                                <li>特定權限因「人」而異</li>
+                            </ul>                 
+                    </section>
+                    <section>
+                        <h2>圖示</h2>
+                        <div class="tcm">
+                            <div class="downbox">
+                                <img src="imgs/portal1.png">
+                            </div>
+                            <div class="downbox">
+                                <img src="imgs/portal2.png">
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>單一入口網站</h2>
+                        <p>入口網站開始塞進每個部門的需求，作為訊息、交流、申請、申報、核准等工具及作業系統。</p>
+                    </section>
+                    <section>
+                        <h2>回到陽信</h2>
+                        <div class="tcm">
+                            <div class="downbox">
+                                <div class="bottomTitle"><u>陰性</u></div>
+                                <img src="imgs/portal3.png">
+                            </div>
+                            <div class="downbox">
+                                <div class="bottomTitle"><u>陽性</u></div>
+                                <img src="imgs/portal4.png">
+                            </div>
+                        </div>
+                    </section>
                 </section>
+               
 
 
 
@@ -613,7 +724,7 @@
                         </div> 
                         <div class="bottombox">
                             <!-- <a href="login.html"><img src="imgs/html.png" target="_blank"></a> -->
-                            <a href="login.html"><i class="fas fa-file-code"></i></a>
+                            <a href="login.html" target="_blank"><i class="fas fa-file-code"></i></a>
                         </div> 
                     </div>
                 </section>
