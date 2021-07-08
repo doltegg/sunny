@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=consolas:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Modal Popup Box</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        } 
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #2196f3;
+        }
+        .btn{
+            position: relative;
+            padding: 15px 20px;
+            background: #fff;
+            font-size: 18px;
+            display: inline-block;
+            text-decoration: none;
+            color: #03a9f4;
+            cursor: pointer;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.5s;
+        }
+        .btn:hover{
+            letter-spacing: 4px;
+        }
+        #popup{
+            position: fixed;
+            top: -100%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 1000;
+            background: #fff;
+            width: 450px;
+            padding: 80px 50px 50px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transition: 0.5s;
+            visibility: hidden;
+        }
+        #popup.active{
+            visibility: visible;
+            top: 50%;
+        }
+        #popup .content{
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #popup .content img{
+            max-width: 80px;
+        }
+        #popup .content h2{
+            font-size: 24px;
+            font-weight: 500;
+            color: #333;
+            margin: 20px 0 10px;            
+        }
+        #popup .content p{
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+        #popup .content .inputBox{
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+        #popup .content .inputBox input{
+            width: 100%;
+            border: 1px solid rgba(0,0,0,0.2);
+            padding: 15px;
+            outline: none;
+            font-size: 18px;
+        }
+        #popup .content .inputBox input[type="submit"]{
+            max-width: 150px;
+            background: #03a9f4;
+            color: #fff;
+            border: none;
+        }
+        .close{
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+    <a class="btn" onclick="popupToggle();">Subscribe Us</a>
+    <div id="popup">
+        <div class="content">
+            <img src="imgs/email2.png" alt="">
+            <h2>Join Our Newletter</h2>
+            <p> Dolore ex, reprehenderit debitis nihil dolorum hic possimus, eum necessitatibus voluptate molestias porro sed?</p>
+            <div class="inputBox">
+                <input type="email" placeholder="Enter Email">
+            </div>
+            <div class="inputBox">
+                <input type="submit" placeholder="Sign Up" class="btn">
+            </div>            
+        </div>
+        <a class="close" onclick="popupToggle();"><img src="imgs/close2.png" alt=""></a>
+    </div>
+
+    <script>
+        function popupToggle(){
+            const popup = document.getElementById('popup');
+            popup.classList.toggle('active')
+
+        }
+    </script>
+    
+</body>
+</html>
