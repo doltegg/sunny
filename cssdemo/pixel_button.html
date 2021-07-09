@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=consolas:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Pixel Button</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif;
+        } 
+        body{
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        a{
+            position: relative;
+            width: 180px;
+            height: 60px;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 60px;
+            letter-spacing: 2px;
+            margin: 20px;
+            transition: 0.5s;
+        }
+        a:hover{
+            background: #ec0b36 url(imgs/pixel.png);
+            transition-delay: 0.8s;
+            background-size: 180px;
+            animation: animate 0.8s steps(8) forwards;
+        }
+        a:nth-child(2):hover{
+            background: #730bec url(imgs/pixel2.png);
+            transition-delay: 0.8s;
+            background-size: 180px;
+            animation: animate 0.8s steps(8) forwards;
+        }
+        @keyframes animate{
+            0%{
+                background-position-y:0;
+            }
+            100%{
+                background-position-y:-480px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <a href="#">pixel button</a>
+    <a href="#">Hover effects</a>
+    
+</body>
+</html>
