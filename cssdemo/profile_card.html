@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=consolas:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Creative User Cards Hover Effects</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif;
+        } 
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container{
+            position: relative;
+            width: 1280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .container .cards{
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(#2196f3,#2196f3 30%,#1d3548 30%, #1d3548);
+            margin: 10px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .container .cards .imgBx{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s;
+            z-index: 10000;
+            border-radius: 20px;
+            overflow: hidden;
+            transform-origin: top;
+            /* display: none; */
+        }
+        .container .cards:hover .imgBx{
+            transform: translateY(30px) scale(0.5);
+        }
+        .container .cards .imgBx img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .container .cards .content{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 30px;
+            transform: translateY(100%);
+            transition: 0.5s;
+        }
+        .container .cards:hover .content{
+            transform: translateY(0);
+        }
+        .container .cards .content .details{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .container .cards .content .details h2{
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+        .container .cards .content .details h2 span{
+            font-size: 0.8em;
+            font-weight: 400;
+            color: #03a9f4;
+        }
+        .container .cards .content .details .social_icons{
+            position: relative;
+            display: flex;
+            margin-top: 5px;
+        }
+        .container .cards .content .details .social_icons li{
+            list-style: none;
+            margin: 4px;
+        }
+        .social_icons li a{
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #294d69;
+            border-radius: 50%;
+            font-size: 1.5em;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+        .social_icons li a:hover{
+            transform: rotate(360deg);
+            background: #03a9f4;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="cards">
+            <div class="imgBx">
+                <img src="imgs/person1.jpg">
+            </div>
+            <div class="content">
+                <div class="details">
+                    <h2>John Doe<br><span>Senior Designer</span></h2>                
+                    <ul class="social_icons">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="imgBx">
+                <img src="imgs/person2.jpg">
+            </div>
+            <div class="content">
+                <div class="details">
+                    <h2>John Doe<br><span>Senior Designer</span></h2>                
+                    <ul class="social_icons">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="imgBx">
+                <img src="imgs/person3.jpg">
+            </div>
+            <div class="content">
+                <div class="details">
+                    <h2>John Doe<br><span>Senior Designer</span></h2>                
+                    <ul class="social_icons">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="imgBx">
+                <img src="imgs/person4.jpg">
+            </div>
+            <div class="content">
+                <div class="details">
+                    <h2>John Doe<br><span>Senior Designer</span></h2>                
+                    <ul class="social_icons">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
