@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=consolas:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Responsive Header Using CSS</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif;
+        } 
+        header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 100px;
+            z-index: 10;
+            background: #5b639c;
+        }
+        header .logo{
+            position: relative;
+            color: #fff;
+            font-size: 1.5em;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        header .navigation{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+        header .navigation li{
+            list-style:none;
+            margin: 0 10px;
+        }
+        header .navigation li a{
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        header .navigation li a:hover{
+            color: #ffeb3b;
+        }
+        header .search{
+            position: relative;
+            width: 300px;
+            height: 40px;
+        }
+        header .search input{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            background: transparent;
+            outline: none;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            padding: 0 10px 0 45px;
+        }
+        header .search input::placeholder{
+            color: #fff;
+        }
+        header .search .fa{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            left: 10px;
+            border-right: 1px solid #fff;
+            padding-right: 10px;
+        }
+        .banner{
+            background: #434978;
+            padding: 200px 100px 100px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .content{
+            max-width: 700px;
+        }
+        .banner .content h2{
+            color: #fff;
+            font-size: 3em;
+        }
+        .banner .content p{
+            color: #fff;
+            font-size: 1em;
+        }
+        .banner .content a{
+            display: inline-block;
+            background: #fff;
+            color: #434978;
+            padding: 8px 20px;
+            text-decoration: none;
+            font-weight: 600px;
+            margin-top: 20px;
+        }
+        .banner .image{
+            filter: invert(1);
+            max-width: 400px;
+            margin-left: 50px;
+        }
+        @media(max-width: 991px){
+            header{
+                padding: 10px 20px;
+                flex-direction: column;
+            }
+            .banner{
+                padding: 150px 20px 50px;
+                flex-direction: column-reverse;
+            }
+            .banner .image{
+                margin-left: 0;
+                max-width: 80%;
+            }
+            .banner .content h2{
+                font-size: 2em;
+            }
+        }
+        @media(max-width: 600px){
+            header .search{
+                width: 100%;
+            }
+            .banner .image{
+                margin-top: 30px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">My Logo</a>
+        <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Latest</a></li>
+            <li><a href="#">My List</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="content">
+            <h2>Responsive Header Design</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aspernatur consectetur autem recusandae! Hic, laborum nesciunt labore deserunt illum, iure nisi tempore impedit amet ea rerum voluptatum obcaecati, eius atque.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat repudiandae, iste quod similique labore asperiores eius omnis! Consectetur adipisci iure ullam sed enim sunt eius non consequuntur autem!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et harum doloremque consequuntur alias itaque placeat quasi minima deserunt ipsum, veritatis aut, repellendus minus non at! Nam iure similique impedit unde!
+            </p>
+            <a href="#">Read More</a>
+        </div>
+        <img src="imgs/computer.png" class="image">
+    </div>
+    
+</body>
+</html>
