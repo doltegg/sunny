@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Section UI Design</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=consolas:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif;
+        } 
+        section{
+            width: 100%;
+            height: 100vh;
+            background: url(imgs/bg.jpg);
+            background-size: cover;
+        }
+        section .leftBox{
+            width: 50%;
+            height: 100%;
+            float: left;
+            padding: 50px;
+        }
+        section .leftBox .content{
+            color: #fff;
+            background: rgba(0,0,0,.5);
+            padding: 40px;
+            transition: .5s;
+        }
+        section .leftBox .content:hover{
+            background: #e91e63;
+        }
+        section .leftBox .content h1{
+            margin: 0;
+            padding: 0;
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+        section .leftBox .content p{
+            margin: 10px 0 0;
+            padding: 0;
+        }
+        section .events{
+            position: relative;
+            box-sizing: border-box;
+            width: 50%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            float: right;
+        }
+        section .events ul{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0;
+            padding: 40px;            
+        }
+        section .events ul li{
+            list-style: none;
+            background: #fff;
+            box-sizing: border-box;
+            height: 200px;
+            margin: 15px 0;
+        }
+        section .events ul li .time{
+            position: relative;
+            padding: 20px;
+            background: #262626;
+            width: 30%;
+            height: 100%;
+            float: left;
+            text-align: center;
+            transition: .5s;
+        }
+        section .events ul li:hover .time{
+            background: #e91e63;
+        }
+        section .events ul li .time h2{
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: #fff;
+            font-size: 60px;
+            line-height: 30px;
+        }
+        section .events ul li .time h2 span{
+            font-size: 30px;
+        }
+        section .events ul li .details{
+            padding: 20px;
+            background: #fff;
+            box-sizing: border-box;
+            width: 70%;
+            height: 100%;
+            float: left;
+        }
+        section .events ul li .details h3{
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+        }
+        section .events ul li .details p{
+            position: relative;
+            margin: 6px 0 0;
+            padding: 0;
+            font-size: 15px;
+        }
+        section .events ul li .details a{
+            display: inline-block;
+            text-decoration: none;
+            /* text-transform: uppercase; */
+            padding: 6px 15px;
+            border: 2px solid #262626;
+            margin-top: 15px;
+            font-size: 18px;
+            transition: .5s;
+        }
+        section .events ul li .details a:hover{
+            background: #e91e63;
+            color: #fff;
+            border-color: #e91e63;
+        }
+        @media(max-width:991px){
+            section{
+                height: 100%;
+                background-position: center;
+            }
+            section .leftBox{
+                width: 100%;
+                height: auto;
+                float: none;
+                padding: 20px;
+            }
+            section .events{
+                width: 100%;
+                height: auto;
+                background: transparent;
+                float: none;                
+            }
+            section .leftBox .content{
+                padding: 20px;
+            }
+            section .leftBox .content h1{
+                font-size: 30px;
+            }
+            section .events ul{
+                position: relative;
+                transform: translateY(0px);
+                padding: 0 20px 20px;
+            }
+            section .events ul li{
+                height: auto;
+                background: rgba(255,255,255,0.8);
+            }
+            section .events ul li .time{
+                width: 80px;
+                height: 80px;
+                padding: 0;
+            }
+            section .events ul li .time h2{
+                font-size: 30px;
+                line-height: 24px;
+            }
+            section .events ul li .time h2 span{
+                font-size: 20px;
+            }
+            section .events ul li .details{
+                width: 100%;
+                float: none;
+                padding-left: 100px;
+                background: transparent;
+            }
+            section .events ul li .details a{
+                padding: 5px 10px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <section>
+        <div class="leftBox">
+            <div class="content">
+                <h1>Events And Shows</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore sint neque molestiae quae tenetur quos inventore, dignissimos consequuntur sunt? Magni non molestiae fuga beatae eum, ipsam repellat odio ab sequi?</p>
+            </div>
+        </div>
+        <div class="events">
+            <ul>
+                <li>
+                    <div class="time">
+                        <h2>15<br><span>July</span></h2>
+                    </div>
+                    <div class="details">
+                        <h3>Where does it come from</h3>
+                        <p>Comodi earum adipisci non neque repudiae aspernatur odio sint possi mus eos, minus eligendi tempore ducimus.</p>
+                        <a href="#">View Detail</a>
+                    </div>
+                    <div style="clear: both;"></div>
+                </li>
+                <li>
+                    <div class="time">
+                        <h2>15<br><span>July</span></h2>
+                    </div>
+                    <div class="details">
+                        <h3>Where does it come from</h3>
+                        <p>Comodi earum adipisci non neque repudiae aspernatur odio sint possi mus eos, minus eligendi tempore ducimus.</p>
+                        <a href="#">View Detail</a>
+                    </div>
+                    <div style="clear: both;"></div>
+                </li>
+                <li>
+                    <div class="time">
+                        <h2>15<br><span>July</span></h2>
+                    </div>
+                    <div class="details">
+                        <h3>Where does it come from</h3>
+                        <p>Comodi earum adipisci non neque repudiae aspernatur odio sint possi mus eos, minus eligendi tempore ducimus.</p>
+                        <a href="#">View Detail</a>
+                    </div>
+                    <div style="clear: both;"></div>
+                </li>
+            </ul>
+        </div>
+        
+    </section>
+    
+</body>
+</html>
