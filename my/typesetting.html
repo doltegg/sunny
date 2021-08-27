@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="../dist/reveal.css">
 		<link rel="stylesheet" href="../dist/theme/black.css" id="theme">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
@@ -17,26 +18,73 @@
         <!-- 另存pdf： ?print-pdf -->
 
         <style>
-            *{
-                font-family: 'Raleway','Noto Sans TC', 微軟正黑體,  sans-serif;
+            body .reveal .slides *{
+            font-family: 'Raleway', sans-serif, 'Noto Sans TC', 微軟正黑體;
             }
-            .reveal .sx-letter{
+            .reveal .slides .subject{
+                font-weight: 900;
+                font-size:6.5rem;
+            }
+            .author{
                 text-transform: lowercase;
+                font-size: 3rem;
+                color:#bbb;
+                font-weight: 700;
             }
             .reveal .date-form{
-                padding-top:1.6rem;  
-            }     
+                padding-top:1.6rem; 
+                color: yellow; 
+            } 
             .reveal h1{
                 font-weight: 700;
             }  
-            .reveal section h2 { 
-                color:#4CAF50; 
-            }     
+            .reveal .slides .chapter{
+                color:gray;
+                text-transform: capitalize;
+            }
+            .pink{
+                color: pink;
+            }
             .small{
                 font-size: 75%;
-                color: #bbb;
-                line-height: 1;
             }
+            .container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .box{
+                border: 2px solid #aaa;
+                border-radius: 1rem;
+                margin: 0 .5rem;
+            }
+            .subtitle{
+                color: yellow;
+                font-size: 3.5rem;
+                margin: 1rem; 
+            }
+            .content{
+                font-size: 2.5rem;
+            }
+            .quote{
+                font-size: 2rem; 
+                line-height: 1.5;
+            }
+
+
+            .sx-letter{
+                text-transform: lowercase;
+            }
+
+
+
+
+
+            
+            .reveal section h2{ 
+                color:#4CAF50; 
+            }     
+            
             .orange{
                 color:orange;
             }
@@ -67,20 +115,35 @@
 		<div class="reveal">
 			<div class="slides">
                 <section>
-                    <h1 style="font-family: 'Noto Sans TC'; font-weight: 900;font-size:6.5rem">排版</h1>
+                    <h1 class="subject">排版兩三事</h1>
+                    <div class="author">egg</div>
                     <h4 class="date-form">2021.4.7</h4>
                 </section>
 
                 <section>
+                    <h2>目錄</h2>
+                    <ol>
+                        <li>序</li>
+                        <li>字</li>
+                        <li>行</li>
+                        <li>段</li>
+                        <li>頁</li>
+                        <li>表</li>
+                        <li>圖</li>
+                        <li>跋</li>
+                    </ol>
+                </section>
+
+                <section>
                     <section>
-                        <h1 style="color:gray;text-transform:capitalize">Chapter 0</h1>
-                        <h1 style="font-family: 'Noto Sans TC';font-weight:700">序</h1>
+                        <h1 class="chapter">Chapter 0</h1>
+                        <h1>序</h1>
                     </section>
                     <section>
                         <h2>排版的三大功能</h2>
                         <p>易讀、<span class=fragment>易讀、</span><span class=fragment>易讀</span></p>
                     </section>
-                    <section>
+                    <!-- <section>
                         <h2>看範例</h2>
                         <ul>
                             <li>履歷表</li>
@@ -88,64 +151,257 @@
                             <li>Excel</li>
                             <li>PowerPoint</li>
                         </ul>
-                    </section>
+                    </section> -->
                     <section>
-                        <h2></h2>
-                        
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h1 style="color:gray;text-transform:capitalize">Chapter 1</h1>
-                        <h1 style="font-family: 'Noto Sans TC';font-weight:700">字</h1>
-                    </section>
-                    <section>
-                        <h2></h2>
+                        <h2>版面</h2>
                         <ul>
-                            <li>字型與搭配</li>
-                            <li>中、英字排列</li>                            
-                            <li>字距</li>
-                            <li>全形、半形</li>
-                            <li>標點符號</li>
+                            <li>最容易受輕忽，也最受誤導。</li>
+                            <li>版面這件事，如果不在易讀上講究，還有甚麼值得講究？</li>
                         </ul>
                     </section>
                     <section>
-                        <h2>報紙是什麼字體？</h2>
-                        <img src="imgs/newspaper.jpg" class=fragment alt="">
+                        <h2>易讀</h2>
+                        <p class="orange">《編輯可以可以不知道排版嗎？》老貓</p> 
+                        <pre>
+                            <code data-trim data-noescape class="quote">
+                                易讀性指大量文字讀起來舒服，不易疲累，
+                                易讀性的最高境界是「透明」，
+                                你根本沒注意到你正在讀字。
+
+                                現在排版變成小孩遊戲了，
+                                人人都會做，都會改，都會變化，
+                                而這正是麻煩所在。
+
+                                排版的目的已經無人聞問，
+                                大家都在追求漂亮、活潑、生動、炫，
+                                只管好不好看，卻不管好不好讀。
+                            </code>    
+                        </pre>                        
                     </section>
-                    
+                    <section>
+                        <h2>品味</h2>
+                        <p class="orange">《cwTex 排版系統》吳聰敏</p>  
+                        <pre>
+                            <code data-trim data-noescape class="quote">
+                                大部分的桌上排版系統所排出的文稿，
+                                其品質只有一句話可以形容：糟透了！
+                                主要的問題不在於硬體，
+                                也不在於軟體，
+                                而在於排版者的排版知識與品味。
+                            </code>    
+                        </pre> 
+                    </section>
+                    <section>
+                        <h2>藝術</h2>
+                        <p class="orange">《Word 排版藝術》侯捷</p> 
+                        <pre>
+                            <code data-trim data-noescape class="quote">
+                                藝術和工程彷彿在光譜兩端，
+                                但藝術無處不在，
+                                不帶 dirty work 的工程，
+                                就是一種藝術。
+                            </code>    
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>大家都會排版？</h2>
+                        <div class="container">
+                            <div class="box">
+                                <div class="subtitle">醜</div>
+                                <p class="content">形貌陋劣、難看。惡劣的、不好的。汙穢。</p>
+                                <p class="small pink">(理解的成本好高)</p>
+                            </div>
+                            <div class="box">
+                                <div class="subtitle">髒</div>
+                                <p class="content">形貌陋劣、難看。惡劣的、不好的。汙穢。</p>
+                                <p class="small pink">(理解的成本好高)</p>
+                            </div>
+                            <div class="box">
+                                <div class="subtitle">不入流</div>
+                                <p class="content">形貌陋劣、難看。惡劣的、不好的。汙穢。</p>
+                                <p class="small pink">(理解的成本好高)</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>參考書目</h2>
+                        <div class="picBox">
+                            <img class="upx" src="https://doltegg.github.io/egg/others/egg/2020/word.jpg" height="260px">
+                            <img class="upx" src="https://doltegg.github.io/egg/others/egg/2020/cwtex.jpg" height="260px">
+                        </div>
+                        <ul style="font-size: 30px">
+                            <li>
+                                <a href="http://homepage.ntu.edu.tw/~ntut019/cwtex/Write-typeset.pdf" target="_blank">寫作與排版</a>
+                            </li>
+                            <li>
+                                <a href="http://www.econ.ntu.edu.tw/ter/TER_%E8%AB%96%E6%96%87%E8%A6%8F%E7%AF%84_2019.pdf" target="_blank">《經濟論文叢刊》 文稿規範</a>
+                            </li>			
+                        </ul><br>
+                    </section>
+                    <section>
+                        <h2>排版工具</h2>
+                        <ul>
+                            <li>幕前排版</li>
+                            <ul>
+                                <li>WYSIWYG: What You See Is What You Get.</li>
+                                <li>例如：Word, Excel, PowerPoint,...</li>
+                                <li>缺點：編排長篇文章不易，較適合文字編輯，而非排版。</li>
+                            </ul>
+                            <li>幕後排版</li>
+                            <ul>
+                                <li>WYTIWYG: What You Think Is What You Get.</li>
+                                <li>例如：MarkDown, TeX, PE2, *.html,...</li>
+                                <li>缺點：入門障礙高。</li>
+                            </ul>
+                        </ul>
+                    </section>
                 </section>
 
                 <section>
                     <section>
-                        <h1 style="color:gray;text-transform:capitalize">Chapter 2</h1>
-                        <h1 style="font-family: 'Noto Sans TC';font-weight:700">行</h1>
+                        <h1 class="chapter">Chapter 1</h1>
+                        <h1>字</h1>
                     </section>
                     <section>
-                        <h2></h2>
+                        <h2>字體</h2>
                         <ul>
-                            <li>標題</li>
-                            <li>避頭點</li>
-                            <li>縮排、凸排</li>
+                            <li>襯體</li>
+                            <li><a href="imgs/newspaper.jpg">報紙字體</a></li>
+                            <li>微軟預設字體</li>
+                            <li>蘋果預設字體</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>標點符號</h2>
+                        <ul>
+                            <li>中式標點符號</li>
+                            <li>英式標點符號</li>
+                            <li>亂式標點符號</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>全形、半形</h2>
+                        <ul>
+                            <li>全形數字</li>
+                            <li>全形標點符號</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>字型與搭配</h2>
+                        <ul>
+                            <li>中文字排版</li>
+                            <li>英文字牌版</li>
+                            <li>中英文字牌版</li>
+                            <li>數學式排版</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>避頭點</h2>
+                        <ul>
+                            <li>避頭點：點號不置頂</li>
+                            <li>避尾點：左標號不置底</li>
+                        </ul>
+                    </section>                    
+                    <section>
+                        <h2>空白</h2>
+                        <p class="pink">很特殊的存在，讓人又愛又恨</p>
+                        <ul>
+                            <li>必要的空白</li>
+                            <li>不必要的空白</li>
+                            <li>惱人的空白</li>
+                            <li>可愛的空白</li>
+                            <li>他媽的空白</li>
+                        </ul>
+                    </section> 
+                    <section>
+                        <h2>字距</h2>
+                    </section>                   
+                </section>
+
+                <section>
+                    <section>
+                        <h1 class="chapter">Chapter 2</h1>
+                        <h1>行</h1>
+                    </section>
+                    <section>
+                        <h2>對齊</h2>
+                        <ul>
+                            <li>靠左</li>
+                            <li>靠右</li>
+                            <li>靠 <span class="gray small">(蔡英文的論文)</span></li>
+                            <li>中間</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>行高</h2>
+                        <ul>
+                            <li>中文</li>
+                            <li>英文</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>標題</h2>
+                        <ul>
+                            <li>字體</li>
+                            <li>字族</li>
+                            <li>行高 (段距)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>換行</h2>
+                        <ul>
+                            <li>Enter</li>
+                            <li>Shift + Enter</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>空行</h2>
+                        <p>Enter + Enter + Enter + Enter + Enter + Enter</p>
+                    </section>
+                    <section>
+                        <h2>定位點</h2>
+                        <ul>
+                            <li>靠左</li>
+                            <li>靠右</li>
+                            <li>置中</li>
+                        </ul>
+                    </section>                    
+                </section>
+
+                <section>
+                    <section>
+                        <h1 class="chapter">Chapter 3</h1>
+                        <h1>段</h1>
+                    </section>
+                    <section>
+                        <h2>段距</h2>
+                        <ul>
+                            <li>與前段距</li>
+                            <li>與後段距</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>縮排</h2>
+                        <ul>
+                            <li>首行縮排</li>
+                            <li>首行凸排</li>
                             <li>定位點</li>
-                            <li>行距或行高</li>
                         </ul>
                     </section>
-                    
-                </section>
-
-                <section>
                     <section>
-                        <h1 style="color:gray;text-transform:capitalize">Chapter 3</h1>
-                        <h1 style="font-family: 'Noto Sans TC';font-weight:700">段</h1>
-                    </section>
-                    <section>
-                        <h2></h2>
+                        <h2>清單</h2>
                         <ul>
-                            <li>段距</li>
-                            <li>空行</li>
-                            <li></li>
+                            <li>縮排</li>
+                            <li>自動 vs. 手動編號</li>
+                            <li>階層</li>
+                            <li>樣式設定</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>空段</h2>
+                        <ul>
+                            <li>斷行 vs. 斷段</li>
+                            <li>空行 vs. 空段</li>
                         </ul>
                     </section>
                     
@@ -153,8 +409,8 @@
 
                 <section>
                     <section>
-                        <h1 style="color:gray;text-transform:capitalize">Chapter 4</h1>
-                        <h1 style="font-family: 'Noto Sans TC';font-weight:700">頁</h1>
+                        <h1 class="chapter">Chapter 4</h1>
+                        <h1>頁</h1>
                     </section>
                     <section>
                         <h2></h2>
@@ -169,8 +425,8 @@
 
                 <section>
                     <section>
-                        <h1 style="color:gray;text-transform:capitalize">Chapter 5</h1>
-                        <h1 style="font-family: 'Noto Sans TC';font-weight:700">表</h1>
+                        <h1 class="chapter">Chapter 5</h1>
+                        <h1>表</h1>
                     </section>
                     <section>
                         <h2></h2>
@@ -201,16 +457,16 @@
 
                 <section>
                     <section>
-                        <h1 style="color:gray;text-transform:capitalize">Chapter 6</h1>
-                        <h1 style="font-family: 'Noto Sans TC';font-weight:700">圖</h1>
+                        <h1 class="chapter">Chapter 6</h1>
+                        <h1>圖</h1>
                     </section>
                     
                 </section>
 
                 <section>
                     <section>
-                        <h1 style="color:gray;text-transform:capitalize">Chapter 7</h1>
-                        <h1 style="font-family: 'Noto Sans TC';font-weight:700">跋</h1>
+                        <h1 class="chapter">Chapter 7</h1>
+                        <h1>跋</h1>
                     </section>
                     <section>
                         <h2></h2>
