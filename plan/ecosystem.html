@@ -310,19 +310,23 @@
         .expert{
             min-height: 100vh;
         }
-        .expert .titleText{
-            color: #fff;
-        }
         .expert{
-            background: url(images/eco/code.jpg);
+            background: url(images/eco/code.jpeg);
             background-size: cover;            
         }
         .expert .content{
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            flex-direction: row;
+            align-items: center;
+            /* flex-wrap: wrap; */
+            flex-direction: column;
             margin-top: 40px;
+            
+        }
+        .expert .content .report{
+            background: rgba(255,255,255,0.4);
+            margin: 15px;
+            padding: 15px;
         }
         .expert .content .box{
             width: 250px;
@@ -458,8 +462,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 40px;
-            
+            margin-top: 40px;            
         }
         .contact .content .box{
             width: 340px;
@@ -481,7 +484,7 @@
         }
         .contact .content .box .fa{
             color: #555;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
         .contact .content .info2{
             width: 15rem;
@@ -492,36 +495,16 @@
             padding-left: 10px;
             background: #F2F8EE;
         }
-        /* .copyrightText{
-            padding: 8px 40px;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            text-align: center;
+        footer{
+            height: 70px;
+            background: linear-gradient(to top, #11213A, #fff 65%);
+            color: #5f5f63;
+            padding: 30px 60px 0 15px; 
+            font-size: 1em; 
+            text-align: right;   
         }
-        .copyrightText p{
-            color: #333;
-        }
-        .copyrightText a{
-            color: #ff0157;
-            font-weight: 500;
-            text-decoration: none;
-        } */
-
-
-
         
-        
-        /* .testimonialBox .details h3{
-            font-size: 16px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            color: #2196f3;
-            line-height: 1.1em;
-        }
-        .testimonialBox .details h3 span{
-            font-size: 12px;
-            color: #666;
-        } */
-        
+
 
 
         @media(max-width:991px){
@@ -610,6 +593,9 @@
                 margin: 10px;
                 padding: 20px;
             }
+
+    
+
             /* .contactForm{
                 padding: 35px 40px;
                 max-width: 500px;
@@ -636,7 +622,7 @@
             <li><a href="#banner" onclick="toggleMenu();">首頁</a></li>
             <li><a href="#ecosystem" onclick="toggleMenu();">生態圈</a></li>
             <li><a href="#measure" onclick="toggleMenu();">推動措施</a></li>
-            <li><a href="#qa" onclick="toggleMenu();">Q & A</a></li>
+            <li><a href="#qa" onclick="toggleMenu();">QA</a></li>
             <li><a href="#reports" onclick="toggleMenu();">報表</a></li>
             <!-- <li><a href="#testimonials" onclick="toggleMenu();">Testimonials</a></li> -->
             <li><a href="#contact" onclick="toggleMenu();">聯絡我們</a></li>
@@ -867,12 +853,12 @@
             <div class="box">
                 <h3>2. 會員</h3>
                 <p class="ques">Q 商店街如何知道我的客戶有點數？</p>
-                <p class="ans">A 資訊處鄭大叔主張銀行把客戶的電話及姓名傳給商店街，這樣就可以核對手機號碼與客戶了。鄭大叔信誓旦旦說法遵同意的，法遵大人最大了。聽鄭大叔的意思是法遵比憲法還大、比法院還大。</p>
+                <p class="ans">A 資訊處鄭大叔主張銀行把客戶的電話及姓名傳給商店街，這樣就可以核對客戶的手機號碼了。</p>
             </div>
             <div class="box">
                 <h3>3. 會員權益</h3>
                 <p class="ques">Q 真的不違反個資法嗎？</p>
-                <p class="ans">A 客戶在同意成為商店街會員時........。</p>
+                <p class="ans">A 客戶在同意成為商店街會員時........。鄭大叔信誓旦旦說法遵同意的，法遵大人最大了。看樣子是本行的法遵比金管會還大、甚至比法院還大。</p>
             </div>
             <div class="box">
                 <h3>4. 點數</h3>
@@ -922,6 +908,21 @@
             <h2 class="titleText"><span>報</span>表</h2>
             <!-- <p>Lorem, ipsum dolor molestiae expedita corrupti? Officia, placeat? Delectus eum dolor animi dolorum impedit velit omnis voluptatibus voluptates.</p> -->
         </div>
+        <div class="content">
+            <div class="report">
+                <h3>會員數、推薦數、app 下載數、MAU</h3>
+            </div> 
+            <div class="report">   
+                <h3>發點數、消費點數、點數使用率</h3>
+            </div>
+        </div>
+        
+
+
+
+
+
+
         <!-- <div class="content">
             <div class="box">
                 <div class="imgBx">
@@ -1069,6 +1070,14 @@
             </div>
         </div>
     </section>
+    <footer>
+        風吹鴨蛋殼，財去人安樂
+    </footer>
+
+
+
+
+
 
     <!-- <div class="copyrightText">
         <p>Copyright 2021 <a href="#">Online Tutorials</a>. All Right Reserved</p>
