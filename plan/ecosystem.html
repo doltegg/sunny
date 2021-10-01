@@ -318,10 +318,10 @@
         .expert{
             min-height: 100vh;
         }
-        .expert{
+        /* .expert{
             background: url(images/eco/code.jpeg);
             background-size: cover;            
-        }
+        } */
         .expert .content{
             display: flex;
             justify-content: center;
@@ -393,7 +393,7 @@
         .contact .content .info2{
             width: 15rem;
             height: 1.75rem;
-            border: 1px solid #888;
+            border: 1px solid #ccc;
             border-radius: .25rem;
             margin-left: .4rem;
             padding-left: 10px;
@@ -864,6 +864,91 @@
             <h2 class="titleText"><span>報</span>表</h2>
             <!-- <p>Lorem, ipsum dolor molestiae expedita corrupti? Officia, placeat? Delectus eum dolor animi dolorum impedit velit omnis voluptatibus voluptates.</p> -->
         </div>
+
+
+        <style>
+            .expert{
+                /* background: url(images/eco/code.jpeg);
+                background-size: cover;*/   
+                background: linear-gradient(rgb(178, 248, 178) 0%,#fff 30%, #fff 70%, rgb(178, 248, 178) 100%);        
+            }
+            .expert .cardBox{
+                /* background: #fff;
+                box-shadow: 0 7px 15px #eee; */
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 40px;
+            }
+            .expert .cardBox .card{
+                width: 280px;
+                margin: 15px;
+                border: 15px solid #fff;
+                border-radius: 10px;
+                box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
+                /* cursor: pointer; */
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+            }
+            .expert .cardBox .card .numbers{
+                position: relative;
+                font-weight: 500;
+                font-size: 2.5em;
+                color: rgb(0, 170, 0);
+            }
+            .expert .cardBox .card .cardName{
+                color: #999;
+                font-size: 1.1em;
+                margin-top: 5px;
+            }
+            .expert .cardBox .card .iconBx{
+                font-size: 3em;
+                color: #999;
+            }
+        </style>
+
+        <div class="cardBox">
+            <div class="card">
+                <div>
+                    <div class="numbers">3,504</div>
+                    <div class="cardName">會員數</div>
+                </div>
+                <div class="iconBx">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">2,001</div>
+                    <div class="cardName">增加會員數</div>
+                </div>
+                <div class="iconBx">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">1,504</div>
+                    <div class="cardName">會員數</div>
+                </div>
+                <div class="iconBx">
+                    <!-- <i class="fa fa-user-times" aria-hidden="true"></i> -->
+                    <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">1,504</div>
+                    <div class="cardName">MAU</div>
+                </div>
+                <div class="iconBx">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>                    
+                </div>
+            </div>            
+        </div>
+
+
         <div class="content">
             <div class="report">
                 <h3>會員數、推薦數、app 下載數、MAU</h3>
