@@ -315,37 +315,75 @@
         }
 
 
-        .expert{
+        .reports{
             min-height: 100vh;
+            background: linear-gradient(rgb(178, 248, 178) 0%,#fff 30%, #fff 70%, rgb(178, 248, 178) 100%);
         }
-        /* .expert{
-            background: url(images/eco/code.jpeg);
-            background-size: cover;            
-        } */
-        .expert .content{
+
+
+        .reports .cardBox{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .reports .cardBox .card{
+            background:#fff;
+            width: 280px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        .reports .cardBox .card .numbers{
+            /* position: relative; */
+            font-weight: 500;
+            font-size: 2.5em;
+            color: rgb(0, 170, 0);
+        }
+        .reports .cardBox .card .cardName{
+            color: #999;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+        .reports .cardBox .card .iconBx{
+            font-size: 3em;
+            color: #999;
+        }
+        .reports .card:hover,
+        .reports .card:hover{
+            background: rgb(0, 170, 0);
+        }
+        .cardBox .card:hover .numbers,
+        .cardBox .card:hover .cardName,
+        .cardBox .card:hover .iconBx{
+            color: #fff;
+        }
+        /* .reports .content{
             display: flex;
             justify-content: center;
             align-items: center;
-            /* flex-wrap: wrap; */
             flex-direction: column;
-            margin-top: 40px;
-            
-        }
-        .expert .content .report{
+            margin-top: 40px;            
+        } 
+        .reports .content .report{
             background: rgba(255,255,255,0.4);
             margin: 15px;
             padding: 15px;
         }
-        .expert .content .box{
+        .reports .content .box{
             width: 250px;
             margin: 15px;
         }
-        .expert .content .box .imgBx{
+        .reports .content .box .imgBx{
             position: relative;
             width: 100%;
             height: 300px;
         }
-        .expert .content .box .imgBx img{
+        .reports .content .box .imgBx img{
             position: absolute;
             top: 0;
             left: 0;
@@ -353,13 +391,13 @@
             height: 100%;
             object-fit: cover;
         }
-        .expert .content .box .text{
+        .reports .content .box .text{
             padding: 15px 0 15px;
         }
-        .expert .content .box .text h3{
+        .reports .content .box .text h3{
             font-weight: 400;
             color: #111;
-        }
+        } */
         
 
         .contact .content{
@@ -859,59 +897,15 @@
     </section>
     
 
-    <section class="expert" id="reports">
+    <section class="reports" id="reports">
         <div class="title">
             <h2 class="titleText"><span>報</span>表</h2>
             <!-- <p>Lorem, ipsum dolor molestiae expedita corrupti? Officia, placeat? Delectus eum dolor animi dolorum impedit velit omnis voluptatibus voluptates.</p> -->
         </div>
-
-
-        <style>
-            .expert{
-                /* background: url(images/eco/code.jpeg);
-                background-size: cover;*/   
-                background: linear-gradient(rgb(178, 248, 178) 0%,#fff 30%, #fff 70%, rgb(178, 248, 178) 100%);        
-            }
-            .expert .cardBox{
-                /* background: #fff;
-                box-shadow: 0 7px 15px #eee; */
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                margin-top: 40px;
-            }
-            .expert .cardBox .card{
-                width: 280px;
-                margin: 15px;
-                border: 15px solid #fff;
-                border-radius: 10px;
-                box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
-                /* cursor: pointer; */
-                display: flex;
-                justify-content: space-between;
-                cursor: pointer;
-            }
-            .expert .cardBox .card .numbers{
-                position: relative;
-                font-weight: 500;
-                font-size: 2.5em;
-                color: rgb(0, 170, 0);
-            }
-            .expert .cardBox .card .cardName{
-                color: #999;
-                font-size: 1.1em;
-                margin-top: 5px;
-            }
-            .expert .cardBox .card .iconBx{
-                font-size: 3em;
-                color: #999;
-            }
-        </style>
-
         <div class="cardBox">
             <div class="card">
                 <div>
-                    <div class="numbers">3,504</div>
+                    <div class="numbers">3,514</div>
                     <div class="cardName">會員數</div>
                 </div>
                 <div class="iconBx">
@@ -949,14 +943,14 @@
         </div>
 
 
-        <div class="content">
+        <!-- <div class="content"> -->
             <div class="report">
                 <h3>會員數、推薦數、app 下載數、MAU</h3>
             </div> 
             <div class="report">   
                 <h3>發點數、消費點數、點數使用率</h3>
             </div>
-        </div>
+        <!-- </div> -->
         
 
 
