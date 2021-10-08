@@ -14,7 +14,8 @@
     <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Stick+No+Bills&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Raleway:wght@700&family=Stick+No+Bills&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     
@@ -175,7 +176,7 @@
             justify-content: center;
             align-items: center;
             background: #76b9f0;
-            overflow: hidden;
+            overflow: hidden; 
         }
         .measure .swiper-container {
             width: 100%;
@@ -226,9 +227,17 @@
             font-weight: 700;   
             text-decoration: underline;      
         }
-        .measure .testimonialBox .content img{
-            width: 60px;
-            padding: .6rem 0;
+        .measure .icoBox{
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background: #0D81E1; /* #2195F2; */
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            margin: .75rem;
         }
         .measure .testimonialBox .content p{
             color: #222;
@@ -310,16 +319,17 @@
             clear: both;
             display: table;
         }
-        .qa .content .box.showed .ans{
+        .qa .content .box.showed .ans,
+        .qa .content .box:hover .ans{
             display: block;
         }
 
 
         .reports{
             min-height: 100vh;
-            background: linear-gradient(rgb(178, 248, 178) 0%,#fff 30%, #fff 70%, rgb(178, 248, 178) 100%);
+            background: linear-gradient(#11213A 0%,#fff 30%, #fff 70%, #11213A 100%);
         }
-
+        /* rgb(178, 248, 178) */
 
         .reports .cardBox{
             display: flex;
@@ -342,7 +352,7 @@
             /* position: relative; */
             font-weight: 500;
             font-size: 2.5em;
-            color: rgb(0, 170, 0);
+            color: #11213A;  /*rgb(0, 170, 0);*/
         }
         .reports .cardBox .card .cardName{
             color: #999;
@@ -355,7 +365,7 @@
         }
         .reports .card:hover,
         .reports .card:hover{
-            background: rgb(0, 170, 0);
+            background: #11213A;  /*rgb(0, 170, 0);*/
         }
         .cardBox .card:hover .numbers,
         .cardBox .card:hover .cardName,
@@ -519,9 +529,9 @@
             .qa .content .box{
                 margin: 10px;
             }
-            .qa .content .box .imgBx{
+            /* .qa .content .box .imgBx{
                 height: 260px;
-            }
+            } */
             .title{
                 text-align: center;
             }
@@ -600,7 +610,7 @@
                         <h3>01</h3>
                         <div class="content">
                             <h2>實體帳戶</h2>
-                            <img src="images/eco/01.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-money-check"></i></div>
                             <p>開立實體帳戶 + 申請網路銀行</p>
                             <h4>100 <span>點</span></h4>
                         </div>
@@ -611,7 +621,7 @@
                         <h3>02</h3>
                         <div class="content">                            
                             <h2>數位帳戶</h2>
-                            <img src="images/eco/01.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-donate"></i></div> 
                             <p>數位台幣 + 外幣帳戶</p>
                             <h4>200 <span>點</span></h4>
                         </div>
@@ -622,7 +632,7 @@
                         <h3>03</h3>
                         <div class="content">                            
                             <h2>電子帳單</h2>
-                            <img src="images/eco/03.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-envelope-open-text"></i></div>  
                             <p>基金 + 信用卡 + 存款同時為電子帳單</p>
                             <h4>100 <span>點</span></h4>
                         </div>
@@ -633,7 +643,7 @@
                         <h3>04</h3>
                         <div class="content">                            
                             <h2>綁定帳戶</h2>
-                            <img src="images/eco/05.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-link"></i></div>
                             <p>SunnyPay 綁定帳戶</p>
                             <h4>50 <span>點</span></h4>
                         </div>
@@ -644,7 +654,7 @@
                         <h3>05</h3>
                         <div class="content">                            
                             <h2>汽車貸款</h2>
-                            <img src="images/eco/09.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-car-side"></i></div>  
                             <p>申辦汽車貸款</p>
                             <h4><span>每戶 </span>300 <span>點</span></h4>
                         </div>
@@ -655,7 +665,7 @@
                         <h3>06</h3>
                         <div class="content">                            
                             <h2>次順位貸款</h2>
-                            <img src="images/eco/09.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-landmark"></i></div> 
                             <p>申辦次順位貸款 (含通信貸款)</p>
                             <h4><span>每戶 </span>300 <span>點</span></h4>
                         </div>
@@ -666,7 +676,7 @@
                         <h3>07</h3>
                         <div class="content">                            
                             <h2>信用貸款</h2>
-                            <img src="images/eco/09.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-user-secret"></i></div>  
                             <p>申辦信用貸款 (不含勞工紓困貸款及行員信貸)</p>
                             <h4><span>每戶 </span>300 <span>點</span></h4>
                         </div>
@@ -677,7 +687,7 @@
                         <h3>08</h3>
                         <div class="content">                            
                             <h2>繳費稅</h2>
-                            <img src="images/eco/07.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-coins"></i></div> 
                             <p>使用網銀繳費稅</p>
                             <h4><span>每筆 </span>10 <span>點</span></h4>
                             <p class="note">每月每人上限 10 點</p>
@@ -689,7 +699,7 @@
                         <h3>09</h3>
                         <div class="content">                            
                             <h2>換匯交易</h2>
-                            <img src="images/eco/07.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-exchange-alt"></i></div>  
                             <p>使用網銀換匯交易 (含結購及結售)</p>
                             <h4><span>每筆 </span>10 <span>點</span></h4>
                             <p class="note">每月每人上限 30 點</p>
@@ -701,7 +711,7 @@
                         <h3>10</h3>
                         <div class="content">                            
                             <h2>跨行轉帳</h2>
-                            <img src="images/eco/07.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-laptop"></i></div>  
                             <p>使用網銀跨行轉帳</p>
                             <h4><span>每筆 </span>5 <span>點</span></h4>
                             <p class="note">每月每人上限 15 點</p>
@@ -713,7 +723,7 @@
                         <h3>11</h3>
                         <div class="content">                            
                             <h2>SunnyPay</h2>
-                            <img src="images/eco/04.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-qrcode"></i></div>
                             <p>Sunnypay 消費、跨行轉帳及繳費</p>
                             <h4><span>每筆 </span>10 <span>點</span></h4>
                             <p class="note">每月每人上限 30 點</p>
@@ -725,7 +735,7 @@
                         <h3>12</h3>
                         <div class="content">                            
                             <h2>信用卡首刷禮</h2>
-                            <img src="images/eco/02.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-hand-holding-heart"></i></div>  
                             <p>活動期間新戶申辦本行信用卡消費金額達 500 元</p>
                             <h4>500 <span>點</span></h4>
                         </div>
@@ -736,7 +746,7 @@
                         <h3>13</h3>
                         <div class="content">                            
                             <h2>信用卡代繳</h2>
-                            <img src="images/eco/02.png" alt="">   
+                            <div class="icoBox"><i class="far fa-credit-card"></i></div> 
                             <p>信用卡首次申辦公共事業費代繳</p>
                             <h4>100 <span>點</span></h4>
                         </div>
@@ -747,7 +757,7 @@
                         <h3>14</h3>
                         <div class="content">                            
                             <h2>信用卡自動扣繳</h2>
-                            <img src="images/eco/02.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-calendar-check"></i></div>   
                             <p>信用卡首次申辦本行帳戶自扣</p>
                             <h4>100 <span>點</span></h4>
                         </div>
@@ -758,7 +768,7 @@
                         <h3>15</h3>
                         <div class="content">                            
                             <h2>外幣到價通知</h2>
-                            <img src="images/eco/06.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-bell"></i></div>  
                             <p>首次開啟外幣到價通知</p>
                             <h4>5 <span>點</span></h4>
                         </div>
@@ -769,7 +779,7 @@
                         <h3>16</h3>
                         <div class="content">                            
                             <h2>推薦禮</h2>
-                            <img src="images/eco/member.png" alt="">   
+                            <div class="icoBox"><i class="fas fa-thumbs-up"></i></div>  
                             <p>行員推薦客戶成功加入會員<br>
                             商店街每增加 2000 名會員，抽一支 iPhone 13</p>
                             <h4>200 <span>點</span></h4>
@@ -781,6 +791,8 @@
         <div class="buttonC">
             <a href="#" class="btn">看看公文</a>
             <a href="others/tutorials.pdf" class="btn">下載教案</a>
+            <a href="#" class="btn">活動辦法</a>
+            <a href="#" class="btn">辦信用卡</a>
         </div>
     </section>
 
