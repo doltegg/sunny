@@ -448,6 +448,39 @@
             padding-left: 10px;
             background: #AFC7DD; /* #F2F8EE; */
         }
+
+        .footer{
+            border-top: #ddd solid 1px;
+            margin: 0 5rem;
+        }
+        .footer .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+            gap: .6rem;
+        }
+        .footer .box-container .box h3{
+            font-size: 1.5rem;
+            color: #11213A;
+            padding: 0 0 .4rem 0;
+        }
+        .footer .box-container .box a{
+            display: block;
+            font-size: 1rem;
+            color: #2F82D6;  /*#015FDF;  #2F82D6; */
+            padding: 0.3rem 0;
+        }
+        .footer .box-container .box a i{
+            color: #2F82D6;
+            padding-right: .4rem;
+        }
+        .footer .box-container .box a:hover i{
+            padding-right: 1rem;
+            color: #11213A;
+        }
+        .footer .box-container .box a:hover{
+            color: #11213A;
+        }
+        
         footer{
             height: 70px;
             background: linear-gradient(to top, #11213A, #fff 65%);
@@ -1131,6 +1164,46 @@
             </div>
         </div>
     </section>
+
+    <!-- footer  -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>本案相關</h3>
+                <a href="#"> <i class="far fa-file-alt"></i>公文</a>
+                <a href="others/tutorials.pdf"> <i class="far fa-file-alt"></i>教案</a>
+                <a href="others/rules.pdf"> <i class="far fa-file-alt"></i>辦法</a>
+
+            </div>
+            <div class="box">
+                <h3>商店街</h3>
+                <a href="https://www.sunnygo.com.tw/sunnygo/"> <i class="fas fa-store"></i>商店街</a>
+                <a href="https://www.sunnygo.com.tw/sunnygo/index.php?action=wpage_355"> <i class="fas fa-store"></i>教育訓練網站</a>
+                <a href="#"> <i class="fas fa-store"></i>教案</a>
+                <a href="https://youtu.be/8LrmLM2WEs0"> <i class="fas fa-store"></i>個人專屬推薦碼</a>
+                <a href="https://youtu.be/jSA0zIZa-KA"> <i class="fas fa-store"></i>是會員</a>
+                <a href="https://youtu.be/boy2A9xPVxU"> <i class="fas fa-store"></i>還不是會員</a>
+
+            </div>
+            <div class="box">
+                <h3>信用卡部</h3>                
+                <a href="#"> <i class="fas fa-credit-card"></i>首刷禮</a>
+                <a href="#"> <i class="fas fa-credit-card"></i>申請公共事業代繳</a>
+                <a href="#"> <i class="fas fa-credit-card"></i>申請自動扣繳</a>
+                <a href="#"> <i class="fas fa-credit-card"></i>辦卡去</a>
+            </div>
+            <div class="box">
+                <h3>電金部</h3>
+                <a href="#"> <i class="fas fa-qrcode"></i>TaiwanPay</a>
+                <a href="#"> <i class="fas fa-qrcode"></i>SunnyPay</a>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
     <footer>
         風吹鴨蛋殼，財去人安樂
     </footer>
