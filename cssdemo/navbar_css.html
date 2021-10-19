@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Navigation Menu</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@0,100;0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=consolas:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"> -->
+    
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap'); */
+        /* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap'); */
+        
+        :root{
+            --pink: #ff046f;
+            --violet: #c63bfa;
+        }
+        *{
+            font-family: 'Roboto', sans-serif; /* Poppins */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;             
+            text-decoration: none;
+            /* outline: none; */
+            /* border: none; */
+            text-transform: capitalize;
+            /* transition: .2s linear; */
+        }
+        body{
+            min-height: 100vh;
+            background: url(imgs/bg.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0,0,0,.1);
+            padding: 0px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+        header .logo{
+            font-weight: bolder;
+            font-size: 25px; 
+            color: #333;
+        }
+        header .navbar ul{
+            list-style: none;
+        }
+        header .navbar ul li{
+            position: relative;
+            float: left;
+        }
+        header .navbar ul li a{
+            font-size: 20px;
+            padding: 20px;
+            color: #333;
+            display: block;
+        }
+        header .navbar ul li a:hover{
+            background: #333;
+            color: #fff;
+        }
+        header .navbar ul li ul{
+            position: absolute;
+            left: 0;
+            width: 200px;
+            background: #fff;
+            display: none;
+        }
+        header .navbar ul li ul li{
+            width: 100%;
+            border-top: 1px solid rgba(0,0,0,.1);            
+        }
+        header .navbar ul li ul li ul{
+            left: 200px;
+            top: 0;
+        }
+        header .navbar ul li:focus-within > ul,
+        header .navbar ul li:hover > ul{
+            display: initial;
+        }
+        #menu-bar{
+            display: none;
+        }
+        header label{
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+            display: none;
+        }
+
+
+
+        @media(max-width: 991px){
+            header{
+                padding: 20px;
+            }
+            header label{
+                display: initial;
+            }
+            header .navbar{
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                border-top: 1px solid rgba(0,0,0,.1);
+                display: none;
+            }
+            header .navbar ul li{
+                width: 100%;
+            }
+            header .navbar ul li ul{
+                position: relative;
+                width: 100%;
+            }
+            header .navbar ul li ul li{
+                background: #eee;
+            }
+            header .navbar ul li ul li ul{
+                width: 100%;
+                left: 0;
+            }
+            #menu-bar:checked ~ .navbar{
+                display: initial;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">LOGO</a>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">pages +</a>
+                    <ul>
+                        <li><a href="#">blogs</a></li>
+                        <li><a href="#">services +</a>
+                            <ul>
+                                <li><a href="#">html</a></li>
+                                <li><a href="#">css</a></li>
+                                <li><a href="#">javascript</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">review</a></li>
+                <li><a href="#">gallery +</a>
+                    <ul>
+                        <li><a href="#">grid gallery</a></li>
+                        <li><a href="#">flex gallery</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+<!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script>
+
+    
+
+</script>
+        
+</body>
+</html>
