@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@0,100;0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=consolas:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"> -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+    :root{
+        --green: #27ae60;
+        --black: #130f40;
+        --white: #fff;
+        --light-color: #666;
+        --light-bg: #f7f7f7;
+        --border: .1rem solid rgba(0,0,0,.2);
+        --box-shadow: 0 1rem 1rem rgba(0,0,0,.05);
+    }
+    *{
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: .2s linear;
+        outline: none;
+        border: none;
+    }
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 8.5rem;
+    }
+    html::-webkit-scrollbar{
+        width: 1rem;
+    }
+    html::-webkit-scrollbar-track{
+        background: var(--white);
+    }
+    html::-webkit-scrollbar-thumb{
+        background: var(--green);
+        border-radius: 5rem;
+    }
+    section{
+        padding: 2rem 9%;
+    }
+    .heading{
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    .heading span{
+        font-family: 'Satisfy', cursive;
+        font-size: 3rem;
+        color: var(--green);
+    }
+    .heading h3{
+        font-size: 3rem;
+        color: var(--black);
+    }
+    .btn{
+        display: inline-block;
+        margin-top: 1rem;
+        padding: .7rem 1.8rem;
+        font-size: 1.7rem;
+        cursor: pointer;
+        color: var(--white);
+        background: var(--green);
+        border-radius: .5rem;
+    }
+    .btn:hover{
+        background: var(--black);
+    }
+    .header{
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--white);
+        box-shadow: var(--box-shadow);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 9%;
+    }
+    .header .logo{
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: var(--black);
+    }
+    .header .logo i{
+        padding-right: .5rem;
+        color: var(--green);
+    }
+    .header .navbar a{
+        font-size: 1.7rem;
+        margin: 0 1rem;
+        color: var(--light-color);
+    }
+    .header .navbar a:hover{
+        color: var(--green);
+    }
+    .header .icons div{
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        font-size: 2rem;
+        background: var(--light-bg);
+        color: var(--black);
+        border-radius: .5rem;
+        margin-left: .3rem;
+        cursor: pointer;
+        text-align: center;
+    }
+    .header .icons div:hover{
+        color: var(--white);
+        background: var(--green);
+    }
+    #menu-btn{
+        display: none;
+    }
+    .search-form-container{
+        position: fixed;
+        top: 8.5rem;
+        left: 0;
+        right: 0;
+        height: calc(100vh - 8.5rem);
+        background: var(--white);
+        z-index: 1000;
+        display: none;
+    }
+    .search-form-container.active{
+        display: block;
+    }
+    .search-form-container form{
+        height: 7rem;
+        border-bottom: .2rem solid var(--black);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        animation: fadeUp .4s linear;
+    }
+    @keyframes fadeUp{
+        0%{
+            transform: translateY(5rem);
+            opacity: 0;
+        }
+     } 
+    .search-form-container form input{
+        height: 100%;
+        width: 100%;
+        font-size: 1.7rem;
+        color: var(--black);
+        text-transform: none;
+        padding-right: 1rem;
+    }
+    .search-form-container form label{
+        font-size: 3rem;
+        cursor: pointer;
+        color: var(--black);
+    }
+    .search-form-container form label:hover{
+        color: var(--green);
+    }
+    .shopping-cart-container{
+        position: fixed;
+        top: 8.5rem;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: calc(100vh - 8.5rem);
+        background: var(--white);
+        overflow-y: scroll;
+        padding-bottom: 8rem;
+        display: none;
+    }
+    .shopping-cart-container.active{
+        display: block;
+    }
+    .shopping-cart-container::-webkit-scrollbar{
+        width: 1rem;
+    }
+    .shopping-cart-container::-webkit-scrollbar-track{
+        background: var(--white);
+    }
+    .shopping-cart-container::-webkit-scrollbar-thumb{
+        background: var(--black);
+        border-radius: 5rem;
+    }
+    .shopping-cart-container .title{
+        font-size: 2.5rem;
+        padding: 1rem;
+        color: var(--black);
+        border-bottom: var(--border);
+        text-align: center;
+    }
+    .shopping-cart-container .products-container{
+        border: var(--border);
+        border-radius: .5rem;
+        animation: fadeUp .4s linear;
+    }
+    .shopping-cart-container .products-container .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .shopping-cart-container .products-container .box-container .box{
+        border-radius: .5rem;
+        background: var(--light-bg);
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem;
+        position: relative;
+    }
+    .shopping-cart-container .products-container .box-container .box .fa-times{
+        position: absolute;
+        top: .7rem;
+        right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--black);
+    }
+    .shopping-cart-container .products-container .box-container .box .fa-times:hover{
+        color: var(--green);
+    }
+    .shopping-cart-container .products-container .box-container .box img{
+        height: 8rem;
+    }
+    .shopping-cart-container .products-container .box-container .box .content h3{
+        font-size: 2rem;
+        color: var(--black);
+    }
+    .shopping-cart-container .products-container .box-container .box .content sapn{
+        font-size: 1.5rem;
+        color: var(--light-color);
+    }
+    .shopping-cart-container .products-container .box-container .box .content sapn.price{
+        color: var(--green);
+        font-size: 1.7rem;
+    }
+    .shopping-cart-container .products-container .box-container .box .content input{
+        width: 8rem;
+        padding: .5rem 1.2rem;
+        font-size: 1.5rem;
+        color: var(--black);
+        margin: .7rem 0;
+    }
+    .shopping-cart-container .cart-total{
+        margin-top: 2rem;
+        border: var(--border);
+        border-radius: .5rem;
+        animation: fadeUp .4s linear .4s backwards;
+    }
+    .shopping-cart-container .cart-total .box{
+        padding: 1.5rem;
+    }
+    .shopping-cart-container .cart-total .box h3{
+        color: var(--black);
+        font-size: 2rem;
+        padding-bottom: .7rem;
+    }
+    .shopping-cart-container .cart-total .box h3 span{
+        color: var(--green);
+    }
+    .login-form-container{
+        position: fixed;
+        top: 8.5rem;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: calc(100vh - 8.5rem);
+        background: var(--white);
+        padding: 2rem 0;
+        display: none;
+    }
+    .login-form-container.active{
+        display: block;
+    }
+    .login-form-container form{
+        margin: 2rem auto;
+        max-width: 40rem;
+        box-shadow: var(--box-shadow);
+        border: var(--border);
+        padding: 2rem;
+        border-radius: .5rem;
+        animation: fadeUp .4s linear;
+    }
+    .login-form-container form h3{
+        padding-bottom: 1rem;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: var(--black);
+    }
+    .login-form-container form .box{
+        margin: .7rem 0;
+        border-radius: .5rem;
+        background: var(--light-bg);
+        padding: 1rem 1.2rem;
+        font-size: 1.6rem;
+        color: var(--black);
+        text-transform: none;
+        width: 100%;
+    }
+    .login-form-container form .remember{
+        padding: 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+    .login-form-container form .remember label{
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--light-color);
+    }
+    .login-form-container form .btn{
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    .login-form-container form p{
+        padding-top: 1rem;
+        font-size: 1.5rem;
+        color: var(--light-color);
+    }
+    .login-form-container form p a{
+        color: green;
+    }
+    .login-form-container form p a:hover{
+        color: var(--black);
+        text-decoration: underline;
+    }
+    .home{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+        gap: 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+    .home .content{
+        flex: 1 1 41rem;  
+    }
+    .home .content span{
+        font-size: 2rem;
+        color: var(--green);
+    }
+    .home .content h3{
+        font-size: 4rem;
+        color: var(--black);
+        padding-top: 1rem;
+    }
+    .home .content p{
+        font-size: 1.4rem;
+        color: var(--light-color);
+        line-height: 2;
+        padding: 1rem 0;
+    }
+    .home .image{
+        flex: 1 1 41rem;
+        margin: 2rem 0;
+        pointer-events: none;  
+    }
+    .home .image .home-img{
+        width: 100%;
+        margin-top: 5rem;
+    }
+    .home .home-parallax-img{
+        position: absolute;
+        top: -10rem;
+        right: -10rem;
+        width: 80rem;
+    }
+    .category{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        gap: 1.5rem;
+        padding-bottom: 5rem;
+    }
+    .category .box{
+        padding: 2rem;
+        text-align: center;
+        border-radius: .5rem;
+        background: var(--light-bg);
+    }
+    .category .box:hover{
+        background: var(--green);
+    }
+    .category .box:hover h3{
+        color: var(--white);
+    }
+    .category .box img{
+        height: 7rem;
+    }
+    .category .box h3{
+        font-size: 1.8trm;
+        color: var(--black);
+    }
+    .about{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+        background: var(--light-bg);
+    }
+    .about .image{
+        flex: 1 1 40rem;
+    }
+    .about .image img{
+        width: 100%;
+    }
+    .about .content{
+        flex: 1 1 40rem;
+    }
+    .about .content span{
+        font-family: 'Satisfy', cursive;
+        font-size: 3rem;
+        color: var(--green);
+    }
+    .about .content .title{
+        font-size: 3rem;
+        padding-top: .5rem;
+        color: var(--black);
+    }
+    .about .content p{
+        padding: 1rem 0;
+        line-height: 2;
+        font-size: 1.4rem;
+        color: var(--light-color);
+    }
+    .about .content .icons-container{
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    .about .content .icons-container .icons{
+        flex: 1 1 20rem;
+        border-radius: .5rem;
+        background: var(--white);
+        box-shadow: var(--box-shadow);
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    .about .content .icons-container .icons h3{
+        font-size: 1.7rem;
+        color: var(--black);
+    }
+    .popular .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 1.5rem;
+    }
+    .popular .box-container .box{
+        border-radius: .5rem;
+        position: relative;
+        background: var(--light-bg);
+        padding: 2rem;
+        text-align: center;
+    }
+    .popular .box-container .box .image{
+        margin: 1rem 0;
+    }
+    .popular .box-container .box .fa-heart{
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 2.5rem;
+        color: var(--light-color);
+        cursor: pointer;
+    }
+    .popular .box-container .box .fa-heart:hover{
+        color: var(--green);
+    }
+    .popular .box-container .box .image img{
+        height: 15rem;
+    }
+    .popular .box-container .box .content h3{
+        font-size: 2rem;
+        color: var(--black);
+    }
+    .popular .box-container .box .content .stars{
+        padding: 1rem 0;
+        font-size: 1.7rem;
+    }
+    .popular .box-container .box .content .stars i{
+        color: gold;
+    }
+    .popular .box-container .box .content .stars span{
+        color: var(--light-color);
+    }
+    .popular .box-container .box .content .price{
+        font-size: 2rem;
+        color: var(--black);
+    }
+    .popular .box-container .box .content .price span{
+        font-size: 1.5rem;
+        color: var(--light-color);
+        text-decoration: line-through;
+    }
+    .banner .row-banner{
+        background: url(imgs/food2/row-banner.png) no-repeat;
+        height: 45rem;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    .banner .row-banner .content{
+        position: absolute;
+        top: 50%;
+        left: 7%;
+        transform: translateY(-50%); 
+    }
+    .banner .row-banner .content span{
+        font-family: 'Satisfy', cursive;
+        font-size: 4rem;
+        color: var(--black);
+    }
+    .banner .row-banner .content h3{
+        font-size: 6rem;
+        color: red;
+        text-transform: uppercase;
+    }
+    .banner .row-banner .content p{
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+    .banner .grid-banner{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+    }
+    .banner .grid-banner .grid{
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        height: 45rem;
+    }
+    .banner .grid-banner .grid:hover img{
+        transform: scale(1.2);
+    }
+    .banner .grid-banner .grid img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .banner .grid-banner .grid .content{
+        position: absolute;
+        top: 2rem;
+        padding: 0 2rem;
+    }
+    .banner .grid-banner .grid .content.center{
+        text-align: center;
+        width: 100%;
+    }
+    .banner .grid-banner .grid .content.center span{
+        color: var(--ligt-color);
+    }
+    .banner .grid-banner .grid .content.center h3{
+        color: var(--black);
+    }
+    .banner .grid-banner .grid .content span{
+        font-size: 2.5rem;
+        color: var(--white);
+    }
+    .banner .grid-banner .grid .content h3{
+        font-size: 3rem;
+        color: var(--white);
+        padding-top: .5rem;
+    }
+    .menu .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+    }
+    .menu .box-container .box{
+        border-radius: .5rem;
+        background: var(--light-bg);
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .menu .box-container .box:hover{
+        background: var(--black);
+    }
+    .menu .box-container .box:hover .content h3{
+        color: var(--white);
+    }
+    .menu .box-container .box img{
+        height: 10rem;
+    }
+    .menu .box-container .box .content h3{
+        font-size: 2rem;
+        color: var(--black);
+        padding-bottom: .5rem;
+    }
+    .menu .box-container .box .content .price{
+        font-size: 1.8rem;
+        color: var(--green);
+    }
+    .order .icons-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .order .icons-container .icons{
+        border-radius: .5rem;
+        padding: 2rem;
+        text-align: center;
+        background: var(--light-bg);
+    }
+    .order .icons-container .icons img{
+        height: 10rem;
+    }
+    .order .icons-container .icons h3{
+        font-size: 2rem;
+        color: var(--black);
+        margin-top: .5rem;
+    }
+    .order form{
+        background: var(--light-bg);
+        padding: 2rem;
+        border-radius: .5rem;
+    }
+    .order form .flex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .order form .flex .inputBox{
+        width: 49%;  
+        padding: .7rem 0;      
+    }
+    .order form .flex span{
+        font-size: 1.7rem;
+        color: var(--light-color);
+    }
+    .order form .flex input, textarea{
+        width: 100%;
+        margin-top: .5rem;
+        padding: 1rem 1.2rem;
+        border-radius: .5rem;
+        font-size: 1.6rem;
+        text-transform: none;
+        color: var(--black);
+    }
+    .order form .flex textarea{
+        height: 20rem;
+        resize: none;
+    }
+    .order form .flex .map{
+        height: 100%;
+        width: 100%;
+        border-radius: .5rem;
+    }
+    .blogs .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+    }
+    .blogs .box-container .box{
+        overflow: hidden;
+        border-radius: .5rem;
+    }
+    .blogs .box-container .box:hover .image img{
+        transform: scale(1.2);
+    }
+    .blogs .box-container .box:hover .image h3{
+        left: 1.5rem;
+    }
+    .blogs .box-container .box .image{
+        height: 25rem;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+    }
+    .blogs .box-container .box .image h3{
+        position: absolute;
+        z-index: 10;
+        top: 1rem;
+        left: -100%;
+        border-radius: .5rem;
+        background: var(--white);
+        color: var(--black);
+        font-size: 1.5rem;
+        padding: .5rem 1rem;
+    }
+    .blogs .box-container .box .image h3 i{
+        padding-right: .5rem;
+        color: var(--green);
+    }
+    .blogs .box-container .box .image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .blogs .box-container .box .content{
+        padding: 2rem 1.5rem;
+        background: var(--light-bg);
+    }
+    .blogs .box-container .box .content .tags{
+        padding-bottom: 1rem;
+    }
+    .blogs .box-container .box .content .tags a{
+        font-size: 1.5rem;
+        color: var(--light-color);
+        padding-right: .5rem;
+    }
+    .blogs .box-container .box .content .tags a:hover{
+        color: var(--green);
+    }
+    .blogs .box-container .box .content .tags a i{
+        color: var(--green);
+        padding-right: .5rem;
+    }
+    .blogs .box-container .box .content h3{
+        font-size: 2rem;
+        color: var(--black);
+    }
+    .blogs .box-container .box .content p{
+        font-size: 1.4rem;
+        color: var(--light-color);
+        padding: 1rem 0;
+        line-height: 2;
+    } 
+    .footer{
+        background: var(--light-bg);
+    }
+    .footer .newsletter{
+        text-align: center;
+        margin-bottom: 2rem;        
+    }
+    .footer .newsletter h3{
+        font-size: 2.5rem;
+        color: var(--black);
+    }
+    .footer .newsletter form{
+        width: 70rem;
+        margin: 1rem auto;
+        max-width: 70rem;
+        display: flex;
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+    .footer .newsletter form input[type="email"]{
+        height: 100%;
+        width: 100%;
+        padding: 1rem 1.2rem;
+        font-size: 1.6rem;
+        color: var(--black);
+        text-transform: none;
+    }
+    .footer .newsletter form input[type="submit"]{
+        padding: 0 2rem;
+        font-size: 1.6rem;
+        color: var(--white);
+        background: var(--green);
+        cursor: pointer;
+    }
+    .footer .newsletter form input[type="submit"]:hover{
+        background: var(--black);
+    }
+    .footer .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 1.5rem;
+    }
+    .footer .box-container .box h3{
+        font-size: 2.2rem;
+        color: var(--black);
+        padding: 1rem 0;
+    }
+    .footer .box-container .box p{
+        font-size: 1.4rem;
+        color: var(--light-color);
+        padding: 1rem 0;
+    }
+    .footer .box-container .box a{
+        display: block;
+        font-size: 1.4rem;
+        color: var(--light-color);
+        padding: 1rem 0;
+    }
+    .footer .box-container .box a:hover{
+        color: var(--green);
+    }
+    .footer .box-container .box a:hover i{
+        padding-right: 2rem;
+    }
+    .footer .box-container .box a i{
+        padding-right: .5rem;
+        color: var(--green);
+    }
+    .footer .bottom{
+        padding-top: 1rem;
+        text-align: center;
+    }
+    .footer .bottom .share{
+        margin: 1.5rem 0;
+    }
+    .footer .bottom .share a{
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        font-size: 2rem;
+        border-radius: .5rem;
+        margin: 0 .3rem;
+        color: var(--white);
+        background: var(--green);
+    }
+    .footer .bottom .share a:hover{
+        background: var(--black);
+    }
+    .footer .bottom .credit{
+        font-size: 2rem;
+        color: var(--light-color);
+        padding: 1rem;
+    }
+    .footer .bottom .credit span{
+        color: var(--green);
+    }
+    /* {
+        font-family: 'Satisfy', cursive;
+        font-size: 
+        color: var(--green);
+    }*/
+
+
+
+
+
+
+
+    @media(max-width: 991px){
+        html{
+            font-size: 55%;
+        }
+        .header{
+            padding: 2rem;
+        }
+        section{
+            padding: 2rem;
+        }
+    }
+    @media(max-width: 768px){
+        #menu-btn{
+            display: inline-block;
+        }
+        .header .navbar{
+            position: absolute;
+            top: 99%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-top: var(--border);
+            border-bottom: var(--border);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+        .header .navbar.active{
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .header .navbar a{
+            font-size: 2rem;
+            margin: 2rem;
+            display: block;
+        }
+        .home .home-parallax-img{
+            top: 0;
+            right: 0;
+            width: 130%;
+        } 
+        .order form .flex .inputBox{
+            width: 100%;
+        }
+    }      
+    @media(max-width: 450px){
+        html{
+            font-size: 50%;
+        }
+        .shopping-cart-container .cart-total .box{
+            text-align: center;
+        }
+        .shopping-cart-container .cart-total .box .btn{
+            width: 100%;
+        }
+        .home .content h3{
+            font-size: 3rem;
+        }
+        .home .content p{
+            font-size: 1.5rem;
+        }
+    }
+</style> 
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo"> <i class="fas fa-utensils"></i> food </a>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#popular">popular</a>
+            <a href="#menu">menu</a>
+            <a href="#order">order</a>
+            <a href="#blogs">blogs</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="cart-btn" class="fas fa-shopping-cart"></div>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+    </header>
+    <section class="search-form-container">
+        <form action="">
+            <input type="search" placeholder="search here..." name="" id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+    </section>
+    <section class="shopping-cart-container">
+        <div class="products-container">
+            <h3 class="title">your products</h3>
+            <div class="box-container">
+                <div class="box">
+                    <i class="fas fa-times"></i>
+                    <img src="imgs/food2/menu-1.png" alt="">
+                    <div class="content">
+                        <h3>delicious food</h3>
+                        <span> quantity : </span>
+                        <input type="number" name="" value="1" id="">
+                        <br>
+                        <span> price : </span>
+                        <span class="price"> $40.00 </span>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fas fa-times"></i>
+                    <img src="imgs/food2/menu-2.png" alt="">
+                    <div class="content">
+                        <h3>delicious food</h3>
+                        <span> quantity : </span>
+                        <input type="number" name="" value="1" id=""><br>
+                        <span> price : </span>
+                        <span class="price"> $40.00 </span>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fas fa-times"></i>
+                    <img src="imgs/food2/menu-3.png" alt="">
+                    <div class="content">
+                        <h3>delicious food</h3>
+                        <span> quantity : </span>
+                        <input type="number" name="" value="1" id=""><br>
+                        <span> price : </span>
+                        <span class="price"> $40.00 </span>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fas fa-times"></i>
+                    <img src="imgs/food2/menu-4.png" alt="">
+                    <div class="content">
+                        <h3>delicious food</h3>
+                        <span> quantity : </span>
+                        <input type="number" name="" value="1" id=""><br>
+                        <span> price : </span>
+                        <span class="price"> $40.00 </span>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fas fa-times"></i>
+                    <img src="imgs/food2/menu-5.png" alt="">
+                    <div class="content">
+                        <h3>delicious food</h3>
+                        <span> quantity : </span>
+                        <input type="number" name="" value="1" id=""><br>
+                        <span> price : </span>
+                        <span class="price"> $40.00 </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-total">
+            <h3 class="title"> cart total </h3>
+            <div class="box">
+                <h3 class="subtotal"> subtotal : <span>$200</span> </h3>
+                <h3 class="total"> total : <span>$200</span> </h3>
+                <a href="#" class="btn">proceed to checkout</a>
+            </div>
+        </div>        
+    </section>
+    <div class="login-form-container">
+        <form action="">
+            <h3>login form</h3>
+            <input type="email" name="" placeholder="enter your email" id="" class="box">
+            <input type="password" name="" placeholder="enter your password" id="" class="box">
+            <div class="remember">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">remember me</label>
+            </div>
+            <input type="submit" value="login now" class="btn">
+            <p>forget password? <a href="#">click here</a></p>
+            <p>don't have an account? <a href="#">create one</a></p>
+        </form>
+    </div>
+
+
+    <section class="home" id="home">
+        <div class="content">
+            <span>welcome foodies</span>
+            <h3>different spices for the different tastes 😋</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid corporis porro unde quisquam, molestiae quod!</p>
+            <a href="#" class="btn">order now</a>
+        </div>
+        <div class="image">
+            <img src="imgs/food2/home-img.png" alt="" class="home-img">
+            <img src="imgs/food2/home-parallax-img.png" alt="" class="home-parallax-img">
+        </div>
+    </section>
+    <section class="category">
+        <a href="#" class="box">
+            <img src="imgs/food2/cat-1.png" alt="">
+            <h3>combo</h3>
+        </a>
+        <a href="#" class="box">
+            <img src="imgs/food2/cat-2.png" alt="">
+            <h3>pizza</h3>
+        </a>
+        <a href="#" class="box">
+            <img src="imgs/food2/cat-3.png" alt="">
+            <h3>burger</h3>
+        </a>
+        <a href="#" class="box">
+            <img src="imgs/food2/cat-4.png" alt="">
+            <h3>chicken</h3>
+        </a>
+        <a href="#" class="box">
+            <img src="imgs/food2/cat-5.png" alt="">
+            <h3>dinner</h3>
+        </a>
+        <a href="#" class="box">
+            <img src="imgs/food2/cat-6.png" alt="">
+            <h3>coffee</h3>
+        </a>
+    </section>
+
+
+    <section class="about" id="about">
+        <div class="image">
+            <img src="imgs/food2/about-img.png" alt="">
+        </div>
+        <div class="content">
+            <span>why choose us?</span>
+            <h3 class="title">what's make our food delicious!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ipsam saepe quae quas adipisci iste mollitia distinctio sint facere unde.</p>
+            <a href="#" class="btn">read more</a>
+            <div class="icons-container">
+                <div class="icons">
+                    <img src="imgs/food2/serv-1.png" alt="">
+                    <h3>fast delivery</h3>
+                </div>
+                <div class="icons">
+                    <img src="imgs/food2/serv-2.png" alt="">
+                    <h3>fresh food</h3>
+                </div>
+                <div class="icons">
+                    <img src="imgs/food2/serv-3.png" alt="">
+                    <h3>best quality</h3>
+                </div>
+                <div class="icons">
+                    <img src="imgs/food2/serv-4.png" alt="">
+                    <h3>24/7 support</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="popular" id="popular">
+        <div class="heading">
+            <span>popular food</span>
+            <h3>our special dishes</h3>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <div class="image">
+                    <img src="imgs/food2/food-1.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>delcious food</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span> (50) </span>
+                    </div>
+                    <div class="price">$40.00 <span>$50.00</span></div>
+                    <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <div class="image">
+                    <img src="imgs/food2/food-2.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>delcious food</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span> (50) </span>
+                    </div>
+                    <div class="price">$40.00 <span>$50.00</span></div>
+                    <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <div class="image">
+                    <img src="imgs/food2/food-3.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>delcious food</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span> (50) </span>
+                    </div>
+                    <div class="price">$40.00 <span>$50.00</span></div>
+                    <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <div class="image">
+                    <img src="imgs/food2/food-4.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>delcious food</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span> (50) </span>
+                    </div>
+                    <div class="price">$40.00 <span>$50.00</span></div>
+                    <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <div class="image">
+                    <img src="imgs/food2/food-5.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>delcious food</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span> (50) </span>
+                    </div>
+                    <div class="price">$40.00 <span>$50.00</span></div>
+                    <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <div class="image">
+                    <img src="imgs/food2/food-6.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>delcious food</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span> (50) </span>
+                    </div>
+                    <div class="price">$40.00 <span>$50.00</span></div>
+                    <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <div class="image">
+                    <img src="imgs/food2/food-7.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>delcious food</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span> (50) </span>
+                    </div>
+                    <div class="price">$40.00 <span>$50.00</span></div>
+                    <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <div class="image">
+                    <img src="imgs/food2/food-8.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>delcious food</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span> (50) </span>
+                    </div>
+                    <div class="price">$40.00 <span>$50.00</span></div>
+                    <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner">
+        <div class="row-banner">
+            <div class="content">
+                <span>double cheese</span>
+                <h3>burger</h3>
+                <p>with cococola and fries</p>
+                <a href="#" class="btn">order now</a>
+            </div>
+        </div>
+        <div class="grid-banner">
+            <div class="grid">
+                <img src="imgs/food2/banner-1.png" alt="">
+                <div class="content">
+                    <span>special offer</span>
+                    <h3>upto 50% off</h3>
+                    <a href="#" class="btn">order now</a>
+                </div>                
+            </div>
+            <div class="grid">
+                <img src="imgs/food2/banner-2.png" alt="">
+                <div class="content center">
+                    <span>special offer</span>
+                    <h3>upto 25% extra</h3>
+                    <a href="#" class="btn">order now</a>
+                </div>                
+            </div>
+            <div class="grid">
+                <img src="imgs/food2/banner-3.png" alt="">
+                <div class="content">
+                    <span>limited offer</span>
+                    <h3>100% cashback</h3>
+                    <a href="#" class="btn">order now</a>
+                </div>                
+            </div>
+        </div>
+    </section>
+
+
+    <section class="menu" id="menu">
+        <div class="heading">
+            <span>our menu</span>
+            <h3>our top dishes</h3>
+        </div>
+        <div class="box-container">
+            <a href="#" class="box">
+                <img src="imgs/food2/menu-1.png" alt="">
+                <div class="content">
+                    <h3>delicious food</h3>
+                    <div class="price">$40.00</div>
+                </div>
+            </a>
+            <a href="#" class="box">
+                <img src="imgs/food2/menu-2.png" alt="">
+                <div class="content">
+                    <h3>delicious food</h3>
+                    <div class="price">$40.00</div>
+                </div>
+            </a>
+            <a href="#" class="box">
+                <img src="imgs/food2/menu-3.png" alt="">
+                <div class="content">
+                    <h3>delicious food</h3>
+                    <div class="price">$40.00</div>
+                </div>
+            </a>
+            <a href="#" class="box">
+                <img src="imgs/food2/menu-4.png" alt="">
+                <div class="content">
+                    <h3>delicious food</h3>
+                    <div class="price">$40.00</div>
+                </div>
+            </a>
+            <a href="#" class="box">
+                <img src="imgs/food2/menu-5.png" alt="">
+                <div class="content">
+                    <h3>delicious food</h3>
+                    <div class="price">$40.00</div>
+                </div>
+            </a>
+            <a href="#" class="box">
+                <img src="imgs/food2/menu-6.png" alt="">
+                <div class="content">
+                    <h3>delicious food</h3>
+                    <div class="price">$40.00</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+
+    <section class="order" id="order">
+        <div class="heading">
+            <span>order now</span>
+            <h3>fastest home delivery</h3>
+        </div>
+        <div class="icons-container">
+            <div class="icons">
+                <img src="imgs/food2/icon-1.png" alt="">
+                <h3>7:00am to 10:30pm</h3>
+            </div>
+            <div class="icons">
+                <img src="imgs/food2/icon-2.png" alt="">
+                <h3>+123-456-7890</h3>
+            </div>
+            <div class="icons">
+                <img src="imgs/food2/icon-3.png" alt="">
+                <h3>mumbai, india - 400104</h3>
+            </div>
+        </div>
+        <form action="">
+            <div class="flex">
+                <div class="inputBox">
+                    <span>your name</span>
+                    <input type="text" placeholder="customer's name" name="" id="">
+                </div>
+                <div class="inputBox">
+                    <span>your number</span>
+                    <input type="number" placeholder="customer's number" name="" id="">
+                </div>
+            </div>
+            <div class="flex">
+                <div class="inputBox">
+                    <span>your order</span>
+                    <input type="text" placeholder="food you want" name="" id="">
+                </div>
+                <div class="inputBox">
+                    <span>how much</span>
+                    <input type="number" placeholder="number or orders" name="" id="">
+                </div>
+            </div>
+            <div class="flex">
+                <div class="inputBox">
+                    <span>your details</span>
+                    <input type="text" placeholder="your message" name="" id="">
+                </div>
+                <div class="inputBox">
+                    <span>pick up time</span>
+                    <input type="datetime-local">
+                </div>
+            </div>
+            <div class="flex">                
+                <div class="inputBox">
+                    <span>your address</span>
+                    <textarea placeholder="your address" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="inputBox">
+                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8253951186157!2d121.51195070000003!3d25.039998899999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a90a8d497325%3A0x2876dc1b4d647f9!2z5Lit6I-v5rCR5ZyL57i957Wx5bqc!5e0!3m2!1szh-TW!2stw!4v1635737353285!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <input type="submit" value="proceed to order" class="btn">
+        </form>
+    </section>
+
+
+    <section class="blogs" id="blogs">
+        <div class="heading">
+            <span>our blogs</span>
+            <h3>our daily stories</h3>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <h3> <i class="fas fa-calendar"></i> 21st may, 2021 </h3>
+                    <img src="imgs/food2/blog-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="tags">
+                        <a href="#"> <i class="fas fa-tag"></i> food / </a>
+                        <a href="#"> <i class="fas fa-tag"></i> burger / </a>
+                        <a href="#"> <i class="fas fa-tag"></i> pizza  </a>
+                    </div>
+                    <h3>blog title goes here...</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ipsum doloremque blanditiis aliquid aliquam dolores!</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <h3> <i class="fas fa-calendar"></i> 21st may, 2021 </h3>
+                    <img src="imgs/food2/blog-2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="tags">
+                        <a href="#"> <i class="fas fa-tag"></i> food / </a>
+                        <a href="#"> <i class="fas fa-tag"></i> burger / </a>
+                        <a href="#"> <i class="fas fa-tag"></i> pizza / </a>
+                    </div>
+                    <h3>blog title goes here...</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ipsum doloremque blanditiis aliquid aliquam dolores!</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <h3> <i class="fas fa-calendar"></i> 21st may, 2021 </h3>
+                    <img src="imgs/food2/blog-3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="tags">
+                        <a href="#"> <i class="fas fa-tag"></i> food / </a>
+                        <a href="#"> <i class="fas fa-tag"></i> burger / </a>
+                        <a href="#"> <i class="fas fa-tag"></i> pizza / </a>
+                    </div>
+                    <h3>blog title goes here...</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ipsum doloremque blanditiis aliquid aliquam dolores!</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footer">
+        <div class="newsletter">
+            <form action="">
+                <input type="email" name="" placeholder="enter your email" id="">
+                <input type="submit" value="subscribe" class="btn">
+            </form>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <h3>our menu</h3>
+                <a href="#">pizza</a>
+                <a href="#">burger</a>
+                <a href="#">chicken</a>
+                <a href="#">pasta</a>
+                <a href="#">and more...</a>
+            </div>
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#home"> <i class="fas fa-arrow-right"></i> home</a>
+                <a href="#about"> <i class="fas fa-arrow-right"></i> about</a>
+                <a href="#popular"> <i class="fas fa-arrow-right"></i> popular</a>
+                <a href="#menu"> <i class="fas fa-arrow-right"></i> menu</a>
+                <a href="#order"> <i class="fas fa-arrow-right"></i> order</a>
+                <a href="#blogs"> <i class="fas fa-arrow-right"></i> blogs</a>
+            </div>
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#"> <i class="fas fa-arrow-right"></i> my order</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> my account</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> my favorite</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> terms of use</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> privary policy</a>
+            </div>
+            <div class="box">
+                <h3>opening hours</h3>
+                <p>monday : 7:00am to 10:00pm</p>
+                <p>tuesday : 7:00am to 10:00pm</p>
+                <p>wednesday : 7:00am to 10:00pm</p>
+                <p>thursday : 7:00am to 10:00pm</p>
+                <p>friday : 7:00am to 10:00pm</p>
+                <p>saturday and sunday closed</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+                <a href="#" class="fab fa-pinterest"></a>
+            </div>
+            <div class="credit"> created <span>mr. web designer</span> | all right reserved! </div>
+        </div>
+    </section>
+
+
+
+
+
+<!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script>
+
+    let searchForm = document.querySelector('.search-form-container');
+    document.querySelector('#search-btn').onclick = () => {
+        searchForm.classList.toggle('active');
+        navbar.classList.remove('active');
+        loginForm.classList.remove('active');
+        cart.classList.remove('active');
+    };
+    let cart = document.querySelector('.shopping-cart-container');
+    document.querySelector('#cart-btn').onclick = () => {
+        cart.classList.toggle('active');
+        searchForm.classList.remove('active');
+        navbar.classList.remove('active');
+        loginForm.classList.remove('active');
+    };
+    let loginForm = document.querySelector('.login-form-container');
+    document.querySelector('#login-btn').onclick = () => {
+        loginForm.classList.toggle('active');
+        searchForm.classList.remove('active');
+        navbar.classList.remove('active');
+        cart.classList.remove('active');
+    };
+    let navbar = document.querySelector('.header .navbar');
+    document.querySelector('#menu-btn').onclick = () => {
+        navbar.classList.toggle('active');
+        searchForm.classList.remove('active');
+        loginForm.classList.remove('active');
+        cart.classList.remove('active');
+    };
+
+    window.onscroll = () => {
+        navbar.classList.remove('active');
+    };
+
+    document.querySelector('.home').onmousemove = (e) => {
+        let x = (window.innerWidth - e.pageX * 2) / 90;
+        let y = (window.innerHeight - e.pageY * 2) / 90;
+        document.querySelector('.home .home-parallax-img').style.transform = `translateX(${y}px) translateY(${x}px)`;
+    };
+    document.querySelector('.home').onmousleave = (e) => {
+        document.querySelector('.home .home-parallax-img').style.transform = `translateX(0px) translateY(0px)`;
+    }
+
+</script>
+        
+</body>
+</html>
