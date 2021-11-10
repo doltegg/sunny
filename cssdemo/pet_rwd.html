@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@0,100;0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=consolas:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"> -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap'); */
+    :root{
+        --carrot-color: #e67e22;
+        --black: #130f40;
+        --white: #fff;
+        --light-color: #666;
+        --light-bg: #eee;
+        --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+        --border: .2rem solid var(--black);
+    }
+    *{
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: .2s linear;
+        outline: none;
+        border: none;
+    }
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 4rem;
+        scroll-behavior: smooth;
+    }
+    html::-webkit-scrollbar{
+        width: 1rem;
+    }
+    html::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    html::-webkit-scrollbar-thumb{
+        background: var(--carrot-color);
+        border-radius: 5rem;
+    }
+    section{
+        padding: 5rem 9%;
+    }
+    .heading{
+        padding-bottom: 2rem;
+        text-align: center;
+        font-size: 3.5rem;
+        color: var(--black);
+    }
+    .heading span{
+        color: var(--carrot-color);
+    }
+    .btn{
+        display: inline-block;
+        margin-top: 1rem;
+        padding: .8rem 2.8rem;
+        border-radius: 5rem;
+        border-top-left-radius: 0;
+        border: var(--border);
+        cursor: pointer;
+        background: none;
+        color: var(--black);
+        font-size: 1.7rem;
+        overflow: hidden;
+        z-index: 0;
+        position: relative;
+    }
+    .btn::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: var(--black);
+        z-index: -1;
+        transition: .2s linear;
+        clip-path: circle(0% at 0% 5%);
+    }
+    .btn:hover::before{
+        clip-path: circle(100%);
+    }
+    .btn:hover{
+        color: #fff;
+    }
+    @keyframes fadeIn{
+        0%{
+            transform: translateY(3rem);
+            opacity: 0;
+        }
+    }
+    .header{
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 9%;
+        box-shadow: var(--box-shadow);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        transform: translateY(-10rem);
+    }
+    .header.active{
+        transform: translateY(0rem);
+    }
+    .header .logo{
+        font-size: 2.5rem;
+        color: var(--black);
+        font-weight: bolder;
+    }
+    .header .logo i{
+        color: var(--carrot-color);
+    }
+    .header .navbar a{
+        margin: 0 1rem;
+        font-size: 1.7rem;
+        color: var(--light-color);
+    }
+    .header .navbar a:hover{
+        color: var(--carrot-color);
+    }
+    .header .icons a,
+    .header .icons div{
+        font-size: 2.5rem;
+        margin-left: 1.5rem;
+        color: var(--black);
+        cursor: pointer;
+    }
+    .header .icons a:hover,
+    .header .icons div:hover{
+        color: var(--carrot-color);
+    }
+    .header .login-form{
+        position: absolute;
+        top: 120%;
+        right: 2rem;
+        width: 35rem;
+        border-radius: 1rem;
+        background: var(--white);
+        box-shadow: var(--box-shadow);
+        padding: 2rem;
+        display: none;
+    }
+    .header .login-form.active{
+        display: block;
+        animation: fadeIn .4s linear;
+    }
+    .header .login-form h3{
+        color: var(--black);
+        font-size: 2.5rem;
+        padding-bottom: .5rem;
+    }
+    .header .login-form .box{
+        width: 100%;
+        border-bottom: var(--border);
+        border-width: .1rem;
+        padding: 1.5rem 0;
+        font-size: 1.6rem;
+        color: var(--black);
+        text-transform: none;
+        margin: 1rem 0;
+    }
+    .header .login-form .remember{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: 1rem 0;
+    }
+    .header .login-form .remember label{
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--light-color);
+    }
+    .header .login-form .btn {
+        width: 100%;
+        text-align: center;
+        margin: 1.5rem 0;
+    }
+    .header .login-form .btn:hover {
+        background: var(--black);
+    }
+    .header .login-form .links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .header .login-form .links a {
+        font-size: 1.4rem;
+        color: var(--carrot-color);
+    }
+    .header .login-form .links a:hover {
+        color: var(--black);
+        text-decoration: underline;
+    }
+    #menu-btn{
+        display: none;
+    }
+    .home{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background: url(imgs/pet/home_bg_img.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+    .home .content{
+        width: 50rem;
+    }
+    .home .content h3{
+        font-size: 6rem;
+        color: var(--white);
+        padding-bottom: 1rem;
+    }
+    .home .content h3 span{
+        color: var(--carrot-color);
+    }
+    .home .content .btn{
+        color: var(--white);
+        border-color: var(--white);
+    }
+    .home .content .btn:hover{
+        color: var(--black);
+    }
+    .home .content .btn::before{
+        background: var(--white);
+    }
+    .home .wave{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 12rem;
+    }
+    .about{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .about .image{
+        flex: 1 1 40rem;
+    }
+    .about .image img{
+        width: 100%;
+    }
+    .about .content{
+        flex: 1 1 40rem;
+    }
+    .about .content h3{
+        color: var(black);
+        font-size: 4rem;
+    }
+    .about .content h3 span{
+        color: var(--carrot-color);
+    }
+    .about .content p{
+        font-size: 1.6rem;
+        color: var(--light-color);
+        padding: 1rem 0;
+        line-height: 2;
+    }
+    .dog-food,
+    .cat-food{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 2rem 0;
+    }
+    .dog-food .image,
+    .cat-food .image{
+        flex: 1 1 40rem;
+    }
+    .dog-food .image img,
+    .cat-food .image img{
+        width: 100%;
+    }
+    .dog-food .content,
+    .cat-food .content{
+        flex: 1 1 40rem;
+        text-align: center;
+        padding: 2rem;
+    }
+    .dog-food .content h3,
+    .cat-food .content h3{
+        font-size: 3.5rem;
+        color: var(--black);
+    }
+    .dog-food .content h3 span,
+    .cat-food .content h3 span{
+        color: var(--carrot-color);
+    }
+    .dog-food .content p,
+    .cat-food .content p{
+        padding: 1rem 0;
+        line-height: 2;
+        color: var(--light-color);
+        font-size: 1.6rem;
+    }
+    .dog-food .content .amount,
+    .cat-food .content .amount{
+        font-size: 3.5rem;
+        color: var(--black);
+        padding: .5rem 0;
+    }
+    .dog-food .content a img,
+    .cat-food .content a img{
+        height: 15rem;
+        margin-top: 1rem;
+    }
+    .dog-food .content a img:hover,
+    .cat-food .content a img:hover{
+        transform: rotate(15deg);
+    }
+    .cat-food{
+        flex-wrap: wrap-reverse;
+    }
+    .shop .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+    }
+    .shop .box-container .box{
+        position: relative;
+        overflow: hidden;
+    }
+    .shop .box-container .box:hover .image img{
+        transform: scale(1.1);
+    }
+    .shop .box-container .box:hover .icons{
+        transform: translateX(0rem);
+    }
+    .shop .box-container .box .image{
+        height: 45rem;
+        width: 100%;
+        overflow: hidden;
+    }
+    .shop .box-container .box .image img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .shop .box-container .box .icons{
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        z-index: 10;
+        transform: translateX(10rem);
+    }
+    .shop .box-container .box .icons a{
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        line-height: 5rem;
+        font-size: 2.2rem;
+        margin-top: 1rem;
+        background: var(--white);
+        color: var(--black);
+        text-align: center;
+    }
+    .shop .box-container .box .icons a:hover{
+        color: var(--white);
+        background: var(--carrot-color);
+    }
+    .shop .box-container .box .content{
+        padding: 1rem 0;
+        text-align: center;
+    }
+    .shop .box-container .box .content h3{
+        font-size: 2.2rem;
+        color: var(--black);
+        padding-bottom: .5rem;
+    }
+    .shop .box-container .box .content .amount{
+        font-size: 2rem;
+        color: var(--carrot-color);
+    }
+    .services .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+    }
+    .services .box-container .box{
+        background: var(--light-bg);
+        padding: 3rem;
+        text-align: center;
+        border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+    }
+    .services .box-container .box:nth-child(even){
+        border-radius: 79% 21% 81% 19% / 58% 93% 7% 42%;
+    }
+    .services .box-container .box:hover{
+        border-radius: .5rem;
+    }
+    .services .box-container .box i{
+        height: 6.5rem;
+        width: 6.5rem;
+        line-height: 6.5rem;
+        font-size: 3rem;
+        color: var(--white);
+        background: var(--carrot-color);
+        border-radius: 50%;
+        margin-bottom: .5rem;
+    }
+    .services .box-container .box h3{
+        font-size: 2.2rem;
+        color: var(--black);
+        padding: 1rem 0;
+    }
+    .plan .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+    }
+    .plan .box-container .box{
+        position: relative;
+        padding: 2rem;
+        border-radius: .5rem;
+        position: relative;
+        margin-bottom: 2rem;
+        background: var(--light-bg);
+    }
+    .plan .box-container .box .btn{
+        position: absolute;
+        bottom: -2rem;
+        right: 2rem;
+        background: var(--white);
+    }
+    .plan .box-container .box .title{
+        text-align: center;
+        color: var(--carrot-color);
+        font-size: 2rem;
+    }
+    .plan .box-container .box .day{
+        text-align: center;
+        color: var(--black);
+        font-size: 3.5rem;
+    }
+    .plan .box-container .box .icon{
+        color: var(--carrot-color);
+        font-size: 5rem;
+        padding: 2rem 0;
+    }
+    .plan .box-container .box .list{
+        margin: 1rem 0;
+    }
+    .plan .box-container .box .list p{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        color: var(--light-color);
+        padding: 1rem 0;
+    }
+    .plan .box-container .box .list p span{
+        color: var(--carrot-color);
+    }
+    .plan .box-container .box .amount{
+        font-size: 5rem;
+        font-weight: bolder;
+        color: var(--black);
+    }
+    .plan .box-container .box .amount span{
+        font-size: 3rem;
+    }
+    .contact{
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+    .contact .image{
+        flex: 1 1 40rem;
+    }
+    .contact .image img{
+        width: 100%;
+    }
+    .contact form{
+        flex: 1 1 40rem;
+        padding: 2rem 7%;
+    }
+    .contact form .btn{
+        width: 100%;
+        text-align: center;
+    }
+    .contact form .btn:hover{
+        background: var(--black);
+    }
+    .contact form h3{
+        font-size: 3rem;
+        padding-bottom: 1rem;
+        color: var(--black);
+    }
+    .contact form .box,
+    .contact form textarea{
+        width: 100%;
+        border-bottom: var(--border);
+        border-width: .1rem;
+        font-size: 1.6rem;
+        text-transform: none;
+        color: var(--black);
+        padding: 1.5rem 0;
+        margin: 1rem 0;
+    }
+    .contact form textarea{
+        height: 15rem;
+        resize: none;
+    }
+    .footer{
+        position: relative;
+        background: url(imgs/pet/footer_background.jpg) no-repeat;
+        background-position: center;
+        background-size: center;
+        padding-top: 10rem;
+        padding-bottom: 2rem;
+    }
+    .footer img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 10rem;
+        width: 100%;
+    }
+    .footer .share{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    .footer .share a{
+        color: #fff;
+        border-color: #fff;
+    }
+    .footer .share a:hover{
+        color: var(--black);
+    }
+    .footer .share a::before{
+        background: #fff;
+    }
+    .footer .share a i{
+        padding-right: .5rem;
+    }
+    .footer .credit{
+        text-align: center;
+        color: #fff;
+        font-size: 2rem;
+        padding: 2rem 1rem;
+        margin-top: 2.5rem;
+    }
+    .footer .credit span{
+        color: var(--carrot-color);
+    }
+
+
+
+
+
+
+
+
+
+    @media(max-width: 991px){
+        html{
+            font-size: 55%;
+        }
+        .header{
+            padding: 2rem;
+        }
+        section{
+            padding: 5rem 2rem;
+        }
+        .home{
+            justify-content: center;
+            background-position: right;
+        }
+        .home .content{
+            text-align: center;
+            padding-bottom: 5rem;
+        }
+        .home .content h3{
+            font-size: 4.5rem;
+        }
+        
+    }
+    @media(max-width: 768px){
+        #menu-btn{
+            display: inline-block;
+        }
+        .header .navbar{
+            position: absolute;
+            top: 99%;
+            left: 0;
+            right: 0;
+            background: var(--whtie);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+        .header .navbar.active{
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .header .navbar a{
+            display: block;
+            margin: 2rem;
+            font-size: 2rem;
+        }
+    }
+    @media(max-width: 450px){
+        html{
+            font-size: 50%;
+        }
+        header .login-form{
+            width: 90%;
+        }
+    }
+    
+
+
+
+
+
+</style> 
+</head>
+<body>
+
+<header class="header">
+    <a href="#" class="logo"> <i class="fas fa-paw"></i> shop </a>
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#shop">shop</a>
+        <a href="#services">services</a>
+        <a href="#plan">plan</a>
+        <a href="#contact">contact</a>
+    </nav>
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <div class="fas fa-user" id="login-btn"></div>
+    </div>
+    <form action="" class="login-form">
+        <h3>sign in</h3>
+        <input type="email" name="" placeholder="enter your email" class="box" id="">
+        <input type="password" name="" placeholder="enter your password" class="box" id="">
+        <div class="remember">
+            <input type="checkbox" name="" id="remember-me">
+            <label for="remember-me">remember me</label>
+        </div>
+        <input type="submit" value="sign in" class="btn">
+        <div class="links">
+            <a href="#">forget password</a>
+            <a href="#">sign up</a>
+        </div>
+    </form>
+</header>
+
+
+
+<section class="home" id="home">
+    <div class="content">
+        <h3><span>hi</span> welcome to our pet shop </h3>
+        <a href="#" class="btn">shop now</a>
+    </div>
+    <img src="imgs/pet/bottom_wave.png" class="wave" alt="">
+</section>
+
+
+<section class="about" id="about">
+    <div class="image">
+        <img src="imgs/pet/about_img.png" alt="">
+    </div>
+    <div class="content">
+        <h3>premium <span>pet food</span> manufacturer</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque voluptas natus fugiat, totam facere rerum doloremque provident cum qui ducimus.</p>
+        <a href="#" class="btn">read more</a>
+    </div>
+</section>
+
+
+<div class="dog-food">
+    <div class="image">
+        <img src="imgs/pet/dog_food.png" alt="">
+    </div>
+    <div class="content">
+        <h3> <span>air dried</span> dog food </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis odit expedita, explicabo laudantium pariatur facere.</p>
+        <div class="amount">$15.00 - $30.00</div>
+        <a href="#"> <img src="imgs/pet/shop_now_dog.png" alt=""> </a>
+    </div>
+</div>
+<div class="cat-food">
+    <div class="content">
+        <h3> <span>air dried</span> cat food </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis odit expedita, explicabo laudantium pariatur facere.</p>
+        <div class="amount">$15.00 - $30.00</div>
+        <a href="#"> <img src="imgs/pet/shop_now_cat.png" alt=""> </a>
+    </div>
+    <div class="image">
+        <img src="imgs/pet/cat_food.png" alt="">
+    </div>
+</div>
+
+
+<section class="shop" id="shop">
+    <h1 class="heading"> our <span> products </span> </h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="imgs/pet/product_01.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>air-dried food</h3>
+                <div class="amount"> $15.00 - $30.00 </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="imgs/pet/product_02.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>air-dried food</h3>
+                <div class="amount"> $15.00 - $30.00 </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="imgs/pet/product_03.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>air-dried food</h3>
+                <div class="amount"> $15.00 - $30.00 </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="imgs/pet/product_04.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>air-dried food</h3>
+                <div class="amount"> $15.00 - $30.00 </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="imgs/pet/product_05.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>air-dried food</h3>
+                <div class="amount"> $15.00 - $30.00 </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="imgs/pet/product_06.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>air-dried food</h3>
+                <div class="amount"> $15.00 - $30.00 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="services" id="services">
+    <h1 class="heading"> our <span>services</span> </h1>
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-dog"></i>
+            <h3>dog boarding</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-cat"></i>
+            <h3>cat boarding</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-bath"></i>
+            <h3>spa & grooming</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-drumstick-bite"></i>
+            <h3>healthy meal</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-baseball-ball"></i>
+            <h3>activity exercise</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-heartbeat"></i>
+            <h3>health care</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="plan" id="plan">
+    <h1 class="heading"> choose a <span>plan</span> <h1>
+    <div class="box-container">
+        <div class="box">
+            <h3 class="title">pet care</h3>
+            <h3 class="day"> 1 day </h3>
+            <i class="fas fa-bicycle icon"></i>
+            <div class="list">
+                <p> pet room <span class="fas fa-check"></span> </p>
+                <p> pet grooming <span class="fas fa-check"></span> </p>
+                <p> pet exercise <span class="fas fa-check"></span> </p>
+                <p> pet meals <span class="fas fa-check"></span> </p>
+            </div>
+            <div class="amount"><span>$</span>50</div>
+            <a href="#" class="btn"> choose plan </a>
+        </div>
+        <div class="box">
+            <h3 class="title">pet care</h3>
+            <h3 class="day"> 10 days </h3>
+            <i class="fas fa-motorcycle icon"></i>
+            <div class="list">
+                <p> pet room <span class="fas fa-check"></span> </p>
+                <p> pet grooming <span class="fas fa-check"></span> </p>
+                <p> pet exercise <span class="fas fa-check"></span> </p>
+                <p> pet meals <span class="fas fa-check"></span> </p>
+            </div>
+            <div class="amount"><span>$</span>350</div>
+            <a href="#" class="btn"> choose plan </a>
+        </div>
+        <div class="box">
+            <h3 class="title">pet care</h3>
+            <h3 class="day"> 30 days </h3>
+            <i class="fas fa-car-side icon"></i>
+            <div class="list">
+                <p> pet room <span class="fas fa-check"></span> </p>
+                <p> pet grooming <span class="fas fa-check"></span> </p>
+                <p> pet exercise <span class="fas fa-check"></span> </p>
+                <p> pet meals <span class="fas fa-check"></span> </p>
+            </div>
+            <div class="amount"><span>$</span>650</div>
+            <a href="#" class="btn"> choose plan </a>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="contact" id="contact">
+    <div class="image">
+        <img src="imgs/pet/contact_img.png" alt="">
+    </div>
+    <form action="">
+        <h3>contact us</h3>
+        <input type="text" placeholder="your name" class="box" id="">
+        <input type="email" placeholder="your email" class="box" id="">
+        <input type="number" placeholder="your number" class="box" id="">
+        <textarea name="" placeholder="your message" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="send message" class="btn">
+    </form>
+</section>
+
+
+<section class="footer">
+    <img src="imgs/pet/top_wave.png" alt="">
+    <div class="share">
+        <a href="#" class="btn"> <i class="fab fa-facebook-f"></i> facebook-f</a>
+        <a href="#" class="btn"> <i class="fab fa-twitter"></i> twitter</a>
+        <a href="#" class="btn"> <i class="fab fa-instagram"></i> instagram</a>
+        <a href="#" class="btn"> <i class="fab fa-linkedin"></i> linkedin</a>
+        <a href="#" class="btn"> <i class="fab fa-pinterest"></i> pinterest</a>
+    </div>
+    <div class="credit"> created by <span> mr. web designer </span> | all rights reserved! </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+    let loginForm = document.querySelector('.header .login-form');
+
+    document.querySelector('#login-btn').onclick = () =>{
+        loginForm.classList.toggle('active');
+        navbar.classList.remove('active');
+    }
+
+    let navbar = document.querySelector('.header .navbar');
+
+    document.querySelector('#menu-btn').onclick = () =>{
+        navbar.classList.toggle('active');    
+        loginForm.classList.remove('active');
+    }
+
+    window.onscroll = () =>{
+        loginForm.classList.remove('active');
+        navbar.classList.remove('active');
+
+        if(window.scrollY > 0){
+            document.querySelector('.header').classList.add('active');
+        }else{
+            document.querySelector('.header').classList.remove('active');
+        }
+    }
+
+    window.onload = () =>{
+        if(window.scrollY > 0){
+            document.querySelector('.header').classList.add('active');
+        }else{
+            document.querySelector('.header').classList.remove('active');
+        }
+    }
+
+ 
+
+</script>
+        
+</body>
+</html>
