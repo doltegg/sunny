@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP Register</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 65%;
+        }
+        body{
+            background: #D8C9BD;
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+        }        
+        h1{
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #BE6159;
+        }
+        form{
+            max-width: 60rem;
+            margin: 1rem auto;
+            text-align: right;
+            /* border: 1px solid black; */
+        }
+        form .inputbox{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            /* gap: 1.5rem */
+        }
+        form .inputbox label{
+            width: 9rem;
+            font-size: 1.7rem;
+            margin: .9rem;
+        }
+        form .inputbox input{
+            flex: 1;
+            line-height: 2;
+            font-size: 1.5rem;
+            border-radius: .5rem;
+            margin-right: 1.9rem;
+            /* width: calc(100% - 10rem); */
+        }
+        form .inputbox .phone{
+            width: calc(100% - 10rem);
+            display: flex;
+            justify-content: space-between;
+        } 
+        form .inputbox .phone .numbox{
+            flex: 1;
+        }
+        form .inputbox .phone input{
+            width: 100%;
+        }
+        form .inputbox .phone .getbox{
+            margin-left: .5rem;
+            width: 9rem;
+            margin-right: 1.9rem;
+        }
+        form .inputbox .phone .getbox input{
+            background: #493D39;
+            color: #ddd;
+            border: 1px solid #ddd;
+            height: 100%;
+        }
+        form input::placeholder{
+            padding-left: .6rem;
+        }
+        .info{
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 1.2rem;
+        }
+        .info div{
+            margin: 1.5rem;
+            font-size: 1.7rem;
+        }
+        .info div input[type="checkbox"]{
+            display: inline-block;
+            width: 1.7rem;
+            height: 1.7rem;
+            margin-right: .5rem;
+            transform: translateY(.2rem);
+        }
+        .info a{
+            font-size: 1.7rem;
+        }
+        .send{
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .btn{
+            padding: .5rem 5rem;
+            font-size: 1.5rem;
+            background: #493D39;
+            color: #ddd;
+            border-radius: .5rem;
+            letter-spacing: .1rem;            
+        }
+        .btn:hover{
+            color: #493D39;
+            background: #eee;
+            letter-spacing: .5rem;
+        }
+        input:focus{
+            outline: 1px solid #BE6159;
+        }
+    </style>
+</head>
+<body>
+    
+    <img src="https://www.sunnygo.com.tw/sunnygo/event/register/img/mail.jpg" alt="">
+    <h1>陽信商店街會員註冊</h1>
+    <form action="">
+        <div class="inputbox">
+            <label for="">姓名</label>
+            <input type="text" placeholder="姓名">
+        </div>
+        <div class="inputbox">
+            <label for="">電子郵件</label>
+            <input type="email" placeholder="電子郵件">
+        </div>
+        <div class="inputbox">
+            <label for="">密碼設定</label>
+            <input type="password" placeholder="密碼設定">
+        </div>
+        <div class="inputbox">
+            <label for="">密碼確認</label>
+            <input type="password" placeholder="密碼確認">
+        </div>
+        <div class="inputbox">
+            <label for="">手機門號</label>
+            <div class="phone">
+                <div class="numbox">
+                    <input type="unumber" placeholder="手機門號">
+                </div>
+                <div class="getbox">
+                    <input type="button" value="獲取驗證碼">
+                </div>
+            </div>
+        </div>
+        <div class="inputbox">
+            <label for="">手機驗證碼</label>
+            <input type="text" placeholder="手機驗證碼">
+        </div>
+        <div class="inputbox">
+            <label for="">推薦代碼</label>
+            <input type="text" placeholder="推薦代碼">
+        </div>      
+        <div class="info">
+            <div><input type="checkbox" name="" id=""><label>我已經同意</label></div>
+            <a href="#">會員註冊條款</a>
+            <a href="#">隱私權政策</a>
+        </div>
+        <div class="send">
+            <input type="submit" value="送出" class="btn">
+        </div>
+    </form>  
+
+</body>
+</html>
