@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@0,100;0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=consolas:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"> -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> -->
+
+    <!-- bootstrap cdn -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
+
+<style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;600;700&display=swap'); */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap'); */
+    
+    *{
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: all .2s linear;
+    }
+    .container{
+        background: linear-gradient(#ddd 50%, crimson 50%);
+        min-height: 100vh;
+        text-align: center;
+    }
+    .container .box-container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .container .box-container .box{
+        background: #fff;
+        box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    }
+    .container .box-container .box:nth-child(2){
+        border: 2px solid #000;
+    }
+    .container .box-container .box:nth-child(2) .btn{
+        background: crimson;
+    }
+    .container .box-container .box:nth-child(2) .btn:hover{
+        background: #fff;
+    }
+    .container .box-container .box h3{
+        font-size: 25px;
+        padding: 17px 0;
+        color: #444;
+    }
+    .container .box-container .box .price{
+        color: #fff;
+        background: crimson;
+        font-weight: bolder;
+        font-size: 50px;
+    }
+    .container .box-container .box .price.year{
+        display: none;
+    }
+    .container .box-container .box .list{
+        margin: 20px 0;
+    }
+    .container .box-container .box .list p{
+        padding: 15px 0;
+        font-size: 17px;
+        color: #666; 
+    }
+    .container .box-container .box .list p i{
+        padding-right: 5px; 
+        color: crimson;
+    }
+    .container .box-container .box .btn{
+        margin: 20px;
+        display: block;
+        font-size: 17px;
+        background: #444;
+        color: #fff;
+        padding: 10px;
+    }
+    .container .box-container .box .btn:hover{
+        background: crimson;
+    }
+    .container .price-toggler{
+        margin-top: 20px;
+        display: inline-block;
+        padding: 5px;
+        border: 2px solid #000;
+        background: #fff;
+    }
+    .container .price-toggler span{
+        padding: 7px 30px;
+        cursor: pointer;
+        color: #444;
+        font-size: 20px;
+        display: inline-block;
+    }
+    .container .price-toggler span.active{
+        background: #444;
+        color: #fff;
+    }
+    @media(max-width: 450px){
+        .container .box-container{
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+</style> 
+</head>
+<body>
+
+<div class="container">
+
+    <div class="price-toggler">
+        <span class="month active">monthly</span>
+        <span class="year">yearly</span>
+    </div>
+
+
+    <div class="box-container">
+        <div class="box">
+            <h3>basic</h3>
+            <div class="price month"><span>$</span>10.<span>00</span></div>
+            <div class="price year"><span>$</span>30.<span>00</span></div>
+            <div class="list">
+                <p><i class="fas fa-check">1 person</i></p>
+                <p><i class="fas fa-check">10GB storage</i></p>
+                <p><i class="fas fa-check">1 domain</i></p>
+                <p><i class="fas fa-check">team support</i></p>
+                <p><i class="fas fa-check">maintenance</i></p>
+            </div>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+        <div class="box">
+            <h3>regular</h3>
+            <div class="price month"><span>$</span>30.<span>00</span></div>
+            <div class="price year"><span>$</span>50.<span>00</span></div>
+            <div class="list">
+                <p><i class="fas fa-check">10 person</i></p>
+                <p><i class="fas fa-check">50GB storage</i></p>
+                <p><i class="fas fa-check">10 domain</i></p>
+                <p><i class="fas fa-check">team support</i></p>
+                <p><i class="fas fa-check">maintenance</i></p>
+            </div>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+        <div class="box">
+            <h3>business</h3>
+            <div class="price month"><span>$</span>90.<span>00</span></div>
+            <div class="price year"><span>$</span>150.<span>00</span></div>
+            <div class="list">
+                <p><i class="fas fa-check">100 person</i></p>
+                <p><i class="fas fa-check">100GB storage</i></p>
+                <p><i class="fas fa-check">100 domain</i></p>
+                <p><i class="fas fa-check">team support</i></p>
+                <p><i class="fas fa-check">maintenance</i></p>
+            </div>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+    </div>
+</div>
+
+
+
+ <script>
+     let month = document.querySelector('.price-toggler .month');
+     let year = document.querySelector('.price-toggler .year');
+     let monthAmount = document.querySelectorAll('.box-container .box .month');
+     let yearAmount = document.querySelectorAll('.box-container .box .year');
+     year.onclick = () =>{
+         year.classList.add('active');
+         month.classList.remove('active');
+
+         monthAmount.forEach(mo =>{ mo.style.display = 'none' });
+         yearAmount.forEach(yr =>{ yr.style.display = 'block' });
+     };
+     month.onclick = () =>{
+         year.classList.remove('active');
+         month.classList.add('active');
+
+         monthAmount.forEach(mo =>{ mo.style.display = 'block' });
+         yearAmount.forEach(yr =>{ yr.style.display = 'none' });
+     };
+ </script>   
+
+
+
+
+
+<!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
+
+
+
+
+        
+</body>
+</html>
