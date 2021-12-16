@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:wght@100;300;400;500;600&display=swap');
+    :root{
+        --red: #e60000;
+        --black: #222;
+        --white: #fff;
+        --light-color: #666;
+        --light-bg: #eee;
+        --border: .2rem solid var(--black);
+        --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        text-transform: capitalize;
+        transition: all .2s linear;
+    }
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 7rem;
+    }
+    html::-webkit-scrollbar{
+        width: 1rem;
+    }
+    html::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    html::-webkit-scrollbar-thumb{
+        background: var(--red);
+    }
+    section{
+        padding: 3rem 9%;
+    }
+    .heading{
+        text-align: center;
+        color: var(--black);
+        margin-bottom: 3rem;
+        font-size: 4rem;
+    }
+    .btn{
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 1rem 3rem;
+        background: var(--red);
+        color: var(--white);
+        font-size: 1.7rem;
+        box-shadow: var(--box-shadow);
+        cursor: pointer;
+    }
+    .btn:hover{
+        letter-spacing: .1rem;
+    }
+    @keyframes fadeIn{
+        0%{
+            opacity: 0;
+            transform: translateY(-4rem) scale(.4);
+        }
+    }
+    .header{
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: var(--box-shadow);
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 9%;
+    }
+    .header .logo{
+        font-size: 2.5rem;
+        color: var(--black);
+        font-weight: bolder;
+    }
+    .header .logo i{
+        color: var(--red);
+    }
+    .header .navbar a{
+        margin: 0 1.5rem;
+        font-size: 1.7rem;
+        color: var(--black);
+    }
+    .header .navbar a:hover{
+        color: var(--red);
+    }
+    .header .icons div,
+    .header .icons a{
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        border-radius: .5rem;
+        background: var(--light-bg);
+        font-size: 1.7rem;
+        color: var(--black);
+        margin-left: .3rem;
+        text-align: center;
+        cursor: pointer;
+    }
+    .header .icons div:hover,
+    .header .icons a:hover{
+        background: var(--red);
+        color: var(--white);
+    }
+    .header #menu-btn{
+        display: none;
+    }
+    .header .search-form{
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        height: 6rem;
+        background: var(--white);
+        border-top: var(--border);
+        border-bottom: var(--border);
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .header .search-form.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .header .search-form input{
+        width: 100%;
+        font-size: 1.6rem;
+        color: var(--light-color);
+        text-transform: none;
+    }
+    .header .search-form label{
+        font-size: 2.5rem;
+        margin-left: 2rem;
+        color: var(--black);
+        cursor: pointer;
+    }
+    .header .search-form label:hover{
+        color: var(--red);
+    }
+    .home{
+        position: relative;
+        padding: 0;
+    }
+    .home .slide{
+        padding: 2rem;
+        display: flex; 
+        min-height: 60vh; 
+        display: none;      
+    }
+    .home .slide.active{
+        display: flex;
+    }
+    .home .slide .content{
+        margin: auto;
+        text-align: center;
+    }
+    .home .slide .content span{
+        color: var(--black);
+        display: block;
+        font-size: 3rem;
+        text-shadow: var(--box-shadow);
+        animation: fadeIn .2s linear backwards;
+    }
+    .home .slide .content h3{
+        font-size: 5rem;
+        color: var(--black);
+        text-shadow: var(--box-shadow);
+        text-transform: uppercase;
+        animation: fadeIn .2s linear backwards .4s;
+    }
+    .home .slide .content .btn{
+        animation: fadeIn .2s linear backwards .6s;
+    }
+    .home #next-slide,
+    .home #prev-slide{
+        height: 5rem;
+        width: 5rem;
+        line-height: 4.5rem;
+        font-size: 2.5rem;
+        color: var(--black);
+        border: var(--border);
+        background: var(--white);
+        box-shadow: var(--box-shadow);
+        cursor: pointer;
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        text-align: center;
+    }
+    .home #next-slide:hover,
+    .home #prev-slide:hover{
+        background: var(--red);
+        color: var(--white);
+    }
+    .home #prev-slide{
+        right: 8rem;
+    }
+    .category .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        gap: 2rem;
+    }
+    .category .box-container .box{
+        text-align: center;
+    }
+    .category .box-container .box:hover h3{
+        color: var(--red);
+    }
+    .category .box-container .box img{
+        height: 14rem;
+        margin-bottom: 1rem;
+    }
+    .category .box-container .box h3{
+        font-size: 1.7rem;
+        color: var(--black);
+        font-weight: normal;
+    }
+    .about {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .about .image{
+        flex: 1 1 42rem;
+        padding-bottom: 5rem;
+        padding-right: 5rem;
+    }
+    .about .image img{
+        width: 100%;
+        box-shadow: 4rem 4rem 0 var(--light-bg);
+    }
+    .about .content{
+        flex: 1 1 42rem;
+    }
+    .about .content .box{
+        padding: 3rem;
+        background: var(--light-bg);
+    }
+    .about .content .box h3{
+        font-size: 2.5rem;
+        color: var(--black);
+    }
+
+    .about .content .box p{
+        padding: 1rem 0;
+        line-height: 2;
+        color: var(--light-color);
+        font-size: 1.4rem;
+    }
+    .about .content .icons-container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;   
+        gap: 2rem;
+        margin-top: 2rem;
+    }   
+    .about .content .icons-container .icons{
+        flex: 1 1 16rem;
+        background: var(--light-bg);
+        padding: 2rem;
+        text-align: center;
+    }
+    .about .content .icons-container .icons i{
+        color: var(--red);
+        margin-bottom: 1rem;
+        font-size: 5rem;
+    }
+    .about .content .icons-container .icons p{
+        font-size: 1.4rem;
+        color: var(--light-color);
+    } 
+    .shop{
+        background: var(--light-bg);
+    }
+    .shop .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+        gap: 2rem;
+    }
+    .shop .box-container .box{
+        text-align: center;
+        background: var(--white);
+        border: var(--border);
+        box-shadow: var(--box-shadow);
+    }
+    .shop .box-container .box:hover .image img{
+        transform: scale(1.1);
+    }
+    .shop .box-container .box:hover .image .icons{
+        transform: translateX(0rem);
+    }
+    .shop .box-container .box .image{
+        position: relative;
+        overflow: hidden;
+    }
+    .shop .box-container .box .image img{
+        height: 25rem;
+    }
+    .shop .box-container .box .image .icons{
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+        transform: translateX(-10rem);
+    }
+    .shop .box-container .box .image .icons a{
+        display: block;
+        height: 5rem;
+        width: 5rem;
+        line-height: 4.5rem;
+        font-size: 1.7rem;
+        color: var(--black);
+        border: var(--border);
+        box-shadow: var(--box-shadow);
+        margin-top: 1rem;
+    }
+    .shop .box-container .box .image .icons a:hover{
+        color: var(--white);
+        background: var(--red);
+    }
+    .shop .box-container .box .content{
+        padding: 2rem;
+    }
+    .shop .box-container .box .content h3{
+        font-size: 2rem;
+        color: var(--black);
+        padding-bottom: .5rem;
+        font-weight: normal;
+    }
+    .shop .box-container .box .content .price{
+        font-size: 2rem;
+        font-weight: bolder;
+        color: var(--red);
+    }
+    .shop .box-container .box .content .price span{
+        color: var(--light-color);
+        font-size: 1.5rem;
+        text-decoration: line-through;
+    }
+    .banner{
+        background: url(imgs/xmas/banner-bg.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .banner .content{
+        max-width: 40rem;
+        background: var(--white);
+        box-shadow: var(--box-shadow);
+        padding: 2rem;
+        text-align: center;
+        margin: 10rem 0;
+    }
+    .banner .content span{
+        font-size: 2rem;
+        color: var(--red);
+    }
+    .banner .content h3{
+        font-size: 3rem;
+        color: var(--black);
+        padding-top: .5rem;
+    }
+    .banner .content p{
+        font-size: 1.4rem;
+        color: var(--light-color);
+        padding: 1rem 0;
+        line-height: 2;
+    }
+    .gallery .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+        gap: 2rem;
+    }
+    .gallery .box-container .box{
+        height: 25rem;
+        overflow: hidden;
+        position: relative;
+        box-shadow: var(--box-shadow);
+    }
+    .gallery .box-container .box:hover .content{
+        display: flex;
+    }
+    .gallery .box-container .box img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .gallery .box-container .box .content{
+        background: rgba(255,255,255,.8);
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding: 2rem;
+        text-align: center;
+        border: var(--border);
+        display: none;
+    }
+    .gallery .box-container .box .content h3{
+        font-size: 2rem;
+        color: var(--black);
+        animation: fadeIn .2s linear backwards;
+    }
+    .gallery .box-container .box .content p{
+        font-size: 1.4rem;
+        color: var(--black);
+        padding: 1rem 0;
+        line-height: 2;
+        animation: fadeIn .2s linear backwards .2s;
+    }
+    .gallery .box-container .box .content .btn{
+        animation: fadeIn .2s linear backwards .4s;
+    }
+    .message{
+        background: url(imgs/xmas/message-bg.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 0 2rem;
+    }
+    .message form{
+        margin: 2rem auto;
+        background: var(--white);
+        text-align: center;
+        max-width: 40rem;
+        box-shadow: var(--box-shadow);
+        padding: 2rem;
+    }
+    .message form h3{
+        font-size: 3rem;
+        color: var(--black);
+    }
+    .message form .box{
+        width: 100%;
+        padding: 1.5rem 0;
+        margin: .7rem 0;
+        font-size: 1.6rem;
+        color: var(--light-color);
+        text-transform: none;
+        border-bottom: var(--border);
+    }
+    .message form .box:focus{
+        border-color: var(--red);
+    }
+    .message form textarea{
+        height: 15rem;
+        resize: none;
+    }
+    .blogs .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+        gap: 2rem;
+    }
+    .blogs .box-container .box{
+        border: var(--border);
+        box-shadow: var(--box-shadow);
+    }
+    .blogs .box-container .box:hover .image img{
+        transform: scale(1.1);
+    }
+    .blogs .box-container .image{
+        height: 30rem;
+        width: 100%;
+        border-bottom: var(--border);
+        overflow: hidden;
+    }
+    .blogs .box-container .image img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .blogs .box-container .content{
+        padding: 2rem;
+        position: relative;
+    }
+    .blogs .box-container .content .date{
+        position: absolute;
+        top: -4rem;
+        right: 3rem;
+        height: 8rem;
+        width: 8rem;
+        border: .5rem solid var(--white);    
+        border-radius: 50%;
+        background: var(--red);
+        text-align: center;
+        padding-top: 1rem;
+    }
+    .blogs .box-container .content .date h3{
+        font-size: 2.7rem;
+        line-height: 1;
+        color: var(--white);
+    }
+    .blogs .box-container .content .date span{
+        font-size: 1.5rem;
+        color: var(--white);
+    }
+    .blogs .box-container .content .user{
+        display: block;
+        padding-bottom: 1rem;
+        font-size: 1.5rem;
+        color: var(--light-color);
+    }
+    .blogs .box-container .content .user i{
+        padding-right: .5rem;
+        color: var(--red);
+    }
+    .blogs .box-container .content .user:hover{
+        color: var(--red);
+    }
+    .blogs .box-container .content .title{
+        font-size: 2rem;
+        color: var(--black);
+    }
+    .blogs .box-container .content .title:hover{
+        color: var(--red);
+    }
+    .blogs .box-container .content p{
+        padding: 1rem 0;
+        line-height: 2;
+        color: var(--light-color);
+        font-size: 1.4rem;
+    }
+    .service{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+        gap: 2rem;
+        background: var(--red);
+    }
+    .service .box{
+        text-align: center;
+        padding: 2rem;
+    }
+    .service .box img{
+        height: 10rem;
+    }
+    .service .box h3{
+        padding: 1rem 0;
+        padding-bottom: .5rem;
+        font-size: 2rem;
+        color: var(--white);
+    }
+    .service .box p{
+        line-height: 2;
+        font-size: 1.4rem;
+        color: var(--white);
+    }
+    .footer .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 2rem;
+    }
+    .footer .box-container .box h3{
+        font-size: 2.2rem;
+        color: var(--black);
+        padding: 1rem 0;
+    }
+    .footer .box-container .box .link{
+        padding: 1rem 0;
+        font-size: 1.4rem;
+        color: var(--light-color);
+        display: block;   
+    }
+    .footer .box-container .box .link i{
+        padding-right: .5rem;
+        color: var(--red);
+    }
+    .footer .box-container .box .link:hover{
+        color: var(--red);
+    }
+    .footer .box-container .box .link:hover i{
+        padding-right: 2rem;
+    }
+    .footer .box-container .box .share{
+        margin-top: 2rem;   
+    }
+    .footer .box-container .box .share a{
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        font-size: 1.7rem;
+        border-radius: .5rem;
+        background: var(--light-bg);
+        text-align: center;
+        color: var(--black);
+        margin-right: .5rem;
+    }
+    .footer .box-container .box .share a:hover{
+        background: var(--red);
+        color: var(--white);        
+    }
+    .footer .box-container .box p{
+        padding: 1rem 0;
+        font-size: 1.7rem;
+        color: var(--light-color);
+    }
+    .footer .box-container .box form .email{
+        border: var(--border);
+        width: 100%;
+        padding: 1.2rem 1.4rem;
+        text-transform: none;
+        color: var(--light-color);
+        margin: 1rem 0;
+        font-size: 1.6rem;
+    }
+    .footer .credit{
+        text-align: center;
+        padding: 1rem;
+        padding-top: 3rem;
+        margin-top: 3rem;
+        font-size: 2rem;
+        border-top: var(--border);
+        color: var(--light-color);
+    }
+    .footer .credit span{
+        color: var(--red);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    @media(max-width: 991px){
+        html{
+            font-size: 55%;
+        }
+        .header{
+            padding: 1.5rem 2rem;
+        }
+        section{
+            padding: 3rem 2rem;
+        }
+    }
+    @media(max-width: 768px){
+        .header #menu-btn{
+            display: inline-block;
+        }
+        .header .navbar{
+            position: absolute;
+            top: 99%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-top: var(--border);
+            border-bottom: var(--border);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+        .header .navbar.active{
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .header .navbar a{
+            display: block;
+            font-size: 2rem;
+            margin: 2rem;
+        }
+    }
+    @media(max-width: 450px){
+        html{
+            font-size: 50%;
+        }
+        .home .slide .content h3{
+            font-size: 4rem;
+        }
+        .home .slide .content span{
+            font-size: 2.5rem;
+        }
+        .banner .content{
+            margin: 3rem 0;
+        }
+    }
+
+</style>
+</head>
+<body>
+
+<header class="header">
+    <a href="#" class="logo"> <i class="fas fa-gifts"></i> gifts </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#shop">shop</a>
+        <a href="#gallery">gallery</a>
+        <a href="#message">message</a>
+        <a href="#blogs">blogs</a>
+    </nav>
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn" class="fas fa-search"></div>
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+    </div>
+    <form action="" class="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+</header>
+
+
+<section class="home" id="home">
+    <div class="slide active" style="background: url(imgs/xmas/home-bg-1.png) no-repeat; background-size: cover; background-position: center;">
+        <div class="content">
+            <span>merry christmas</span>
+            <h3>upto 60% off</h3>
+            <a href="#" class="btn">shop now</a>
+        </div>
+    </div>
+    <div class="slide" style="background: url(imgs/xmas/home-bg-2.png) no-repeat; background-size: cover; background-position: center;">
+        <div class="content">
+            <span>ho-ho-ho</span>
+            <h3>happy holiday</h3>
+            <a href="#" class="btn">shop now</a>
+        </div>
+    </div>
+    <div id="next-slide" onclick="next()" class="fas fa-angle-right"></div>
+    <div id="prev-slide" onclick="prev()" class="fas fa-angle-left"></div>
+</section>
+
+
+<section class="category">
+    <div class="box-container">
+        <a href="#" class="box">
+            <img src="imgs/xmas/category-1.png" alt="">
+            <h3>christmas decorations</h3>
+        </a>
+        <a href="#" class="box">
+            <img src="imgs/xmas/category-2.png" alt="">
+            <h3>christmas decorations</h3>
+        </a>
+        <a href="#" class="box">
+            <img src="imgs/xmas/category-3.png" alt="">
+            <h3>christmas decorations</h3>
+        </a>
+        <a href="#" class="box">
+            <img src="imgs/xmas/category-4.png" alt="">
+            <h3>christmas decorations</h3>
+        </a>
+        <a href="#" class="box">
+            <img src="imgs/xmas/category-5.png" alt="">
+            <h3>christmas decorations</h3>
+        </a>
+        <a href="#" class="box">
+            <img src="imgs/xmas/category-6.png" alt="">
+            <h3>christmas decorations</h3>
+        </a>
+
+    </div>
+</section>
+
+
+<section class="about" id="about">
+    <div class="image">
+        <img src="imgs/xmas/about-img.png" alt="">
+    </div>
+    <div class="content">
+        <div class="box">
+            <h3>christmas sales in on</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae sint similique consequuntur libero corrupti sunt est fuga exercitationem blanditiis optio? Temporibus a alias deserunt minus culpa eaque pariatur veniam blanditiis.</p>
+            <a href="#" class="btn">read more</a>
+        </div>
+        <div class="icons-container">
+            <div class="icons">
+                <i class="fas fa-tree"></i>
+                <p>christmas trees</p>
+            </div>
+            <div class="icons">
+                <i class="fas fa-cookie"></i>
+                <p>christmas cookies</p>
+            </div>
+            <div class="icons">
+                <i class="fas fa-gifts"></i>
+                <p>christmas gifts</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="shop" id="shop">
+    <h1 class="heading">our shop</h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="imgs/xmas/product-1.png" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>christmas decore</h3>
+                <div class="price"> $249.99 <span>$289.99</span> </div>
+                <a href="#" class="btn">add to cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/xmas/product-2.png" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>christmas decore</h3>
+                <div class="price"> $249.99 <span>$289.99</span> </div>
+                <a href="#" class="btn">add to cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/xmas/product-3.png" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>christmas decore</h3>
+                <div class="price"> $249.99 <span>$289.99</span> </div>
+                <a href="#" class="btn">add to cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/xmas/product-4.png" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>christmas decore</h3>
+                <div class="price"> $249.99 <span>$289.99</span> </div>
+                <a href="#" class="btn">add to cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/xmas/product-5.png" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>christmas decore</h3>
+                <div class="price"> $249.99 <span>$289.99</span> </div>
+                <a href="#" class="btn">add to cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/xmas/product-6.png" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>christmas decore</h3>
+                <div class="price"> $249.99 <span>$289.99</span> </div>
+                <a href="#" class="btn">add to cart</a>
+            </div>
+        </div>
+    </div>                                   
+</section>
+
+
+<section class="banner">
+    <div class="content">
+        <span>special offer</span>
+        <h3>upto 50% off</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusantium expedita aliquid?</p>
+        <a href="#" class="btn">shop now</a>
+    </div>
+</section>
+
+
+<section class="gallery" id="gallery">
+    <h1 class="heading"> our gallery</h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="imgs/xmas/gallery-img-1.jpg" alt="">
+            <div class="content">
+                <h3>merry christmas</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, nulla. Vitae, dignissimos!</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/xmas/gallery-img-2.jpg" alt="">
+            <div class="content">
+                <h3>merry christmas</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, nulla. Vitae, dignissimos!</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/xmas/gallery-img-3.jpg" alt="">
+            <div class="content">
+                <h3>merry christmas</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, nulla. Vitae, dignissimos!</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/xmas/gallery-img-4.jpg" alt="">
+            <div class="content">
+                <h3>merry christmas</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, nulla. Vitae, dignissimos!</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/xmas/gallery-img-5.jpg" alt="">
+            <div class="content">
+                <h3>merry christmas</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, nulla. Vitae, dignissimos!</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/xmas/gallery-img-6.jpg" alt="">
+            <div class="content">
+                <h3>merry christmas</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, nulla. Vitae, dignissimos!</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="message" id="message">
+    <form action="">
+        <h3>get in touch</h3>
+        <input type="text" placeholder="full name" class="box" name="" id="">
+        <input type="email" placeholder="email" class="box" name="" id="">
+        <input type="number" placeholder="phone" class="box" name="" id="">
+        <textarea name="" placeholder="message" class="box" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="send message" class="btn">
+    </form>
+</section>
+
+
+<section class="blogs" id="blogs">
+    <h1 class="heading">our daily blogs</h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="imgs/xmas/blog-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="date">
+                    <h3>21</h3>
+                    <span>jan</span>
+                </div>
+                <a href="#" class="user"> <i class="fas fa-user"></i> by admin </a>
+                <a href="#" class="title"> blog title goes here... </a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, iure.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/xmas/blog-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="date">
+                    <h3>19</h3>
+                    <span>feb</span>
+                </div>
+                <a href="#" class="user"> <i class="fas fa-user"></i> by admin </a>
+                <a href="#" class="title"> blog title goes here... </a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, iure.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/xmas/blog-3.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="date">
+                    <h3>02</h3>
+                    <span>aug</span>
+                </div>
+                <a href="#" class="user"> <i class="fas fa-user"></i> by admin </a>
+                <a href="#" class="title"> blog title goes here... </a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, iure.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="service">
+    <div class="box">
+        <img src="imgs/xmas/icon-1.png" alt="">
+        <h3>free delivery</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, repudiandae?</p>
+    </div>
+    <div class="box">
+        <img src="imgs/xmas/icon-2.png" alt="">
+        <h3>secure payments</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, repudiandae?</p>
+    </div>
+    <div class="box">
+        <img src="imgs/xmas/icon-3.png" alt="">
+        <h3>24/7 support</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, repudiandae?</p>
+    </div>
+</section>
+
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>quick links</h3>
+            <a class="link" href="#home"> <i class="fas fa-angle-right"></i> home</a>
+            <a class="link" href="#about"> <i class="fas fa-angle-right"></i> about</a>
+            <a class="link" href="#shop"> <i class="fas fa-angle-right"></i> shop</a>
+            <a class="link" href="#gallery"> <i class="fas fa-angle-right"></i> gallery</a>
+            <a class="link" href="#message"> <i class="fas fa-angle-right"></i> message</a>
+            <a class="link" href="#blogs"> <i class="fas fa-angle-right"></i> blogs</a>
+        </div>
+        <div class="box">
+            <h3>extra links</h3>
+            <a class="link" href="#"> <i class="fas fa-angle-right"></i> my favorite </a>
+            <a class="link" href="#"> <i class="fas fa-angle-right"></i> my order </a>
+            <a class="link" href="#"> <i class="fas fa-angle-right"></i> my wishlist </a>
+            <a class="link" href="#"> <i class="fas fa-angle-right"></i> private policy </a>
+            <a class="link" href="#"> <i class="fas fa-angle-right"></i> terms of use </a>
+        </div>
+        <div class="box">
+            <h3>contact inof</h3>
+            <a class="link" href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+            <a class="link" href="#"> <i class="fas fa-phone"></i> +111-222-7890 </a>
+            <a class="link" href="#"> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </a>
+            <a class="link" href="#"> <i class="fas fa-map"></i> mumbai, india - 400104 </a>
+            <div class="share">
+                <a href="" class="fab fa-facebook-f"></a>
+                <a href="" class="fab fa-twitter"></a>
+                <a href="" class="fab fa-instagram"></a>
+                <a href="" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="box">
+            <h3>newsletter</h3>
+            <p>subscribe for latest updates</p>
+            <form action="">
+                <input type="email" class="email" placeholder="enter your email" name="" id="">
+                <input type="submit" class="btn" value="subscribe">
+            </form>
+        </div>
+        <div class="credit">created by <span>mr. web designer</span> | all rights reserved!</div>
+    </div>
+</section>
+   
+
+
+
+<script>
+    let searchBtn = document.querySelector('#search-btn');
+    let searchForm = document.querySelector('.header .search-form');
+
+    searchBtn.onclick = () =>{
+        searchBtn.classList.toggle('fa-times');
+        searchForm.classList .toggle('active');
+        menu.classList.remove('fa-times');
+        navbar.classList .remove('active');
+    }
+
+    let menu = document.querySelector('#menu-btn');
+    let navbar = document.querySelector('.header .navbar');
+
+    menu.onclick = () =>{
+        menu.classList.toggle('fa-times');
+        navbar.classList .toggle('active');
+        searchBtn.classList.remove('fa-times');
+        searchForm.classList .remove('active');
+    }
+    window.onscroll = () =>{
+        searchBtn.classList.remove('fa-times');
+        searchForm.classList .remove('active');
+        menu.classList.remove('fa-times');
+        navbar.classList .remove('active');
+    }
+
+    let slides = document.querySelectorAll('.home .slide');
+    let index = 0;
+    function next(){
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+    }
+    function prev(){
+        slides[index].classList.remove('active');
+        index = (index - 1 + slides.length) % slides.length;
+        slides[index].classList.add('active');
+    }
+
+
+</script>
+
+</body>
+</html>
