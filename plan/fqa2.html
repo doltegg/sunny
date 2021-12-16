@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+    *{
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        text-decoration: none;
+    }
+    body{
+        background: #ddd;
+    }
+    .container{
+        margin: 20px auto;
+        max-width: 700px;
+    }
+    .container .heading{
+        text-align: center;
+        font-size: 30px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .container .accordion-container{
+        padding: 0 20px;
+    }
+    .container .accordion-container .accordion{
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    .container .accordion-container .accordion.active .accordion-heading{
+        background: crimson;
+    }
+    .container .accordion-container .accordion.active .accordion-heading h3{
+        color: #fff;
+    }
+    .container .accordion-container .accordion.active .accordion-heading i{
+        color: #fff;
+        transform: rotate(180deg);
+        transition: transform .2s .1s;
+    }
+    .container .accordion-container .accordion.active .accordion-content{
+        display: block;
+    }
+    .container .accordion-container .accordion .accordion-heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        background: #fff;
+        border: 2px solid #000;
+        padding: 15px 20px;
+    }
+    .container .accordion-container .accordion .accordion-heading h3{
+        font-size: 20px;
+    }
+    .container .accordion-container .accordion .accordion-heading i{
+        font-size: 25px
+    }
+    .container .accordion-container .accordion .accordion-content{
+        padding: 15px 20px;
+        border: 2px solid #000;
+        font-size: 15px; 
+        background: #fff;
+        border-top: 0;
+        display: none;
+        animation: animate .2s linear backwards;
+        line-height: 2;
+        transform-origin: top;
+    }
+    @keyframes animate{
+        0%{
+            transform: scaleY(0);
+        }
+    }
+</style>
+</head>
+<body>
+    
+<div class="container">
+    <h1 class="heading">frequently asked questions</h1>
+    <div class="accordion-container">
+        <div class="accordion">
+            <div class="accordion-heading">
+                <div class="box">
+                    <h3>accordion heading 01</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, corporis quam. Quo delectus voluptatum debitis.</p>
+                </div>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatibus est sint eos laborum necessitatibus, labore dignissimos cupiditate odit, eligendi repudiandae aliquid veritatis quam officia aperiam, quos aliquam vel laboriosam?
+            </p>
+        </div>
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>accordion heading 02</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatibus est sint eos laborum necessitatibus, labore dignissimos cupiditate odit, eligendi repudiandae aliquid veritatis quam officia aperiam, quos aliquam vel laboriosam?
+            </p>
+        </div>
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>accordion heading 03</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatibus est sint eos laborum necessitatibus, labore dignissimos cupiditate odit, eligendi repudiandae aliquid veritatis quam officia aperiam, quos aliquam vel laboriosam?
+            </p>
+        </div>
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>accordion heading 04</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatibus est sint eos laborum necessitatibus, labore dignissimos cupiditate odit, eligendi repudiandae aliquid veritatis quam officia aperiam, quos aliquam vel laboriosam?
+            </p>
+        </div>
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>accordion heading 05</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatibus est sint eos laborum necessitatibus, labore dignissimos cupiditate odit, eligendi repudiandae aliquid veritatis quam officia aperiam, quos aliquam vel laboriosam?
+            </p>
+        </div>
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>accordion heading 06</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatibus est sint eos laborum necessitatibus, labore dignissimos cupiditate odit, eligendi repudiandae aliquid veritatis quam officia aperiam, quos aliquam vel laboriosam?
+            </p>
+        </div>
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>accordion heading 07</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, eos iure earum dolorum nam exercitationem?</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dolorum aspernatur esse?</li>
+                </ul>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatibus est sint eos laborum necessitatibus, labore dignissimos cupiditate odit, eligendi repudiandae aliquid veritatis quam officia aperiam, quos aliquam vel laboriosam?
+            </p>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+
+    let accordions =  document.querySelectorAll('.accordion-container .accordion');
+    accordions.forEach(acco => {
+        acco.onclick = () => {
+            accordions.forEach(subAcco => {
+                subAcco.classList.remove('active')
+            });
+            acco.classList.add('active');
+        }
+    })
+
+</script>
+
+</body>
+</html>
