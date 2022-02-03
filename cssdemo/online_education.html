@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online education</title>
+
+    <!-- Boxicons icons CDN Link -->
+    <!-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        @import url('http://fonts.googleapis.com/css?family=Montserrat:wght@100;200;300,400&display=swap');
+        *{
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+        :root{
+            --green: #44bb6a;
+            --black: #263238;
+            --white: #fff;
+            --light-color: #777;
+            --yellow: #ff0;
+            --light-bg: #f6f6f6;
+            --border: .1rem solid #999;
+        }
+        /* 
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(, 1fr)); 
+        grid-gap: 2rem;
+        */
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        html::-webkit-scrollbar{
+            width: 1rem;
+        }
+        html::-webkit-scrollbar-track{
+            background: transparent;
+        }
+        html::-webkit-scrollbar-thumb{
+            background: var(--green);
+        }
+        body{
+            padding-left: 30rem;
+        }
+        section{
+            padding: 3rem 5%;
+        }
+        section:nth-child(even){
+            background: var(--light-bg);
+        }
+        .heading{
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .heading span{
+            font-size: 2rem;
+            color: var(--green);            
+            text-transform: uppercase;
+        }
+        .heading h3{            
+            padding-top: 1rem;
+            font-size: 3rem;
+            color: var(--black);
+            text-transform: uppercase;
+        }
+        .btn{
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 1.2rem 3rem;
+            cursor: pointer;
+            color: var(--white);
+            background: var(--black);
+            font-size: 1.7rem;
+        }
+        .btn:hover{
+            background: var(--green);
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: var(--green);
+            width: 30rem;
+            height: 100%;
+            padding: 3rem;
+        }
+        .header .logo{
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+        .header .logo i{
+            color: var(--yellow);
+        }
+        .header .navbar{
+            padding: 20% 0;
+        }
+        .header .navbar a{
+            display: block;
+            font-size: 2rem;
+            margin: 1.7rem 0;
+            color: var(--white);
+        }
+        .header .navbar a i{
+            color: var(--yellow);
+            padding-right: .5rem;
+        }
+        .header .navbar a:hover{
+            color: var(--yellow);
+        }
+        .header .navbar a:hover i{
+            padding-right: 2rem;
+        }
+        .header .share{
+            text-align: center;
+        }
+        .header .share a{
+            height: 4.5rem;
+            width: 4.5rem;
+            line-height: 4.5rem;
+            font-size: 1.8rem;
+            background: var(--white);
+            color: var(--black);
+            margin: 0 .1rem;
+        }
+        .header .share a:hover{
+            color: var(--white);
+            background: var(--black);
+        }
+        .header .credit{
+            text-align: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            padding-top: 15%;
+        }
+        .header .credit span{
+            color: var(--yellow);
+        }
+        #menu-btn{
+            position: fixed;
+            top: 1rem;
+            right: 2rem;
+            height: 5rem;
+            width: 5rem;
+            line-height: 5rem;
+            font-size: 2.5rem;
+            background: var(--green);
+            color: var(--white);
+            cursor: pointer;
+            text-align: center; 
+            z-index: 10000;
+            display: none;           
+        }
+        #menu-btn.fa-times{
+            background: var(--white);
+            color: var(--black);
+        }
+        .home{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .home .image{
+            flex: 1 1 40rem;
+        }
+        .home .image img{
+            width: 100%;
+        }
+        .home .content{
+            width: 45rem;
+        }
+        .home .content span{
+            color: var(--grenn);
+            font-size: 2rem;
+        }
+        .home .content h3{
+            color: var(--black);
+            font-size: 3rem;
+            padding: 2rem 0;
+        }
+        .home .content h3 a{
+            color: var(--green);
+        }
+        .home .content h3 a:hover{
+            text-decoration: underline;
+        }
+        .home .content p{
+            font-size: 1.5rem;
+            color: var(--light-color);
+            padding-bottom: 1rem;
+            line-height: 2;
+        }
+        .info-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); 
+            grid-gap: 2rem;
+        }
+        .info-container .box{
+            padding: 3rem;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border: var(--border);
+        }
+        .info-container .box i{
+            height: 5rem;
+            width: 5rem;
+            line-height: 5rem;
+            font-size: 2rem;
+            border-radius: 50%;
+            background: var(--green);
+            color: var(--white);
+            text-align: center;
+        }
+        .info-container .box h3{
+            font-size: 2rem;
+            padding-bottom: .5rem;
+            color: var(--black);
+        }
+        .info-container .box p{
+            font-size: 1.5rem;
+            color: var(--light-color);
+        }
+        .category .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 2rem;
+        }
+        .category .box-container .box{
+            text-align: center;
+            padding: 3rem 2rem;
+            border: var(--border);
+        }
+        .category .box-container .box:hover i{
+            transform: translateY(-1rem);
+        }
+        .category .box-container .box i{
+            height: 5.5rem; 
+            width: 5.5rem;
+            line-height: 5.5rem;
+            font-size: 2rem;
+            border-radius: .5rem;
+            color: var(--white);
+            background: var(--green);
+            margin-bottom: 1.5rem;
+        }
+        .category .box-container .box h3{
+            font-size: 2rem;
+            color: var(--black);
+        }
+        .category .box-container .box p{
+            font-size: 1.4rem;
+            color: var(--light-color);
+            line-height: 2;
+            padding-top: 1.5rem;
+        }
+        .about{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;            
+        }
+        .about .image{
+            flex: 1 1 40px;
+        }
+        .about .image img{
+            width: 100%;
+        }
+        .about .content{
+            width: 45rem;
+        }
+        .about .content span{
+            font-size: 2rem;
+            color: var(--green);
+        }
+        .about .content h3{
+            padding-top: 2.2rem;
+            font-size: 2.5rem;
+            color: var(--black);
+        }
+        .about .content p{
+            padding: 1.5rem 0;
+            font-size: 1.4rem;
+            line-height: 2;
+            color: var(--light-color);
+        }
+        .courses .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 2rem;
+        }
+        .courses .box-container .box{
+            position: relative;
+            padding: 2rem;
+            border: var(--border);
+            overflow: hidden;
+            text-align: center;
+        }
+        .courses .box-container .box:hover .content{
+            opacity: 1;
+        }
+        .courses .box-container .box .image img{
+            width: 100%;
+        }
+        .courses .box-container .box .image h3{
+            font-size: 2rem;
+            color: var(--black);
+            font-weight: normal;
+            padding-bottom: 1rem;
+        }
+        .courses .box-container .box .content{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            background: var(--green);
+            padding: 2rem;
+            opacity: 0;
+        }
+        .courses .box-container .box .content .stars{
+            padding-bottom: 2rem;
+        }
+        .courses .box-container .box .content .stars i{
+            font-size: 1.7rem;
+            color: var(--yellow);
+        }
+        .courses .box-container .box .content h3{
+            font-size: 2rem;
+            color: var(--white);
+        }
+        .courses .box-container .box .content p{
+            font-size: 1.4rem;
+            color: var(--white);
+            line-height: 2;
+            padding: 1.5rem 0;
+        }
+        .courses .box-container .box .content .btn:hover{
+            background: var(--yellow);
+            color: var(--black);
+        }
+        .pricing .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 2rem;
+        }
+        .pricing .box-container .box{
+            text-align: center;
+            padding: 2rem;
+            border: var(--border);
+            background: var(--white);
+        }
+        .pricing .box-container .box h3{
+            font-size: 2rem;
+            color: var(--black);
+        }
+        .pricing .box-container .box img{
+            height: 20rem;
+        }
+        .pricing .box-container .box .amount{
+            font-size: 5rem;
+            color: var(--black);
+            /* margin-bottom: 1rem; */
+        }
+        .pricing .box-container .box .amount span{
+            font-size: 2.5rem;
+        }
+        .pricing .box-container .box .list{
+            padding: 1.5rem 0;
+            text-align: left;
+        }
+        .pricing .box-container .box .list p{
+            font-size: 1.5rem;
+            color: var(--light-color);
+            padding: 1rem 0;
+        }
+        .pricing .box-container .box .list p i{
+            color: var(--green);
+            padding-right: .5rem;
+        }
+        .pricing .box-container .box .list p i.fa-times{
+            color: red;
+        }
+        .contact .row{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .contact .row .contact-info-container{
+            width: 40rem;
+        }
+        .contact .row .contact-info-container .box{
+            margin-bottom: 3rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+        .contact .row .contact-info-container .box i{
+            height: 5rem;
+            width: 5rem;
+            line-height: 5rem;
+            font-size: 1.7rem;
+            background: var(--green);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            margin-top: -1rem;
+        }
+        .contact .row .contact-info-container .box h3{
+            font-size: 2rem;
+            color: var(--black);
+            padding-bottom: 1rem;
+        }
+        .contact .row .contact-info-container .box p{
+            font-size: 1.5rem;
+            color: var(--light-color);
+            line-height: 2;
+        }
+        .contact .row .contact-info-container .share{
+            padding-top: 1rem;
+        }
+        .contact .row .contact-info-container .share a{
+            height: 5rem;
+            width: 5rem;
+            line-height: 5rem;
+            font-size: 2rem;
+            background: var(--black);
+            color: var(--white);
+            margin-right: .1rem;
+            text-align: center;
+        }
+        .contact .row .contact-info-container .share a:hover{
+            background: var(--green);
+        }
+        .contact .row form{
+            flex: 1 1 42rem;
+        }
+        .contact .row form .inputBox{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .contact .row form .inputBox input{
+            width: 49%;
+        }
+        .contact .row form .inputBox input,
+        .contact .row form textarea{
+            padding: 1.4rem;
+            background: var(--light-bg);
+            text-transform: none;
+            color: var(--light-color);
+            margin: .7rem 0;
+            font-size: 1.6rem;
+            border: var(--border);
+        }
+        .contact .row form textarea{
+            width: 100%;
+            resize: none;
+            height: 15rem;
+        }
+        .reviews .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 2rem;
+        }
+        .reviews .box-container .box{
+            text-align: center;
+            padding: 3rem;
+            background: var(--white);
+            border: var(--border);
+        }
+        .reviews .box-container .box img{
+            height: 10rem;
+            width: 10rem;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        .reviews .box-container .box h3{
+            font-size: 2rem;
+            color: var(--black);
+        }
+        .reviews .box-container .box p{
+            line-height: 2;
+            padding: 2rem 0;
+            font-size: 1.3rem;
+            color: var(--light-color);
+        }
+        .reviews .box-container .box .stars i{
+            color: var(--green);
+            font-size: 1.7rem;
+        }
+        .blogs .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 2rem;
+        }
+        .blogs .box-container .box{
+            text-align: center;
+            padding: 2rem;
+            border: var(--border);
+        }
+        .blogs .box-container .box:hover img{
+            transform: translateY(-1rem);
+        }
+        .blogs .box-container .box img{
+            height: 20rem;
+        }
+        .blogs .box-container .box .title{
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: var(--black);
+        }
+        .blogs .box-container .box .title:hover{
+            text-decoration: underline;
+            color: var(--green);
+        }
+        .blogs .box-container .box .blog-description{
+            padding: 1rem 0;
+            color: var(--light-color);
+            font-size: 1.4rem;
+            line-height: 2;
+        }
+        .blogs .box-container .box .icons{
+            padding-top: 1.7rem;
+            margin-top: 1.5rem;
+            border-top: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .blogs .box-container .box .icons p{
+            font-size: 1.4rem;
+            color: var(--light-color);
+        }
+        .blogs .box-container .box .icons p i{
+            padding-right: .5rem;
+            color: var(--green);
+        }
+        .blogs .box-container .box a{
+            font-size: 1.4rem;
+            color: var(--balck);  
+        }
+        .blogs .box-container .box a:hover{
+            text-decoration: underline;
+        }
+
+
+
+
+
+
+
+
+
+        @media(max-width: 1200px){
+            html{
+                font-size: 55%;
+            }            
+        }
+        @media(max-width: 991px){
+            body{
+                padding-left: 0;
+            }
+            #menu-btn{
+                display: block;
+            }
+            .header{
+                left: -110%;
+            }
+            .header.active{
+                left: 0;
+                box-shadow: 0 0 100vw rgba(0,0,0,0.7);
+                width: 35rem;
+            }
+            .home .content h3{
+                font-size: 2.5rem;
+            }
+        }
+        @media(max-width: 450px){
+            html{
+                font-size: 50%;
+            }
+            .contact .row form .inputBox input{
+                width: 100%;
+            }
+        }   
+
+    </style>
+</head>
+<body>
+
+<div id="menu-btn" class="fas fa-bars"></div>
+<header class="header">
+    <a href="#" class="logo"> <i class="fas fa-graduation-cap"></i> educa </a>
+    <nav class="navbar">
+        <a href="#home"> <i class="fas fa-angle-right"></i> home </a>
+        <a href="#category"> <i class="fas fa-angle-right"></i> category </a>
+        <a href="#about"> <i class="fas fa-angle-right"></i> about </a>
+        <a href="#courses"> <i class="fas fa-angle-right"></i> courses </a>
+        <a href="#pricing"> <i class="fas fa-angle-right"></i> pricing </a>
+        <a href="#contact"> <i class="fas fa-angle-right"></i> contact </a>
+        <a href="#reviews"> <i class="fas fa-angle-right"></i> reviews </a>
+        <a href="#blogs"> <i class="fas fa-angle-right"></i> blogs </a>
+    </nav>
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+    <p class="credit">created by <span>mr. web designer</span> | all rights reserved!</p>
+</header>
+
+<section id="home" class="home">
+    <div class="image">
+        <img src="imgs/education_2/home-img.svg" alt="">
+    </div>
+    <div class="content">
+        <span>online education</span>
+        <h3>A better learning future starts here. <a href="#">get start</a></h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, ut? Laudantium suscipit cumque magni iste labore excepturi debitis officiis quaerat?</p>
+        <a href="#courses" class="btn">our courses</a>
+    </div>
+</section>
+
+<section class="info-container">
+    <div class="box">
+        <i class="fas fa-user-graduate"></i>
+        <div class="info">
+            <h3>+450</h3>
+            <p>students</p>
+        </div>
+    </div>
+    <div class="box">
+        <i class="fas fa-laptop-code"></i>
+        <div class="info">
+            <h3>+70</h3>
+            <p>courses</p>
+        </div>
+    </div>
+    <div class="box">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <div class="info">
+            <h3>+199</h3>
+            <p>teachers</p>
+        </div>
+    </div>
+    <div class="box">
+        <i class="fas fa-book"></i>
+        <div class="info">
+            <h3>+520</h3>
+            <p>subjects</p>
+        </div>
+    </div>
+</section>
+
+<section class="category" id="category">
+    <div class="heading">
+        <span>our category</span>
+        <h3>our top category</h3>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-code"></i>
+            <h3>programing</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, veritatis.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-paint-brush"></i>
+            <h3>graphic design</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, veritatis.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-bullhorn"></i>
+            <h3>marketing</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, veritatis.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-chart-bar"></i>
+            <h3>business management</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, veritatis.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-music"></i>
+            <h3>music & dance</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, veritatis.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-microscope"></i>
+            <h3>science & biology</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, veritatis.</p>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="image">
+        <img src="imgs/education_2/about-img.svg" alt="">
+    </div>
+    <div class="content">
+        <span>about us</span>
+        <h3>best online platform for e-learning</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate aspernatur maxime quibusdam minima, labore, consequatur esse minus aperiam atque velit optio.</p>
+        <a href="#" class="btn">read more</a>
+    </div>
+</section>
+
+<section class="courses" id="courses">
+    <div class="heading">
+        <span>our top courses</span>
+        <h3>popular courses</h3>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="imgs/education_2/course-1.svg" alt="">
+                <h3>front-end development</h3>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>front-end development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ab?</p>
+                <a href="#" class="btn">select course</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/education_2/course-2.svg" alt="">
+                <h3>teaching & training</h3>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>teaching & training</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ab?</p>
+                <a href="#" class="btn">select course</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/education_2/course-3.svg" alt="">
+                <h3>music & dance</h3>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>music & dance</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ab?</p>
+                <a href="#" class="btn">select course</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/education_2/course-4.svg" alt="">
+                <h3>digital marketing</h3>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>digital marketing</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ab?</p>
+                <a href="#" class="btn">select course</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/education_2/course-5.svg" alt="">
+                <h3>graphic design</h3>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>graphic design</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ab?</p>
+                <a href="#" class="btn">select course</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="imgs/education_2/course-6.svg" alt="">
+                <h3>science & biology</h3>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>science & biology</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ab?</p>
+                <a href="#" class="btn">select course</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing" id="pricing">
+    <div class="heading">
+        <span>choose a plan</span>
+        <h3>affordable plans</h3>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <h3>basic plan</h3>
+            <img src="imgs/education_2/price-1.svg" alt="">
+            <div class="amount"> <span>$</span>30<span>/mo</span> </div>
+            <div class="list">
+                <p><i class="fas fa-check"></i> full courses </p>
+                <p><i class="fas fa-check"></i> online exams </p>
+                <p><i class="fas fa-check"></i> certificate </p>
+                <p><i class="fas fa-times"></i> full modules </p>
+                <p><i class="fas fa-times"></i> 24/7 support </p>
+            </div>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+        <div class="box">
+            <h3>standard plan</h3>
+            <img src="imgs/education_2/price-2.svg" alt="">
+            <div class="amount"> <span>$</span>50<span>/mo</span> </div>
+            <div class="list">
+                <p><i class="fas fa-check"></i> full courses </p>
+                <p><i class="fas fa-check"></i> online exams </p>
+                <p><i class="fas fa-check"></i> certificate </p>
+                <p><i class="fas fa-check"></i> full modules </p>
+                <p><i class="fas fa-times"></i> 24/7 support </p>
+            </div>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+        <div class="box">
+            <h3>premium plan</h3>
+            <img src="imgs/education_2/price-3.svg" alt="">
+            <div class="amount"> <span>$</span>90<span>/mo</span> </div>
+            <div class="list">
+                <p><i class="fas fa-check"></i> full courses </p>
+                <p><i class="fas fa-check"></i> online exams </p>
+                <p><i class="fas fa-check"></i> certificate </p>
+                <p><i class="fas fa-check"></i> full modules </p>
+                <p><i class="fas fa-check"></i> 24/7 support </p>
+            </div>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="heading">
+        <span>contact us</span>
+        <h3>get in touch</h3>
+    </div>
+    <div class="row">
+        <div class="contact-info-container">
+            <div class="box">
+                <i class="fas fa-phone"></i>
+                <div class="info">
+                    <h3>phone :</h3>
+                    <p>+123-456-7890</p>
+                    <p>+111-222-3333</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <div class="info">
+                    <h3>email :</h3>
+                    <p>shaikanas@gmail.com</p>
+                    <p>anasbhai@gmail.com</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-map"></i>
+                <div class="info">
+                    <h3>address :</h3>
+                    <p>mumbai, india - 400104</p>
+                </div>
+            </div>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+        <form action="">
+            <div class="inputBox">
+                <input type="text" placeholder="name">
+                <input type="email" placeholder="email">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="phone">
+                <input type="text" placeholder="subject">
+            </div>
+            <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+    </div>
+</section>
+
+<section class="reviews" id="reviews">
+    <div class="heading">
+        <span>clients reviews</span>
+        <h3>what they say?</h3>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <img src="imgs/education_2/pic-1.png" alt="">
+            <h3>john deo</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quidem dolore molestiae inventore quisquam unde reprehenderit voluptates recusandae fugit natus?</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/education_2/pic-1.png" alt="">
+            <h3>john deo</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quidem dolore molestiae inventore quisquam unde reprehenderit voluptates recusandae fugit natus?</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/education_2/pic-2.png" alt="">
+            <h3>john deo</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quidem dolore molestiae inventore quisquam unde reprehenderit voluptates recusandae fugit natus?</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/education_2/pic-3.png" alt="">
+            <h3>john deo</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quidem dolore molestiae inventore quisquam unde reprehenderit voluptates recusandae fugit natus?</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blogs" id="blogs">
+    <div class="heading">
+        <span>our blogs</span>
+        <h3>our untold stories</h3>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <img src="imgs/education_2/blog-1.svg" alt="">
+            <a href="#" class="title">blog title goes here.</a>
+            <p class="blog-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, fuga.</p>
+            <div class="icons">
+                <p><i class="fas fa-calendar"></i> 21st may, 2021</p>
+                <a href="#">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/education_2/blog-2.svg" alt="">
+            <a href="#" class="title">blog title goes here.</a>
+            <p class="blog-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, fuga.</p>
+            <div class="icons">
+                <p><i class="fas fa-calendar"></i> 21st may, 2021</p>
+                <a href="#">read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/education_2/blog-2.svg" alt="">
+            <a href="#" class="title">blog title goes here.</a>
+            <p class="blog-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, fuga.</p>
+            <div class="icons">
+                <p><i class="fas fa-calendar"></i> 21st may, 2021</p>
+                <a href="#">read more</a>
+            </div>
+        </div>
+    </div>
+</section>
+   
+
+
+
+<script>
+
+    let menu = document.querySelector('#menu-btn');
+    let header = document.querySelector(".header");
+    // menu.onclick = function(){
+    //     menu.classList.toggle('fa-times');
+    //     header.classList.toggle('active');
+    // };
+    menu.addEventListener('click', ()=>{
+        menu.classList.toggle('fa-times');
+        header.classList.toggle('active');
+    });
+
+    window.onscroll = function(){
+        menu.classList.remove('fa-times');
+        header.classList.remove('active');
+    };
+
+</script>
+    
+</body>
+</html>
