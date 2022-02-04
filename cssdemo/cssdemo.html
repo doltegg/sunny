@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- <link rel="icon" type="image/png" href="img/favicon.ico" />	 -->
+  <title>Card</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+  
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        body{
+            background: #191919;
+            width: 100%;
+        }
+        section{
+            padding: 3rem 5%;
+        }
+        h1{
+            text-align: center;
+            font-size: 3rem;
+            color: #0ea73a;
+            margin: 1.4rem;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            gap: 1rem;
+        }
+        .box{
+            border: 1px solid #444;
+        }
+        h3{
+            font-size: 2.2rem;
+            color: #ff0;
+            margin-bottom: 1.2rem;
+        }
+        img{
+            width: 100%;
+        }
+        a{
+            text-decoration: none;
+        }
+        .txt{
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Demo</h1>  
+    <section>
+        <h3>RWD Website</h3>
+        <div class="container">
+            <div class="box">
+                <a target="_blank" href="website1.html">
+                    <img src="pics/website1.jpg">                
+                    <p class="txt">餐廳 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="website2.html">
+                    <img src="pics/website2.jpg">                
+                    <p class="txt">電視 RWD 網頁</p>
+                </a>
+            </div> 
+            <div class="box">
+                <a target="_blank" href="resume_website.html">
+                    <img src="pics/resume_website.jpg">                
+                    <p class="txt">履歷 RWD 網頁</p>
+                </a>
+            </div> 
+            <div class="box">
+                <a target="_blank" href="rwd_page.html">
+                    <img src="pics/rwd_page.jpg">                
+                    <p class="txt">RWD 網頁</p>
+                </a>
+            </div> 
+            <div class="box">
+                <a target="_blank" href="fb_rwd.html">
+                    <img src="pics/fb_rwd.jpg">                
+                    <p class="txt">臉書 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="mulan_rwd.html">
+                    <img src="pics/mulan_rwd.jpg">                
+                    <p class="txt">花木蘭 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="dashboard_rwd.html">
+                    <img src="pics/dashboard_rwd.jpg">                
+                    <p class="txt">儀錶板 RWD 網頁 (grid 格線系統)</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="food_rwd.html">
+                    <img src="pics/food_rwd.jpg">                
+                    <p class="txt">餐廳 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="food2_rwd.html">
+                    <img src="pics/food2_rwd.jpg">                
+                    <p class="txt">餐廳 RWD 網頁 2</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="book_rwd.html">
+                    <img src="pics/book_rwd.jpg">                
+                    <p class="txt">書店 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="project_rwd.html">
+                    <img src="pics/project_rwd.jpg">                
+                    <p class="txt">雜貨店 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="coffee_rwd.html">
+                    <img src="pics/coffee_rwd.jpg">                
+                    <p class="txt">咖啡店 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="education_rwd.html">
+                    <img src="pics/education_rwd.jpg">                
+                    <p class="txt">課程 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="online_education.html">
+                    <img src="pics/online_education.jpg">                
+                    <p class="txt">線上課程 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="tutorial_rwd.html">
+                    <img src="pics/tutorial_rwd.jpg">                
+                    <p class="txt">教程 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="design_rwd.html">
+                    <img src="pics/design_rwd.jpg">                
+                    <p class="txt">網頁設計 RWD 網頁 (*.svg)</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="hospital_rwd.html">
+                    <img src="pics/hospital_rwd.jpg">                
+                    <p class="txt">醫院 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="pet_rwd.html">
+                    <img src="pics/pet_rwd.jpg">                
+                    <p class="txt">寵物店 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="event_rwd.html">
+                    <img src="pics/event_rwd.jpg">                
+                    <p class="txt">活動組織 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="travel_rwd.html">
+                    <img src="pics/travel_rwd.jpg">                
+                    <p class="txt">旅行社 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="seo_rwd.html">
+                    <img src="pics/seo_rwd.jpg">                
+                    <p class="txt">SEO RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="christmas_rwd.html">
+                    <img src="pics/christmas_rwd.jpg">                
+                    <p class="txt">聖誕節 RWD 網頁</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="imgs/furniture/furniture_rwd.html">
+                    <img src="pics/furniture_rwd.jpg">                
+                    <p class="txt">傢俱行 RWD 網頁 (分頁)</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="app_rwd.html">
+                    <img src="pics/app_rwd.jpg">                
+                    <p class="txt">App RWD 網頁 (no js)</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="flower_rwd.html">
+                    <img src="pics/flower_rwd.jpg">                
+                    <p class="txt">花店 RWD 網頁 (no js)</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="portfolio.html">
+                    <img src="pics/portfolio.jpg">                
+                    <p class="txt">個人網頁 (without RWD)</p>
+                </a>
+            </div>      
+            <div class="box">
+                <a target="_blank" href="footer.html">
+                    <img src="pics/footer.jpg">
+                </a>
+                <p class="txt">頁尾 RWD</p>
+            </div>
+        </div>    
+    </section>
+
+    <section>
+        <h3>Card</h3>
+        <div class="container">
+            <div class="box">
+                <a target="_blank" href="glass_card.html">
+                    <img src="pics/glass_card.jpg">
+                </a>
+                <p class="txt">玻璃卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="glass_bar.html">
+                    <img src="pics/glass_bar.jpg">
+                </a>
+                <p class="txt">玻璃效果進度欄</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="glassmorphism_card.html">
+                    <img src="pics/glassmorphism_card.jpg">
+                </a>
+                <p class="txt">玻璃懸停出現文字卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="card_glassmorphism.html">
+                    <img src="pics/card_glassmorphism.jpg">
+                </a>
+                <p class="txt">玻璃背景卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="card_hover.html">
+                    <img src="pics/card_hover.jpg">
+                </a>
+                <p class="txt">卡片懸停效果</p>
+            </div>
+
+            <div class="box">
+                <a target="_blank" href="price_table.html">
+                    <img src="pics/price_table.jpg">
+                </a>
+                <p class="txt">價格卡片 (RWD)</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/card_1.html">
+                    <img src="pics/card_1.jpg">
+                </a>
+                <p class="txt">卡片 1</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/card_2.html">
+                    <img src="pics/card_2.jpg">
+                </a>
+                <p class="txt">卡片 2</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/card_3.html">
+                    <img src="pics/card_3.jpg">
+                </a>
+                <p class="txt">卡片 3</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="card_4.html">
+                    <img src="pics/card_4.jpg">
+                </a>
+                <p class="txt">卡片 4</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="card_pricing.html">
+                    <img src="pics/card_pricing.jpg">
+                </a>
+                <p class="txt">卡片懸停伸縮</p>
+            </div>
+            
+            <div class="box">
+                <a target="_blank" href="stacked_cards.html">
+                    <img src="pics/stacked_cards.jpg">
+                </a>
+                <p class="txt">卡片堆疊懸停後展開</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="morphism_cards.html">
+                    <img src="pics/morphism_cards.jpg">
+                </a>
+                <p class="txt">響應式卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="box_hover.html">
+                    <img src="pics/box_hover.jpg">
+                </a>
+                <p class="txt">盒子卡片懸停 1</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="box_hover2.html">
+                    <img src="pics/box_hover2.jpg">
+                </a>
+                <p class="txt">盒子卡片懸停 2</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="profile_card.html">
+                    <img src="pics/profile_card.jpg">
+                </a>
+                <p class="txt">個人資料卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="profile_glass.html">
+                    <img src="pics/profile_glass.jpg">
+                </a>
+                <p class="txt">個人卡片玻璃效果</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="snake_border.html">
+                    <img src="pics/snake_border.jpg">
+                </a>
+                <p class="txt">蛇行邊框卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="irregular_circle.html">
+                    <img src="pics/irregular_circle.jpg">
+                </a>
+                <p class="txt">不規則圓外框卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="light_dark.html">
+                    <img src="pics/light_dark.jpg">
+                </a>
+                <p class="txt">日夜轉換背景卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="hexagon_hover.html">
+                    <img src="pics/hexagon_hover.jpg">
+                </a>
+                <p class="txt">六邊形懸停效果</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="read_more.html">
+                    <img src="pics/read_more.jpg">
+                </a>
+                <p class="txt">動態看更多</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="client_testimonial.html">
+                    <img src="pics/client_testimonial.jpg">
+                </a>
+                <p class="txt">客戶推薦卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="hover.html">
+                    <img src="pics/hover.jpg">
+                </a>
+                <p class="txt">懸停形狀效果</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="debit_card.html">
+                    <img src="pics/debit_card.jpg">
+                </a>
+                <p class="txt">玻璃效果簽帳卡</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="foldable_card.html">
+                    <img src="pics/foldable_card.jpg">
+                </a>
+                <p class="txt">摺疊卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="modal_popup.html">
+                    <img src="pics/modal_popup.jpg">
+                </a>
+                <p class="txt">模態彈出窗口卡片</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="card_design.html">
+                    <img src="pics/card_design.jpg">
+                </a>
+                <p class="txt">圓弧下緣照卡片</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>List</h3>
+        <div class="container">
+            <div class="box">
+                <a target="_blank" href="checklist.html">
+                    <img src="pics/checklist.jpg">
+                </a>
+                <p class="txt">檢查清單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="check.html">
+                    <img src="pics/check.jpg">
+                </a>
+                <p class="txt">單選選單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="todolist.html">
+                    <img src="pics/todolist.jpg">
+                </a>
+                <p class="txt">To Do List 清單</p>
+            </div>        
+            <div class="box">
+                <a target="_blank" href="list_item.html">
+                    <img src="pics/list_item.jpg">
+                </a>
+                <p class="txt">清單懸停效果</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="list_item2.html">
+                    <img src="pics/list_item2.jpg">
+                </a>
+                <p class="txt">清單懸停效果 2</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="contact_form.html">
+                    <img src="pics/contact_form.jpg">
+                </a>
+                <p class="txt">聯絡表單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="contact_us.html">
+                    <img src="pics/contact_us.jpg">
+                </a>
+                <p class="txt">聯絡表單 2 (RWD)</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Word</h3>
+        <div class="container">
+            <div class="box">
+                <a target="_blank" href="applelogo.html">
+                    <img src="pics/applelogo.jpg">                
+                    <p class="txt">APPLE LOGO</p>
+                </a>
+            </div> 
+            <div class="box">
+                <a target="_blank" href="squid_game.html">
+                    <img src="pics/squid_game.jpg">                
+                    <p class="txt">魷魚遊戲</p>
+                </a>
+            </div> 
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/woodentext.html">
+                    <img src="pics/woodentext.jpg">                
+                    <p class="txt">木製字排版</p>
+                </a>
+            </div>           
+            <div class="box">
+                <a target="_blank" href="3d.html">
+                    <img src="pics/3d.jpg">                
+                    <p class="txt">3 D 文字效果</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="text_animation.html">
+                    <img src="pics/text_animation.jpg">                
+                    <p class="txt">文字旋轉</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="vertical_text.html">
+                    <img src="pics/vertical_text.jpg">                
+                    <p class="txt">文字直排</p>
+                </a>
+            </div>            
+            <div class="box">
+                <a target="_blank" href="water.html">
+                    <img src="pics/water.jpg">                
+                    <p class="txt">文字波浪</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="change_fontsize.html">
+                    <img src="pics/change_fontsize.jpg">
+                </a>
+                <p class="txt">改變字大小</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="media_icon.html">
+                    <img src="pics/media_icon.jpg">
+                </a>
+                <p class="txt">媒體圖標 3 D 變化</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="rwd_icon.html">
+                    <img src="pics/rwd_icon.jpg">
+                </a>
+                <p class="txt">RWD 社交媒體圖標</p>
+            </div>
+        </div>
+    </section>       
+    
+    <section>
+        <h3>Menu</h3>
+        <div class="container">
+            <div class="box">
+                <a target="_blank" href="navbar_css.html">
+                    <img src="pics/navbar_css.jpg">
+                </a>
+                <p class="txt">下拉式導航選單 (純 CSS)</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="navbar_css2.html">
+                    <img src="pics/navbar_css2.jpg">
+                </a>
+                <p class="txt">下拉式導航動畫選單 (純 CSS)</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="navigation_drawer.html">
+                    <img src="pics/navigation_drawer.jpg">
+                </a>
+                <p class="txt">導航抽屜</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="tooltip.html">
+                    <img src="pics/tooltip.jpg">
+                </a>
+                <p class="txt">懸停選單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="floating_menu.html">
+                    <img src="pics/floating_menu.jpg">
+                </a>
+                <p class="txt">浮動選單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="animated_menu.html">
+                    <img src="pics/animated_menu.jpg">
+                </a>
+                <p class="txt">動態背景選單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="icon_menu.html">
+                    <img src="pics/icon_menu.jpg">
+                </a>
+                <p class="txt">圖樣選單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="curved_outside.html">
+                    <img src="pics/curved_outside.jpg">
+                </a>
+                <p class="txt">反曲邊線</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="magic_nav.html">
+                    <img src="pics/magic_nav.jpg">
+                </a>
+                <p class="txt">魔球</p>
+            </div>
+            
+            <div class="box">
+                <a target="_blank" href="icon_hover.html">
+                    <img src="pics/icon_hover.jpg">
+                </a>
+                <p class="txt">圖樣移入效果</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="dropdown_navbar.html">
+                    <img src="pics/dropdown_navbar.jpg">
+                </a>
+                <p class="txt">下拉選單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="dropdown_menu.html">
+                    <img src="pics/dropdown_menu.jpg">
+                </a>
+                <p class="txt">下拉式選單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="glassmorphism_menu.html">
+                    <img src="pics/glassmorphism_menu.jpg">
+                </a>
+                <p class="txt">玻璃效果選單</p>
+            </div>            
+            <div class="box">
+                <a target="_blank" href="menu.html">
+                    <img src="pics/menu.jpg">
+                </a>
+                <p class="txt">全螢幕導覽選單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="menu2.html">
+                    <img src="pics/menu2.jpg">
+                </a>
+                <p class="txt">全螢幕導覽選單 2</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="user_menu.html">
+                    <img src="pics/user_menu.jpg">
+                </a>
+                <p class="txt">個人帳戶選單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="close_sidebar.html">
+                    <img src="pics/close_sidebar.jpg">
+                </a>
+                <p class="txt">關閉側邊選單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="close_navbar.html">
+                    <img src="pics/close_navbar.jpg">
+                </a>
+                <p class="txt">關閉上方選單 (RWD)</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="search.html">
+                    <img src="pics/search.jpg">
+                    <p class="txt">搜尋列</p>
+                </a>                
+            </div>
+            <div class="box">
+                <a target="_blank" href="google_search.html">
+                    <img src="pics/google_search.jpg">
+                </a>
+                <p class="txt">谷歌搜尋引擎</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Button</h3>
+        <div class="container">
+            <div class="box">
+                <a target="_blank" href="neonlightb.html">
+                    <img src="pics/neonlightb.jpg">
+                </a>
+                <p class="txt">霓虹邊框按鈕</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/glassmorphism.html">
+                    <img src="pics/glass_btn.jpg">
+                </a>
+                <p class="txt">玻璃態懸停按鈕</p>
+            </div>
+            
+            <div class="box">
+                <a target="_blank" href="radio_button.html">
+                    <img src="pics/radio_button.jpg">
+                </a>
+                <p class="txt">單選按鈕</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="checkbox_button.html">
+                    <img src="pics/checkbox_button.jpg">
+                </a>
+                <p class="txt">動畫按鈕</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="checkbox2.html">
+                    <img src="pics/checkbox2.jpg">
+                </a>
+                <p class="txt">動畫按鈕 2</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="pixel_button.html">
+                    <img src="pics/pixel_button.jpg">
+                </a>
+                <p class="txt">馬賽克動畫按鈕</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="button_hover.html">
+                    <img src="pics/button_hover.jpg">
+                </a>
+                <p class="txt">按鈕懸停效果</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="button_ripple.html">
+                    <img src="pics/button_ripple.jpg">
+                </a>
+                <p class="txt">按鈕懸停波紋</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="checkbox_button2.html">
+                    <img src="pics/checkbox_button2.jpg">
+                </a>
+                <p class="txt">複選框按鈕 2</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="checkbox_button3.html">
+                    <img src="pics/checkbox_button3.jpg">
+                </a>
+                <p class="txt">複選框按鈕 3</p>
+            </div>
+                
+            <div class="box">
+                <a target="_blank" href="slider_button.html">
+                    <img src="pics/slider_button.jpg">
+                </a>
+                <p class="txt">投影片按鈕</p>
+            </div>  
+        </div>
+    </section>
+
+    <section>
+        <h3>動畫</h3>
+        <div class="container">
+            <div class="box">
+                <a target="_blank" href="wavy_line.html">
+                    <img src="pics/wavy_line.jpg">                
+                    <p class="txt">波浪線動畫</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="perpetual.html">
+                    <img src="pics/perpetual.jpg">                
+                    <p class="txt">永動的球</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="wavy_bg.html">
+                    <img src="pics/wavy_bg.jpg">                
+                    <p class="txt">波浪背景</p>
+                </a>
+            </div>
+            <div class="box">
+                <a target="_blank" href="change_background.html">
+                    <img src="pics/change_background.jpg">
+                </a>
+                <p class="txt">變更背景顏色</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="abstract_background.html">
+                    <img src="pics/abstract_background.jpg">
+                </a>
+                <p class="txt">變更背景顏色抽象背景</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="glowing_dots.html">
+                    <img src="pics/glowing_dots.jpg">
+                </a>
+                <p class="txt">光點動畫</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="var_calc".html>
+                    <img src="pics/var_calc.jpg">
+                </a>
+                <p class="txt">下載中動畫</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="text_loading.html">
+                    <img src="pics/text_loading.jpg">
+                </a>
+                <p class="txt">方塊下載中</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="climb_cube.html">
+                    <img src="pics/climb_cube.jpg">
+                </a>
+                <p class="txt">方塊爬升</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="scroll_cube.html">
+                    <img src="pics/scroll_cube.jpg">
+                </a>
+                <p class="txt">方塊馬路滾動</p>
+            </div>
+            
+            <div class="box">
+                <a target="_blank" href="skewed_background.html">
+                    <img src="pics/skewed_background.jpg">
+                </a>
+                <p class="txt">傾斜背景變換</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="accordion.html">
+                    <img src="pics/accordion.jpg">
+                </a>
+                <p class="txt">手風琴變化</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="image_hover.html">
+                    <img src="pics/image_hover.jpg">
+                </a>
+                <p class="txt">圖像懸停疊加 </p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="clip_path.html">
+                    <img src="pics/clip_path.jpg">
+                </a>
+                <p class="txt">剪輯路徑</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="text_hover.html">
+                    <img src="pics/text_hover.jpg">
+                </a>
+                <p class="txt">文字懸停效果</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="radient_shadow.html">
+                    <img src="pics/radient_shadow.jpg">
+                </a>
+                <p class="txt">漸變邊框</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="wavy_border.html">
+                    <img src="pics/wavy_border.jpg">
+                </a>
+                <p class="txt">動態波浪框</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="tricks.html">
+                    <img src="pics/tricks.jpg">
+                </a>
+                <p class="txt">梯狀邊框</p>
+            </div>          
+            <div class="box">
+                <a target="_blank" href="dark_light.html">
+                    <img src="pics/dark_light.jpg">
+                </a>
+                <p class="txt">白天黑夜轉換</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="events_section.html">
+                    <img src="pics/events_section.jpg">
+                </a>
+                <p class="txt">事件記錄 RWD</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="neon_text.html">
+                    <img src="pics/neon_text.jpg">
+                </a>
+                <p class="txt">霓虹燈字</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="css_var.html">
+                    <img src="pics/css_var.jpg">
+                </a>
+                <p class="txt">動態發亮光環</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="star_rating.html">
+                    <img src="pics/star_rating.jpg">
+                </a>
+                <p class="txt">星等評價</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="load_bar.html">
+                    <img src="pics/load_bar.jpg">
+                </a>
+                <p class="txt">下載進度條</p>
+            </div>          
+            <div class="box">
+                <a target="_blank" href="get_battery.html".html>
+                    <img src="pics/get_battery.jpg">
+                </a>
+                <p class="txt">所剩電池電力</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="z_index.html">
+                    <img src="pics/z_index.jpg">
+                </a>
+                <p class="txt">Z 軸跳上</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="https://doltegg.github.io/library/animation/pointer.html">
+                    <img src="pics/pointer.jpg">
+                </a>
+                <p class="txt">指向方塊</p>
+            </div>            
+            <div class="box">
+                <a target="_blank" href="slidershow.html">
+                    <img src="pics/slidershow.jpg">
+                </a>
+                <p class="txt">投影片播放</p>
+            </div>    
+        </div>
+    </section>
+
+    <section>
+        <h3>Log In</h3>
+        <div class="container">
+            <div class="box">
+                <a target="_blank" href="glassmorphism.html">
+                    <img src="pics/glassmorphism.jpg">
+                </a>
+                <p class="txt">玻璃效果登入表單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="animated_login.html">
+                    <img src="pics/animated_login.jpg">
+                </a>
+                <p class="txt">動態效果登入表單</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="registration_login.html">
+                    <img src="pics/registration_login.jpg">
+                </a>
+                <p class="txt">換頁登入註冊表單</p>
+            </div> 
+            <div class="box">
+                <a target="_blank" href="registration_form.html">
+                    <img src="pics/registration_form.jpg">
+                </a>
+                <p class="txt">註冊表單</p>
+            </div>   
+        </div>
+    </section>
+
+    <section>
+        <h3>其他</h3>
+        <div class="container">
+            <div class="box">
+                <a target="_blank" href="calendar.html">
+                    <img src="pics/calendar.jpg">
+                </a>
+                <p class="txt">年月曆</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="small_calendar.html">
+                    <img src="pics/small_calendar.jpg">
+                </a>
+                <p class="txt">日曆</p>
+            </div>
+            <div class="box">
+                <a target="_blank" href="digital_clock.html">
+                    <img src="pics/digital_clock.jpg">
+                </a>
+                <p class="txt">數位時鐘</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- <                      
+            
+            
+            
+            
+            
+            
+           
+            
+            
+            
+        </div>
+    </div>
+
+-->
+<!-- 15.5cm 33.85cm -->
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> -->
+
+
+
+</body>
+
+</html>
