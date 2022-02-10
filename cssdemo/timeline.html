@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeLine</title>
+
+    <!-- Boxicons icons CDN Link -->
+    <!-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> -->
+    
+    <!-- font awesoom cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- lightgallery cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+    
+    <style>
+        @import url('http://fonts.googleapis.com/css?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+        *{
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            /* text-decoration: none; */
+            transition: all .2s linear;
+        }
+        .main{
+            width: 100%;
+            height: auto;
+            background-color: rgb(245,245,245);
+            padding: 50px 0;
+            display: grid;
+            place-items: center;
+        }
+        .main .heading{
+            font-size: 27px;
+            font-weight: 500;
+            color: rgb(106,6,236);
+            position: relative;
+            margin-bottom: 100px;
+        }
+        .heading::after{
+            position: absolute;
+            content: '';
+            left: 50%;
+            width: 50%;
+            height: 4px;
+            bottom: -5px;
+            background-image: linear-gradient(to right, rgb(106,6,236), rgb(220,0,240));
+            transform: translateX(-50%)
+        }
+        .container{
+            width: 70%;
+            height: auto;
+            position: relative;
+        }
+        .container ul::after{
+            position: absolute;
+            content: '';
+            width: 2px;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgb(106,6,236), rgb(220,0,240));
+        }
+        .container ul{
+            list-style: none;
+        }
+        .container ul li{
+            width: 50%;
+            height: auto;
+            padding: 15px 20px;
+            background: #fff;
+            box-shadow: 1px 1px 25px rgba(0,0,0,0.384);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 99;
+            position: relative;
+        }
+        .container ul li:nth-child(odd){
+            float: left;
+            clear: right;
+            transform: translateX(-30px);
+            text-align: right;
+        }
+        .container ul li:nth-child(odd) .date{
+            right: 20px;
+        }
+        .container ul li:nth-child(even){
+            float: right;
+            clear: left;
+            transform: translateX(30px);
+        }
+        .container ul li:nth-child(4){
+            margin-bottom: 0;
+        }
+        .container ul li .title{
+            font-size: 22px;
+            font-weight: 500;
+            color: rgb(106,6,236);
+        }
+        ul li p{
+            font-size: 15px;
+            color: #444;
+            margin: 7px 0;
+            line-height: 23px;
+        }
+        ul li a{
+            font-size: 15px;
+            color: rgb(106,6,236);
+            text-decoration: none;
+        }
+        ul li .date{
+            position: absolute;
+            top: -40px;
+            /* left: 20px; */
+            width: 135px;
+            height: 35px;
+            border-radius: 20px;
+            color: #fff;
+            background-image: linear-gradient(to right, rgb(106,2,236),rgb(220,0,240));
+            display: grid;
+            place-items: center;
+            font-size: 14px;
+        }
+        .container ul li .circle{
+            width: 30px;
+            height: 30px;
+            background-color: rgba(220,0, 240,0.403);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+        }
+        .container ul li .circle::after{
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: rgb(106,6,236);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .container ul li:nth-child(odd) .circle{
+            right: -30px;
+            transform: translate(50%,-50%);
+        }
+        .container ul li:nth-child(even) .circle{
+            left: -30px;
+            transform: translate(-50%,-50%);
+        }
+
+
+
+        @media(max-width: 1224px){
+            .container{
+                width: 85%;
+            }
+        }
+        @media(max-width: 933px){
+            .container{
+                width: 80%;
+                transform: translateX(15px);
+            }
+            .container ul::after{
+                left: -30px;
+            }
+            .container ul li{
+                width: 100%;
+                float: none;
+                clear: none;
+                margin-bottom: 80px;
+            }
+            .container ul li:nth-child(odd){
+                transform: translateX(0);
+                text-align: left;
+            }
+            .container ul li:nth-child(odd) .date{
+                left: 20px;
+            }
+            .container ul li:nth-child(odd) .circle{
+                left: -30px;
+                transform: translate(-50%,-50%);
+            }
+            .container ul li:nth-child(even){
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <h3 class="heading">Responsive Timeline</h3>
+        <div class="container">
+            <ul>
+                <li>
+                    <h3 class="title">FrontEnd Developer</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda explicabo soluta aliquid corrupti et nisi?</p>
+                    <a href="#">Read More</a>
+                    <span class="circle"></span>
+                    <span class="date">January 2022</span>
+                </li>
+                <li>
+                    <h3 class="title">BackEnd</h3> Developer</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda explicabo soluta aliquid corrupti et nisi?</p>
+                    <a href="#">Read More</a>
+                    <span class="circle"></span>
+                    <span class="date">February 2022</span>
+                </li>
+                <li>
+                    <h3 class="title">Full Stack Developer</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda explicabo soluta aliquid corrupti et nisi?</p>
+                    <a href="#">Read More</a>
+                    <span class="circle"></span>
+                    <span class="date">Marcg 2022</span>
+                </li>
+                <li>
+                    <h3 class="title">App Developer</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda explicabo soluta aliquid corrupti et nisi?</p>
+                    <a href="#">Read More</a>
+                    <span class="circle"></span>
+                    <span class="date">April 2022</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+   
+
+
+
+    <!-- lightgallery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script>  
+    </script>
+
+     
+</body>
+</html>
